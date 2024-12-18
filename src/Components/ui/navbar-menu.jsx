@@ -53,7 +53,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
 // Menu Component
 export const Menu = ({ setActive, children }) => {
   return (
-    <div className="flex justify-between items-end p-5 border-b-2 border-black/[0.5]">
+    <div className="flex justify-between items-end   border-black/[0.5]">
       <div className=" pt-5 px-5">
         <img src="https://i.ibb.co.com/pf3YyhR/logo.png" alt="CBSG LOGO"  className="px-1"/>
         <h1 className="font-semibold text-2xl">Capacity Building Service Group</h1>

@@ -5,7 +5,7 @@ const Banner = () => {
     <div className="w-screen h-[60vh]  flex justify-center items-center">
       <Carousel className="w-full h-full" showThumbs={false} infiniteLoop={true} autoPlay={true} interval={3000} showStatus={false} showArrows={false} showIndicators={false} >
         <div>
-          <img src="https://i.ibb.co.com/5MZPdhp/banner-1.jpg" alt="banner-1" />
+          <img src="https://i.ibb.co.com/5MZPdhp/banner-1.jpg" alt="banner-1" className="w-full h-full" />
         </div>
         {/* <div>
           <img src="https://i.ibb.co.com/thDf1NW/banner-2.jpg" alt="banner-2" />
