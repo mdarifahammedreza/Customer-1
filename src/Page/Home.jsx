@@ -3,7 +3,7 @@ import Banner from "../Components/Banner/Banner";
 
 const Home = () => {
     return (
-        <div className=" mt-8">
+        <div className=" mt-24">
             <Line />
             <Banner />
             <Line/>
