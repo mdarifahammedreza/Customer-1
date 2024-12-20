@@ -22,7 +22,7 @@ function Navbar({ className }) {
   const [active, setActive] = useState(null);
 
   return (
-    <div className={cn(" inset-x-0  z-50", className)}>
+    <div className={cn(" inset-x-0  z-5000", className)}>
       <Menu setActive={setActive}>
         {/* Services Menu */}
         <HoveredLink href="/">Home</HoveredLink>
