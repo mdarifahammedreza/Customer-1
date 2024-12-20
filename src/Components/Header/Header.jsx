@@ -29,8 +29,8 @@ function Navbar({ className }) {
         <HoveredLink href="/About">About us</HoveredLink>
         <MenuItem setActive={setActive} active={active} item="Our services">
           <div className="flex flex-col bg-white space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Organization Development</HoveredLink>
-            <HoveredLink href="/interface-design">Research and Evaluation</HoveredLink>
+            <HoveredLink href="/Services/Organization-Development">Organization Development</HoveredLink>
+            <HoveredLink href="/Services/Research&Evaluation">Research and Evaluation</HoveredLink>
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Practice areas">

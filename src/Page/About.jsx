@@ -67,27 +67,27 @@ const About = () => {
                           </div> */}
                </div>
           </div>
-        <div className="card bg-sky-500/[0.25] rounded-none">
+        <div className="card bg-sky-500 rounded-none">
               <div className="card-body">
-                  <h2 className="card-title font-sans font-bold text-violet-950"><div className="flex items-center justify-center"><p>Vision</p> <GiBleedingEye /></div></h2>
-                  <p className="font-semibold">Our mission is to provide high quality services to our clients and to contribute to the development of the society.</p>
+                  <h2 className="card-title font-sans font-bold text-white"><div className="flex items-center justify-center"><p>Vision</p> <GiBleedingEye /></div></h2>
+                  <p className=" text-white">Our mission is to provide high quality services to our clients and to contribute to the development of the society.</p>
                                {/* <div className="card-actions justify-end">
                          <button className="btn btn-primary">Buy Now</button>
                           </div> */}
                </div>
           </div>
-        <div className="card  bg-violet-950/[0.25] rounded-none">
+        <div className="card  bg-violet-950 text-white rounded-none">
               <div className="card-body">
-                  <h2 className="card-title font-sans font-bold text-violet-950"><div className="flex items-center justify-center"><p>Vision</p> <GiBleedingEye /></div></h2>
-                  <p className="font-semibold">Our mission is to provide high quality services to our clients and to contribute to the development of the society.</p>
+                  <h2 className="card-title font-sans font-bold "><div className="flex items-center justify-center"><p>Vision</p> <GiBleedingEye /></div></h2>
+                  <p className="">Our mission is to provide high quality services to our clients and to contribute to the development of the society.</p>
                                {/* <div className="card-actions justify-end">
                          <button className="btn btn-primary">Buy Now</button>
                           </div> */}
                </div>
           </div>
-        <div className="card  bg-yellow-500/[0.5] rounded-none">
+        <div className="card  bg-yellow-600 text-white rounded-none">
               <div className="card-body">
-                  <h2 className="card-title font-sans font-bold text-violet-950"><div className="flex items-center justify-center"><p>Vision</p> <GiBleedingEye /></div></h2>
+                  <h2 className="card-title font-sans font-bold"><div className="flex items-center justify-center"><p>Vision</p> <GiBleedingEye /></div></h2>
                   <p className="font-semibold">Our mission is to provide high quality services to our clients and to contribute to the development of the society.</p>
                                {/* <div className="card-actions justify-end">
                          <button className="btn btn-primary">Buy Now</button>
