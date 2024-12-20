@@ -15,13 +15,14 @@ const transition = {
   restSpeed: 0.001,
 };
 
+  
 // MenuItem Component
 export const MenuItem = ({ setActive, active, item, children }) => {
   return (
     <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.8 }}
-        className="cursor-pointer hover:underline text-black font-semibold  hover:opacity-[0.9] "
+        className="cursor-pointer hover:underline text-black font-semibold bg-white  hover:opacity-[0.9] "
       >
         {item}
       </motion.p>
@@ -36,7 +37,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
               <motion.div
                 transition={transition}
                 layoutId="active"
-                className="bg-floor backdrop-blur-sm rounded-sm overflow-hidden  border border-black/[0.2] shadow-xl"
+                className="bg-white backdrop-blur-sm rounded-sm overflow-hidden  border border-black/[0.2] shadow-xl"
               >
                 <motion.div layout className="w-max h-full p-4">
                   {children}
@@ -53,9 +54,15 @@ export const MenuItem = ({ setActive, active, item, children }) => {
 // Menu Component
 export const Menu = ({ setActive, children }) => {
   return (
-    <div className="flex justify-between items-end   border-black/[0.5]">
+    <div className="flex justify-between items-end bg-white  border-black/[0.5]">
       <div className=" pt-5 px-5">
-        <img src="https://i.ibb.co.com/pf3YyhR/logo.png" alt="CBSG LOGO"  className="px-1"/>
+      <Link href="/">
+  <img
+    src="https://i.ibb.co.com/pf3YyhR/logo.png"
+    alt="CBSG LOGO"
+    className="px-1"
+  />
+</Link>
         <h1 className="font-semibold text-2xl">Capacity Building Service Group</h1>
       </div>
       <nav
@@ -72,7 +79,7 @@ export const Menu = ({ setActive, children }) => {
 // ProductItem Component
 export const ProductItem = ({ title, description, href, src }) => {
   return (
-    <Link href={href} className="flex space-x-2">
+    <Link href={href} className="flex space-x-2 bg-white">
       <Image
         src={src}
         width={140}
@@ -97,7 +104,7 @@ export const HoveredLink = ({ children, ...rest }) => {
   return (
     <Link
       {...rest}
-      className="text-black font-semibold  hover:text-black hover:underline"
+      className="text-black font-semibold  bg-white hover:text-black hover:underline"
     >
       {children}
     </Link>
