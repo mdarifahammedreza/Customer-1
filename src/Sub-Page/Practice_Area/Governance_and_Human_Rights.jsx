@@ -6,6 +6,7 @@ const Governance_and_Human_Rights = () => {
           <h1 className="text-4xl font-bold text-center">Governance and Human Rights</h1>
           <p className="text-center">We work with governments, civil society organizations, and the private sector to promote good governance and human rights. Our</p>
         </div>
+      </div>
     </div>
     );
     }
