@@ -2,10 +2,13 @@ const Footer = () => {
   return (
     <footer>
       <div>
-        <div className="w-full h-52 ">
-          <div className="bg-sky-500/[.80]">a</div>
-          <div className="bg-violet-950/[.8]">a</div>
-          <div className="bg-yellow-500/[.8]">a</div>
+        <div className="w-full h-52 flex">
+         
+          <div className="bg-yellow-500/[.9] w-1/2 p-10">
+          <img src="https://i.ibb.co.com/pf3YyhR/logo.png" alt="CBSG-Logo" />
+          <p className="font-xl">Capacity Building Service Group </p>
+          </div>
+          <div className="bg-violet-950/[.9] w-1/2 text-white">a</div>
         </div>
       </div>
     </footer>

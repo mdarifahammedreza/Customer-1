@@ -13,7 +13,7 @@ const Home = () => {
 export default Home;
 const Line =() => {
     return (
-        <div className="w-full h-3 grid grid-cols-3 bg-black">
+        <div className="w-full h-5 grid grid-cols-3 bg-black">
         <div className="bg-sky-500"></div>
         <div className="bg-violet-950"></div>
         <div className="bg-yellow-500"></div>
