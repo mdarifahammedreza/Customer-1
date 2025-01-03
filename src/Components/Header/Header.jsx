@@ -5,7 +5,6 @@ import { useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { Link } from "react-router";
 
-
 const Header = () => { 
   return (
     <header>
@@ -22,7 +21,7 @@ function Navbar({ className }) {
   const [active, setActive] = useState(null);
 
   return (
-    <div className={cn(" inset-x-0  z-5000 mt-1 bg-white", className)}>
+    <div className={cn(" relative inset-x-0  z-5000 mt-1 bg-white", className)}>
       <Menu setActive={setActive}>
         {/* Services Menu */}
         <HoveredLink href="/">Home</HoveredLink>

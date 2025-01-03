@@ -8,8 +8,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        floor: '##ffffff', // Custom floor color
+        floor: '#ffffff', // Custom floor color
         header: '#', // Custom green color
+      },
+      fontFamily: {
+        sans: ['Poppins'],
       },
     },
   },

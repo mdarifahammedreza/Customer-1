@@ -7,8 +7,7 @@ import Bar from './Components/Contact info bar/Bar';
 
 const Root = () => {
   return (
-    < div className='bg-floor'>
-    <Bar/>
+    < div className='font-sans'>
     <Header/>
     <Outlet />
     </div>

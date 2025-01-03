@@ -1,11 +1,13 @@
 
 import Banner from "../Components/Banner/Banner";
+import ImageSlider from "../Components/tRASH/ImageSlider";
 
 const Home = () => {
     return (
         <div className=" mt-24">
             <Line />
             <Banner />
+            {/* <ImageSlider/> */}
             <Line/>
         </div>
     )

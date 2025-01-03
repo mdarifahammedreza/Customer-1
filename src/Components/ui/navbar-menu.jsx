@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { div } from "framer-motion/client";
+import Marquee from "react-fast-marquee";
 
 // Transition configuration for animations
 const transition = {
@@ -22,7 +23,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
     <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.8 }}
-        className="cursor-pointer hover:underline text-black font-semibold bg-white  hover:opacity-[0.9] "
+        className="cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-violet-950 duration-300  text-black font-semibold bg-white  hover:opacity-[0.9] "
       >
         {item}
       </motion.p>
@@ -54,8 +55,8 @@ export const MenuItem = ({ setActive, active, item, children }) => {
 // Menu Component
 export const Menu = ({ setActive, children }) => {
   return (
-    <div className="flex justify-between items-end bg-white  border-black/[0.5]">
-      <div className=" pt-5 px-5">
+    <div className="flex justify-between items-end bg-white ">
+      <div className=" pt-5 px-5 inline-flex ">
       <Link href="/">
   <img
     src="https://i.ibb.co.com/pf3YyhR/logo.png"
@@ -63,11 +64,14 @@ export const Menu = ({ setActive, children }) => {
     className="px-1"
   />
 </Link>
+        <div className=" p-1  flex flex-col items-center justify-between hover:text-violet-950">
         <h1 className="font-semibold text-2xl">Capacity Building Service Group</h1>
+        <Marquee gradient={true} gradientWidth={20}><p className="text-xs">Supporting Greater Performanc</p></Marquee>
+        </div>
       </div>
       <nav
       onMouseLeave={() => setActive(null)}
-      className="relative border border-transparent  shadow-input flex justify-end space-x-14  pr-14"
+      className="relative border border-transparent  shadow-input flex justify-end space-x-10  pr-14"
     >
       
       {children}
@@ -82,7 +86,7 @@ export const ProductItem = ({ title, description, href, src }) => {
     <Link href={href} className="flex space-x-2 bg-white">
       <Image
         src={src}
-        width={140}
+        width={140} 
         height={70}
         alt={title}
         className="flex-shrink-0 rounded-md shadow-2xl"
@@ -104,7 +108,7 @@ export const HoveredLink = ({ children, ...rest }) => {
   return (
     <Link
       {...rest}
-      className="text-black font-semibold  bg-white hover:text-black hover:underline"
+      className="text-black font-semibold  bg-white  transition ease-in-out delay-150 hover:translate-x-1 hover:scale-1110 hover:text-violet-950 duration-300 "
     >
       {children}
     </Link>
