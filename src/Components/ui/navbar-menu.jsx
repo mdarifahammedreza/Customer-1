@@ -23,7 +23,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
     <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.8 }}
-        className="cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-violet-950 duration-300  text-black font-semibold bg-white  hover:opacity-[0.9] "
+        className="cursor-pointer transition  ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-violet-950 duration-300  text-black font-semibold   hover:opacity-[0.9] "
       >
         {item}
       </motion.p>
@@ -38,7 +38,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
               <motion.div
                 transition={transition}
                 layoutId="active"
-                className="bg-white backdrop-blur-sm rounded-sm overflow-hidden  border border-black/[0.2] shadow-xl"
+                className=" backdrop-blur-sm bg-floor rounded-sm overflow-hidden  border border-black/[0.2] shadow-xl"
               >
                 <motion.div layout className="w-max h-full p-4">
                   {children}
@@ -55,7 +55,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
 // Menu Component
 export const Menu = ({ setActive, children }) => {
   return (
-    <div className="flex justify-between items-end bg-white ">
+    <div className="flex justify-between items-end  ">
       <div className=" pt-5 px-5 inline-flex ">
       <Link href="/">
   <img
@@ -71,7 +71,7 @@ export const Menu = ({ setActive, children }) => {
       </div>
       <nav
       onMouseLeave={() => setActive(null)}
-      className="relative border border-transparent  shadow-input flex justify-end space-x-10  pr-14"
+      className="relative  shadow-input flex justify-end space-x-10  pr-14"
     >
       
       {children}
@@ -83,7 +83,7 @@ export const Menu = ({ setActive, children }) => {
 // ProductItem Component
 export const ProductItem = ({ title, description, href, src }) => {
   return (
-    <Link href={href} className="flex space-x-2 bg-white">
+    <Link href={href} className="flex space-x-2 ">
       <Image
         src={src}
         width={140} 
@@ -108,7 +108,7 @@ export const HoveredLink = ({ children, ...rest }) => {
   return (
     <Link
       {...rest}
-      className="text-black font-semibold  bg-white  transition ease-in-out delay-150 hover:translate-x-1 hover:scale-1110 hover:text-violet-950 duration-300 "
+      className="text-black font-semibold    transition ease-in-out delay-150 hover:translate-x-1 hover:scale-1110 hover:text-violet-950 duration-300 "
     >
       {children}
     </Link>

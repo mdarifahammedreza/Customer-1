@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        floor: '#ffffff', // Custom floor color
+        floor: '#F3F4F6', // Custom floor color
         header: '#', // Custom green color
       },
       fontFamily: {

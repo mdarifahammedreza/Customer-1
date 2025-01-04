@@ -116,29 +116,7 @@ fostering learning to be more effective and efficient in accomplishing their goa
                </div>
           </div>
         </div>
-        <div className="w-full h-32 bg-violet-950 grid grid-cols-2 gap-5 px-72  justify-items-center p-10 my-24">
-          <div >
-             <p className="text-white font-bold text-5xl text-center w-full">Capacity Building Service Group</p>
-          </div>
-        <div className="bg-white w-full">
-          <img src="https://i.ibb.co.com/tcJMk5q/About-Cover-removebg-preview.png" alt="img"  className="h-20"/>
-        </div>
-        </div>
-        <div className="px-72 mt-16 py-10">
-          <div className="w-full flex">
-            <div> <p className="text-right pr-10 font-medium  flex items-center justify-center h-full ">CBSG is a well established survey and research organization in 
-              Bangladesh. Having worked with Joyanta and his team I have the utmost 
-              confidence in their skills and professionalism. CBSG have been able 
-              to exceed my organizationâ€™s expectations in their ability to plan and 
-              execute several large scale cross sectional surveys and easily navigate 
-              the project, despite the enormous challenges of the Covid context. It is 
-              a pleasure to work with them.</p></div>
-           
-              <div className=" flex items-center justify-center h-full border-l-4 border-violet-950">
-              <img src="https://i.ibb.co.com/1qPfm2M/Organizational-Capacity-Assessment-2-OCA.jpg" alt="banner img" className="w-1/2 rounded-xl" />
-              </div>
-          </div>
-        </div>
+        <Core />
         <div className="w-full h-3 grid grid-cols-3 bg-black">
         <div className="bg-sky-500"></div>
         <div className="bg-violet-950"></div>
@@ -151,3 +129,17 @@ fostering learning to be more effective and efficient in accomplishing their goa
 };
 
 export default About;
+
+const Core = () => {
+  return (
+    <>
+      <div className="card shadow-lg rounded-md  bg-white">
+        <div className="card-body p-4">
+          <p className="text-lg card card-title font-medium">
+            Organizational Capacity Assessment
+          </p>
+        </div>
+      </div>
+    </>
+  );
+};

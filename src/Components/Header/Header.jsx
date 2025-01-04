@@ -21,19 +21,19 @@ function Navbar({ className }) {
   const [active, setActive] = useState(null);
 
   return (
-    <div className={cn(" relative inset-x-0  z-50 mt-1 bg-white", className)}>
+    <div className={cn(" relative inset-x-0  z-50 mt-1 ", className)}>
       <Menu setActive={setActive}>
         {/* Services Menu */}
         <HoveredLink href="/">Home</HoveredLink>
         <HoveredLink href="/About">About us</HoveredLink>
         <MenuItem setActive={setActive} active={active} item="Our services">
-          <div className="flex flex-col bg-white space-y-4 text-sm">
+          <div className="flex flex-col  space-y-4 text-sm">
             <HoveredLink href="/Services/Organization-Development">Organization Development</HoveredLink>
             <HoveredLink href="/Services/Research&Evaluation">Research and Evaluation</HoveredLink>
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Practice areas">
-          <div className="flex flex-col bg-white space-y-4 text-sm">
+          <div className="flex flex-col  space-y-4 text-sm">
             <HoveredLink href="/web-dev">Health and Nutrition</HoveredLink>
             <HoveredLink href="/interface-design">Governance and Human Rights</HoveredLink>
             <HoveredLink href="/seo">Women, Child and Youth Development</HoveredLink>

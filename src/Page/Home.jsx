@@ -1,5 +1,6 @@
 
 import Banner from "../Components/Banner/Banner";
+import { TimeEvent } from "../Components/Timeline/TimeEvent";
 import ImageSlider from "../Components/tRASH/ImageSlider";
 
 const Home = () => {
@@ -7,8 +8,8 @@ const Home = () => {
         <div className=" mt-24">
             <Line />
             <Banner />
-            {/* <ImageSlider/> */}
             <Line/>
+            <TimeEvent/>
         </div>
     )
 }
