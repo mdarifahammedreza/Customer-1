@@ -11,7 +11,7 @@ const Banner = () => {
   // Event Handl
 
   return (
-    <div className=" relative z-50">
+    <div className=" relative z-10">
       <Carousel
         showArrows={true}
         showThumbs={false}
