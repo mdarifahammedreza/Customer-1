@@ -23,7 +23,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
     <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.8 }}
-        className="cursor-pointer transition  ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-violet-950 duration-300  text-black font-semibold   hover:opacity-[0.9] "
+        className="cursor-pointer transition  ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-base_900 duration-300  text-base_600 font-semibold   hover:opacity-[0.9] "
       >
         {item}
       </motion.p>
@@ -38,7 +38,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
               <motion.div
                 transition={transition}
                 layoutId="active"
-                className=" backdrop-blur-sm bg-floor rounded-sm overflow-hidden  border border-black/[0.2] shadow-xl"
+                className=" backdrop-blur-2xl  bg-floor rounded-sm overflow-hidden  border border-black/[0.2] shadow-xl"
               >
                 <motion.div layout className="w-max h-full p-4">
                   {children}
@@ -64,9 +64,9 @@ export const Menu = ({ setActive, children }) => {
     className="px-1"
   />
 </Link>
-        <div className=" p-1  flex flex-col items-center justify-between hover:text-violet-950">
+        <div className=" p-1  flex flex-col items-center justify-between text-base_600 hover:text-base_900">
         <h1 className="font-semibold text-2xl">Capacity Building Service Group</h1>
-        <Marquee gradient={true} gradientWidth={20}><p className="text-xs">Supporting Greater Performanc</p></Marquee>
+        <Marquee gradient={true} gradientWidth={20} gradientColor={'#8bd0f23d'}><p className="text-xs">Supporting Greater Performanc</p></Marquee>
         </div>
       </div>
       <nav
@@ -92,7 +92,7 @@ export const ProductItem = ({ title, description, href, src }) => {
         className="flex-shrink-0 rounded-md shadow-2xl"
       />
       <div>
-        <h4 className="text-xl  font-bold mb-1 text-black">
+        <h4 className="text-xl  font-bold mb-1 text-base_600">
           {title}
         </h4>
         <p className="text-neutral-700 text-sm max-w-[10rem] ">
@@ -108,7 +108,7 @@ export const HoveredLink = ({ children, ...rest }) => {
   return (
     <Link
       {...rest}
-      className="text-black font-semibold    transition ease-in-out delay-150 hover:translate-x-1 hover:scale-1110 hover:text-violet-950 duration-300 "
+      className="text-base_600 font-semibold    transition ease-in-out delay-150 hover:translate-x-1 hover:scale-1110 hover:text-base_900 duration-300 "
     >
       {children}
     </Link>
