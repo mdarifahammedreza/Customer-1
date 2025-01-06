@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="text-base_900">
       <img src="https://i.ibb.co.com/hFPQ6Kh/About-Cover.jpg" alt="About"  className="h-full w-full mt-10"/> 
-      <div className="w-full h-5 grid grid-cols-3 bg-black">
+      <div className="w-full h-3 grid grid-cols-3 bg-black">
         <div className="bg-base_500"></div>
         <div className="bg-yellow-500"></div>
         <div className="bg-violet-950"></div>
@@ -75,7 +75,7 @@ fostering learning to be more effective and efficient in accomplishing their goa
                           </div>
                </div>
           </div> */}
-        <div className="card bg-violet-100 rounded-none transition ease-in-out delay-150  hover:translate-y-1 hover:scale-210  duration-400">
+        <div className="card bg-sky-200 rounded-none transition ease-in-out delay-150  hover:translate-y-1 hover:scale-210  duration-400">
               <div className="card-body ">
                   <h2 className="card-title font-sans font-bold text-base_600"><div className="flex items-center justify-center"><p>Integrity</p> </div></h2>
                   <p className="font-medium">We uphold trustworthiness and ethical standards, aligning with client values
@@ -85,7 +85,7 @@ fostering learning to be more effective and efficient in accomplishing their goa
                           </div> */}
                </div>
           </div>
-        <div className="card bg-violet-400 rounded-none transition ease-in-out delay-150  hover:translate-y-1 hover:scale-210  duration-400">
+        <div className="card bg-base_300 rounded-none transition ease-in-out delay-150  hover:translate-y-1 hover:scale-210  duration-400">
               <div className="card-body ">
                   <h2 className="card-title font-sans font-bold text-white"><div className="flex items-center justify-center"><p>Commitment to Meaningful Change:</p> </div></h2>
                   <p className=" text-white font-medium">We drive measurable, sustainable
@@ -95,7 +95,7 @@ fostering learning to be more effective and efficient in accomplishing their goa
                           </div> */}
                </div>
           </div>
-        <div className="card  bg-violet-600 text-white rounded-none transition ease-in-out delay-150  hover:translate-y-1 hover:scale-210  duration-400">
+        <div className="card  bg-base_500 text-white rounded-none transition ease-in-out delay-150  hover:translate-y-1 hover:scale-210  duration-400">
               <div className="card-body ">
                   <h2 className="card-title font-sans font-bold "><div className="flex items-center justify-center"><p>Ethical Practice:</p> </div></h2>
                   <p className="font-medium">We deliver unbiased insights through rigorous methods and
@@ -105,7 +105,7 @@ fostering learning to be more effective and efficient in accomplishing their goa
                           </div> */}
                </div>
           </div>
-        <div className="card  bg-main text-white rounded-none transition ease-in-out delay-150  hover:translate-y-1 hover:scale-210  duration-400">
+        <div className="card  bg-base_900 text-white rounded-none transition ease-in-out delay-150  hover:translate-y-1 hover:scale-210  duration-400">
               <div className="card-body ">
                   <h2 className="card-title font-sans font-bold"><div className="flex items-center justify-center"><p>Inclusivity and Adaptability:</p> </div></h2>
                   <p className="font-medium">We champion inclusivity by addressing diverse client

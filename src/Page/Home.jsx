@@ -1,5 +1,6 @@
 
 import Banner from "../Components/Banner/Banner";
+import { ImagesSliderDemo } from "../Components/Banner/BannerNext";
 import { HeroParallaxDemo } from "../Components/RecentProject/HeroParallaxDemo";
 import { TimeEvent } from "../Components/Timeline/TimeEvent";
 import ImageSlider from "../Components/tRASH/ImageSlider";
@@ -48,10 +49,12 @@ const Home = () => {
 solutions for diverse client needs.`;
     return (
         <div className=" mt-24">
-            <Line />
-            <Banner />
-            <Line/>
-           <div className="border-2 my-20 mx-4 p-10 border-base_500 md:mx-11 lg:mx-24   mb-4 text-base_600 font-medium">
+            {/* <Line /> */}
+            {/* <Banner />
+             */}
+             <ImagesSliderDemo/>
+            {/* <Line/> */}
+           <div className=" mx-auto  px-4 border-2 my-20  p-10 border-base_500 md:mx-11 lg:mx-24   mb-4 text-base_600 font-medium">
             <p className=" font-extrabold pb-2 rounded-md w-full  text-base_600">What we Do</p>
            <p className="text-sm font-normal text-blue-950">CBSG is a pioneering organization serving globally in Organizational Capacity Building,
             and Research and Evaluation areas. We foster growth through inclusive, need based
@@ -88,8 +91,9 @@ including social and statistical tools.</p></div>
             </div>
            </div>
             <TimeEvent/>
+            <Line/>
             <HeroParallaxDemo/>
-          
+          <Line/>
             <AnimatedTestimonials testimonials={testimonials}/>
         </div>
     )
@@ -97,7 +101,7 @@ including social and statistical tools.</p></div>
 export default Home;
 const Line =() => {
     return (
-        <div className="w-full h-5 grid grid-cols-3 bg-black">
+        <div className="w-full h-8 grid grid-cols-3 bg-black mt-10">
         <div className="bg-base_500"></div>
         <div className="bg-yellow-500"></div>
         <div className="bg-violet-950"></div>

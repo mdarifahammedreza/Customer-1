@@ -38,7 +38,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
               <motion.div
                 transition={transition}
                 layoutId="active"
-                className=" backdrop-blur-2xl  bg-floor rounded-sm overflow-hidden  border border-black/[0.2] shadow-xl"
+                className=" backdrop-blur-2xl  bg-sky-100 rounded-sm overflow-hidden  border border-black/[0.2] shadow-xl"
               >
                 <motion.div layout className="w-max h-full p-4">
                   {children}
@@ -95,7 +95,7 @@ export const ProductItem = ({ title, description, href, src }) => {
         <h4 className="text-xl  font-bold mb-1 text-base_600">
           {title}
         </h4>
-        <p className="text-neutral-700 text-sm max-w-[10rem] ">
+        <p className="text-sm max-w-[10rem] ">
           {description}
         </p>
       </div>
