@@ -1,7 +1,9 @@
+import { Outlet } from "react-router";
+
 const Services = () => {
   return (
-    <div>
-      <h1>Services</h1>
+    <div className="mt-12">
+      <Outlet/>
     </div>
   );
 }   

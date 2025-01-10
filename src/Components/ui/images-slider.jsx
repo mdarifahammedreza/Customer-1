@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 export const ImagesSlider = ({
   images,
   children,
-  overlay = true,
+  overlay = false,
   overlayClassName,
   className,
   autoplay = true,

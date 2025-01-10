@@ -10,7 +10,7 @@ export function ImagesSliderDemo() {
    "https://i.ibb.co/SyXjRsH/banner-3.jpg"
   ];
   return (
-    <ImagesSlider className="h-[40rem]" images={images}>
+    <ImagesSlider className="h-[40rem]" images={images} overlay = {true}>
       <motion.div
         initial={{
           opacity: 0,

@@ -21,7 +21,7 @@ function Navbar({ className }) {
   const [active, setActive] = useState(null);
 
   return (
-    <div className={cn(" relative inset-x-0  z-50 mt-1 ", className)}>
+    <div className={cn(" relative inset-x-0  z-50  ", className)}>
       <Menu setActive={setActive}>
         {/* Services Menu */}
         <HoveredLink href="/">Home</HoveredLink>

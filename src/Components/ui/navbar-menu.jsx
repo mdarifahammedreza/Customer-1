@@ -38,7 +38,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
               <motion.div
                 transition={transition}
                 layoutId="active"
-                className=" backdrop-blur-2xl  bg-sky-100 rounded-sm overflow-hidden  border border-black/[0.2] shadow-xl"
+                className=" backdrop-blur-2xl  bg-white rounded-sm overflow-hidden  border border-black/[0.2] shadow-xl"
               >
                 <motion.div layout className="w-max h-full p-4">
                   {children}
@@ -56,7 +56,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
 export const Menu = ({ setActive, children }) => {
   return (
     <div className="flex justify-between items-end  ">
-      <div className=" pt-5 px-5 inline-flex ">
+      <div className=" px-5 inline-flex ">
       <Link href="/">
   <img
     src="https://i.ibb.co.com/pf3YyhR/logo.png"

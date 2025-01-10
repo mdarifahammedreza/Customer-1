@@ -48,7 +48,7 @@ const Home = () => {
     const words = `CBSG is a pioneering organization serving globally in Organizational Capacity Building,and Research and Evaluation areas. We foster growth through inclusive, need based
 solutions for diverse client needs.`;
     return (
-        <div className=" mt-24">
+        <div className=" mt-10">
             {/* <Line /> */}
             {/* <Banner />
              */}
