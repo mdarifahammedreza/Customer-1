@@ -9,6 +9,7 @@ import Work from "./Page/Work";
 import Contacts from "./Page/Contacts";
 import Organization_Development from "./Sub-Page/Services/Organization_Development";
 import Reacher_Evaluation from "./Sub-Page/Services/Research_Evaluation";
+import Child_Organization_Development from "./Sub-Page/Services/Child_Organization_Development/Child_Organization_Development";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -35,6 +36,12 @@ const router = createBrowserRouter([
         {
           path: "/Services/Organization-Development",
           element: <Organization_Development/>,
+          children:[
+            {
+              path: "/Services/Organization-Development/:OrganizationDevelopmentSubPath",
+              element: <Child_Organization_Development/>,
+            }
+          ]
         },
         {
           path: "/Services/Research&Evaluation",

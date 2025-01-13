@@ -11,8 +11,8 @@ export const HoverEffect = ({ items, className }) => {
        
 
         <Link
-          to={item?.link}
-          key={item?.link}
+          to={`/Services/Organization-Development/${item?.OrganizationDevelopmentSubPath}`}
+          key={item?.OrganizationDevelopmentSubPath}
           className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
