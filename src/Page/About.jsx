@@ -1,8 +1,7 @@
-import { TbTargetArrow } from "react-icons/tb";
-import { GiBleedingEye } from "react-icons/gi";
+
 import { ImagesSlider } from "../Components/ui/images-slider";
-import { motion } from "framer-motion";
-import React from "react";
+import { TimeEvent } from "../Components/Timeline/TimeEvent";
+import Time from "../Components/tRASH/Time";
 const About = () => {
   const images = [
     "https://i.ibb.co/SyXjRsH/banner-3.jpg"
@@ -127,7 +126,9 @@ fostering learning to be more effective and efficient in accomplishing their goa
         <Core />
         </div>
         
-       
+       <div>
+        <Time/>
+       </div>
      
     </div>
   );

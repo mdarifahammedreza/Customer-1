@@ -1,11 +1,7 @@
 
-import Banner from "../Components/Banner/Banner";
 import { ImagesSliderDemo } from "../Components/Banner/BannerNext";
-import { HeroParallaxDemo } from "../Components/RecentProject/HeroParallaxDemo";
-import { TimeEvent } from "../Components/Timeline/TimeEvent";
-import ImageSlider from "../Components/tRASH/ImageSlider";
+import { RecentProject } from "../Components/RecentProject/RecentProject";
 import { AnimatedTestimonials } from "../Components/ui/animated-testimonials";
-import { TextGenerateEffect } from "../Components/ui/text-generate-effect.";
 
 const Home = () => {
     const testimonials = [
@@ -45,8 +41,6 @@ const Home = () => {
           src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
       ];
-    const words = `CBSG is a pioneering organization serving globally in Organizational Capacity Building,and Research and Evaluation areas. We foster growth through inclusive, need based
-solutions for diverse client needs.`;
     return (
         <div className=" mt-10">
             {/* <Line /> */}
@@ -62,7 +56,7 @@ solutions for diverse client needs.`;
             <div className="grid grid-cols-1 gap-2 mt-5"> 
                 <div className="p-2 flex flex-col md:flex-row border   items-center ">
                    <div className="w-1/2">
-                    <p className="text-sm font-semibold min-h-10 text-right bg-base_600 text-white flex items-center justify-end px-2 mb-2 ">ORGANIZATIONAL AND INSTITUTIONAL DEVELOPMENT (OD/ID)</p>
+                    <p className="text-sm font-semibold min-h-10 text-right bg-gradient-to-r from-base_500 to-base_900 text-white flex items-center justify-end px-2 mb-2 ">ORGANIZATIONAL AND INSTITUTIONAL DEVELOPMENT (OD/ID)</p>
                     <p className="text-xs font-sans font-normal text-blue-950 text-justify">CBSG takes Organizational Development and Change Management approach to
 institutional development and capacity building. It pursues a planned and long-term
 process of organizational strengthening. Our approach is based on appreciative
@@ -77,7 +71,7 @@ improvement including HRM and M&amp;E.</p></div>
                 <div className="p-2 flex flex-col md:flex-row  items-center md:justify-around">
                   <div className="w-1/2"><img src="https://i.ibb.co.com/QHJjNMp/rb-1899.png" alt="Organizational Development"  className="w-1/2 relative -right-32"/>
                   </div>
-                  <div className="md:w-1/2"> <p className="text-sm font-semibold  min-h-10 bg-base_600 text-white flex items-center justify-start px-2 mb-2">RESEARCH AND EVALUATION</p>
+                  <div className="md:w-1/2"> <p className="text-sm font-semibold  min-h-10 bg-gradient-to-r from-base_900 to-base_500 text-white flex items-center justify-start px-2 mb-2">RESEARCH AND EVALUATION</p>
                     <p className="text-xs font-sans font-normal text-blue-950 text-justify">CBSG has strong competencies in applied research in a range of program areas
 including agriculture, climate, health and nutrition, WASH, livelihood development,
 governance, women empowerment, and social development. Results of our evaluation
@@ -90,9 +84,9 @@ including social and statistical tools.</p></div>
                 </div>
             </div>
            </div>
-            <TimeEvent/>
+            
             <Line/>
-            <HeroParallaxDemo/>
+            <RecentProject/>
           <Line/>
             <AnimatedTestimonials testimonials={testimonials}/>
         </div>
@@ -101,7 +95,7 @@ including social and statistical tools.</p></div>
 export default Home;
 const Line =() => {
     return (
-        <div className="w-full h-8 grid grid-cols-3 bg-black mt-10">
+        <div className="w-full h-3 grid grid-cols-3 bg-black mt-10">
         <div className="bg-base_500"></div>
         <div className="bg-yellow-500"></div>
         <div className="bg-violet-950"></div>

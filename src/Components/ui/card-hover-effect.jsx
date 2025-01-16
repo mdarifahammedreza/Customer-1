@@ -2,17 +2,17 @@ import { cn } from "../../../lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router";
-export const HoverEffect = ({ items, className }) => {
+
+
+export const HoverEffect = ({ items, IsSideBar,SideBar, className }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-
+  const Effect = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
   return (
-    <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3", className)}>
+    <div className={cn(`${SideBar?"":Effect}`, className)}>
       {items.map((item, idx) => (
-       
-
         <Link
-          to={`/Services/Organization-Development/${item?.OrganizationDevelopmentSubPath}`}
-          key={item?.OrganizationDevelopmentSubPath}
+          to={`/Services/${item?.mainPath}/${item?.Subpath}`}
+          key={item?.Subpath}
           className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -20,7 +20,7 @@ export const HoverEffect = ({ items, className }) => {
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-blue-100 block rounded"
+                className="absolute inset-0 h-full w-full bg-blue-100 block "
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -34,24 +34,24 @@ export const HoverEffect = ({ items, className }) => {
               />
             )}
           </AnimatePresence>
-          <Card>
+          <Card onClick={() => IsSideBar(true)}>  {/* Corrected onClick */}
             <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
+            {/* <CardDescription>{item.description}</CardDescription> */}
           </Card>
         </Link>
-        
       ))}
     </div>
   );
 };
 
-export const Card = ({ className, children }) => {
+export const Card = ({ className, children, onClick }) => {
   return (
     <div
       className={cn(
-        "rounded h-full w-full p-2 overflow-hidden  bg-blue-200 hover:-translate-x-1 hover:scale-95 100 hover:bg-blue-300 duration-300",
+        "h-full w-full p-2 overflow-hidden card shadow shadow-indigo-900 bg-gradient-to-r from-base_600 to-base_900 rounded-none transition ease-in-out delay-150  hover:-translate-x-1 hover:scale-x-95 duration-400",
         className
       )}
+      onClick={onClick}  // Added onClick here to handle click event
     >
       <div className="relative z-20">
         <div className="p-4">{children}</div>
@@ -62,7 +62,7 @@ export const Card = ({ className, children }) => {
 
 export const CardTitle = ({ className, children }) => {
   return (
-    <h4 className={cn("text-base_600 font-bold tracking-wide", className)}>
+    <h4 className={cn("text-white font-thin text-sm tracking-wide", className)}>
       {children}
     </h4>
   );
@@ -70,9 +70,7 @@ export const CardTitle = ({ className, children }) => {
 
 export const CardDescription = ({ className, children }) => {
   return (
-    <p
-      className={cn("mt-4 text-base_900 tracking-wide leading-relaxed text-sm", className)}
-    >
+    <p className={cn("mt-4 text-base_900 tracking-wide leading-relaxed text-sm", className)}>
       {children}
     </p>
   );

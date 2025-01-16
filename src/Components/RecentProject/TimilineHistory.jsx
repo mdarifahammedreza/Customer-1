@@ -1,9 +1,8 @@
 "use client";
-import React from "react";
 import HeroParallax from "../ui/HeroParallax";
 
 
-export function HeroParallaxDemo() {
+export function TimilineHistory() {
   return <HeroParallax products={products} />;
 }
 export const products = [

@@ -2,16 +2,32 @@
 import { Outlet } from "react-router";
 import Line from "../../Components/Line/Line";
 import { HoverEffect } from "../../Components/ui/card-hover-effect";
+import { useState } from "react";
 
 const Organization_Development = () => {
+ const [SideBar, IsSideBar] = useState(false);
   return (
-    <div className="">
+    SideBar ? (<div className="flex items-center justify-center transition-all duration-1000 ease-in-out transform  translate-x-5">
+      <div className="mx-auto px-4 ">
+      <HoverEffect items={projects} IsSideBar={IsSideBar} SideBar={SideBar}/>
+    </div>
+    {/* click content. */}
+    <div className="w-5   mx-1">
+        {/* Color blocks */}
+        <div className="bg-base_500 h-32 rounded-sm mb-5"></div>
+        <div className="bg-yellow-500 h-32  rounded-sm mb-5"></div>
+        <div className="bg-violet-950 h-32  rounded-sm"></div>
+      </div>
+    <div className=" w-full h-96 mt-2  ">
+      <Outlet />
+    </div>
+    </div>):<div className="">
      <div className="mx-auto px-4 ">
-      <HoverEffect items={projects} />
+      <HoverEffect items={projects} IsSideBar={IsSideBar}/>
     </div>
     {/* click content. */}
     <div className=" w-full h-96 mt-2  ">
-      <Line/>
+      {/* <Line type={'V'}/> */}
       <Outlet />
     </div>
     </div>
@@ -21,39 +37,39 @@ export default Organization_Development;
 
 export const projects = [
   {
-    title: "Stripe",
-    description:
-      "A technology company that builds economic infrastructure for the internet.",
-    OrganizationDevelopmentSubPath: "Stripe",  // Only the title
+   mainPath:"Organization-Development",
+    title: "Organizational Capacity Assessment (OCA)",
+    description: "Assessing an organization's capacity to achieve its goals and manage its operations effectively.",
+    Subpath: "Organizational-Capacity-Assessment-OCA"
   },
   {
-    title: "Netflix",
-    description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
-    OrganizationDevelopmentSubPath: "Netflix",  // Only the title
+   mainPath:"Organization-Development",
+    title: "Change Management",
+    description: "Guiding organizations through changes to ensure smooth transitions and effective implementation.",
+    Subpath: "Change-Management"
   },
   {
-    title: "Google",
-    description:
-      "A multinational technology company that specializes in Internet-related services and products.",
-    OrganizationDevelopmentSubPath: "Google",  // Only the title
+   mainPath:"Organization-Development",
+    title: "Organizational System & Policy Development",
+    description: "Developing and optimizing organizational systems and policies to improve efficiency and governance.",
+    Subpath: "Organizational-System-Policy-Development"
   },
   {
-    title: "Meta",
-    description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    OrganizationDevelopmentSubPath: "Meta",  // Only the title
+   mainPath:"Organization-Development",
+    title: "Training and Facilitation",
+    description: "Providing training and facilitation services to build capacity and skills within an organization.",
+    Subpath: "Training-and-Facilitation"
   },
   {
-    title: "Amazon",
-    description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    OrganizationDevelopmentSubPath: "Amazon",  // Only the title
+   mainPath:"Organization-Development",
+    title: "Project Cycle Management",
+    description: "Managing the full life cycle of projects from initiation to completion to ensure successful outcomes.",
+    Subpath: "Project-Cycle-Management"
   },
   {
-    title: "Microsoft",
-    description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
-    OrganizationDevelopmentSubPath: "Microsoft",  // Only the title
-  },
+   mainPath:"Organization-Development",
+    title: "ICT/MIS Development",
+    description: "Developing and implementing information and communication technology (ICT) systems and management information systems (MIS).",
+    Subpath: "ICT-MIS-Development"
+  }
 ];

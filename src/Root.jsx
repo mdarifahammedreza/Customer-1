@@ -1,7 +1,6 @@
 
 import { Outlet } from 'react-router'
 import Header from './Components/Header/Header'
-import Bar from './Components/Contact info bar/Bar';
 import Footer from './Components/Footer/Footer';
 
 

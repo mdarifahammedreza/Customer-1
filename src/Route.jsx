@@ -38,14 +38,22 @@ const router = createBrowserRouter([
           element: <Organization_Development/>,
           children:[
             {
-              path: "/Services/Organization-Development/:OrganizationDevelopmentSubPath",
-              element: <Child_Organization_Development/>,
+              path: "/Services/Organization-Development/:Subpath",
+              loader: ({params}) => {return params.Subpath}, 
+              element: <Child_Organization_Development />,
             }
           ]
         },
         {
           path: "/Services/Research&Evaluation",
           element: <Reacher_Evaluation/>,
+          children:[
+            {
+              path: "/Services/Research&Evaluation/:Subpath",
+              loader: ({params}) => {return params.Subpath}, 
+              element: <Child_Organization_Development />,
+            }
+          ]
         },
        ],
       },
