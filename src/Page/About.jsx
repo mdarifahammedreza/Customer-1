@@ -20,7 +20,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="text-base_900 mt-10">
+    <div className="text-base_900 mt-5">
       <ImagesSlider className="h-[40rem]" images={images} data-aos="fade-up" />
 
       <div className="w-full h-3 grid grid-cols-3 bg-black" data-aos="fade-right">
@@ -195,7 +195,7 @@ const Core = () => {
       {categories.map((category, index) => (
         <div
           key={index}
-          className="bg-white p-4 shadow-sm shadow-base_300 bg-gradient-to-r from-blue-100 to-indigo-100 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-x-90 duration-400"
+          className="bg-white p-4 shadow-sm shadow-base_300 bg-teal-50 to-10% transition ease-in-out delay-150 hover:translate-y-1 hover:scale-x-90 duration-400"
           data-aos="fade-in"
         >
           <h3 className="text-lg font-bold text-base_600">{category}</h3>

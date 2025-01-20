@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header>
       
-      <Navbar className="top-2 hidden md:block"/>
+      <Navbar className="hidden md:block"/>
       <Phonenav  />
 
     </header>
@@ -27,7 +27,7 @@ function Navbar({ className }) {
         <HoveredLink href="/">Home</HoveredLink>
         <HoveredLink href="/About">About us</HoveredLink>
         <MenuItem setActive={setActive} active={active} item="Our services">
-          <div className="flex flex-col  space-y-4 text-sm">
+          <div className="flex flex-col  space-y-4  text-sm">
             <HoveredLink href="/Services/Organization-Development">Organization Development</HoveredLink>
             <HoveredLink href="/Services/Research&Evaluation">Research and Evaluation</HoveredLink>
           </div>

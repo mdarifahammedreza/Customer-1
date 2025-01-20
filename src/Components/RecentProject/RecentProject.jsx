@@ -18,7 +18,7 @@ export function RecentProject() {
   }, []);
 
   return (
-    <div className="w-full h-full py-20">
+    <div className="w-full h-full pt-20">
       <h2
         className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-base_600 font-sans"
         data-aos="fade-up" // Apply fade-up animation to the title
@@ -36,10 +36,10 @@ const DummyContent = () => {
       {[...new Array(3)].map((_, index) => (
         <div
           key={"dummy-content" + index}
-          className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
+          className="bg-[#F5F5F7]  rounded-xl p-8 md:p-14 mb-4"
           data-aos="fade-up" // Add fade-up animation for each dummy content block
         >
-          <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+          <p className="text-neutral-600  text-base md:text-2xl font-sans max-w-3xl mx-auto">
             <span className="font-bold text-neutral-700 dark:text-neutral-200">
               The first rule of Apple club is that you boast about Apple club.
             </span>{" "}

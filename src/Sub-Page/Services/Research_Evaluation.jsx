@@ -1,40 +1,64 @@
 import { Outlet } from "react-router";
 import { HoverEffect } from "../../Components/ui/card-hover-effect";
 import { useState } from "react";
-import Line from "../../Components/Line/Line";
-
+import { ImagesSlider } from "../../Components/ui/images-slider";
+import { motion } from "framer-motion";
 
 const Reacher_Evaluation = () => {
+  const images = ["https://i.ibb.co/SyXjRsH/banner-3.jpg"];
   const [SideBar, IsSideBar] = useState(false);
-  console.log(SideBar);
-  return (
-    SideBar ? (<div className="flex items-center justify-center transition-all duration-1000 ease-in-out transform  translate-x-5">
-      <div className="mx-auto px-4 ">
-      <HoverEffect items={projects} IsSideBar={IsSideBar} SideBar={SideBar}/>
-    </div>
-    {/* click content. */}
-    <div className="w-5   mx-1">
+
+  const renderImagesSlider = () => (
+    <ImagesSlider className="h-[30rem]" images={images} overlay={true}>
+      <motion.div
+        initial={{ opacity: 0, y: -80 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9 }}
+        className="z-50 flex flex-col justify-center items-center"
+      >
+        <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-white py-4">
+          Research & Evaluation
+        </motion.p>
+      </motion.div>
+    </ImagesSlider>
+  );
+
+  const renderContent = () => (
+    <div className="flex mt-10 items-center justify-center transition-all duration-1000 ease-in-out transform translate-x-5">
+      <div className="mx-auto px-4">
+        <HoverEffect items={projects} IsSideBar={IsSideBar} SideBar={SideBar} />
+      </div>
+      <div className="w-5 mx-1">
         {/* Color blocks */}
         <div className="bg-base_500 h-32 rounded-sm mb-5"></div>
-        <div className="bg-yellow-500 h-32  rounded-sm mb-5"></div>
-        <div className="bg-violet-950 h-32  rounded-sm"></div>
+        <div className="bg-yellow-500 h-32 rounded-sm mb-5"></div>
+        <div className="bg-violet-950 h-32 rounded-sm"></div>
       </div>
-    <div className=" w-full h-96 mt-2  ">
-      <Outlet />
-    </div>
-    </div>):<div className="">
-     <div className="mx-auto px-4 ">
-      <HoverEffect items={projects} IsSideBar={IsSideBar}/>
-    </div>
-    {/* click content. */}
-    <div className=" w-full h-96 mt-2  ">
-      {/* <Line type={'V'}/> */}
-      <Outlet />
-    </div>
+      <div className="w-full h-96 mt-2">
+        <Outlet />
+      </div>
     </div>
   );
-};  
+
+  const renderFallbackContent = () => (
+    <div className="mx-auto px-4 mt-10">
+      <HoverEffect items={projects} IsSideBar={IsSideBar} />
+      <div className="w-full h-96 mt-2">
+        <Outlet />
+      </div>
+    </div>
+  );
+
+  return (
+    <div>
+      {renderImagesSlider()}
+      {SideBar ? renderContent() : renderFallbackContent()}
+    </div>
+  );
+};
+
 export default Reacher_Evaluation;
+
 
 
 const projects = [

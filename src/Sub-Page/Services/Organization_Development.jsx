@@ -1,74 +1,89 @@
 import { Outlet } from "react-router";
-import Line from "../../Components/Line/Line";
 import { HoverEffect } from "../../Components/ui/card-hover-effect";
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { ImagesSlider } from "../../Components/ui/images-slider";
-
+import { motion } from "framer-motion";
 
 const Organization_Development = () => {
   const [SideBar, IsSideBar] = useState(false);
-  const images = [
-    "https://i.ibb.co/SyXjRsH/banner-3.jpg"
-  ];
+  const images = ["https://i.ibb.co/SyXjRsH/banner-3.jpg"];
+
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration in milliseconds
-      // once: true, // Whether the animation should happen only once
     });
   }, []);
 
-  return (
-    SideBar ? (
-      <div>
-        <ImagesSlider images={images}></ImagesSlider>
-        <div
-        className="flex items-center justify-center transition-all duration-1000 ease-in-out transform translate-x-5"
-        data-aos="fade-right" // Scroll animation for the sidebar view
+  const renderImagesSlider = () => (
+    <ImagesSlider className="h-[30rem]" images={images} overlay={true}>
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: -80,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 0.9,
+        }}
+        className="z-50 flex flex-col justify-center items-center"
       >
-        
-        <div className="mx-auto px-4">
-          <HoverEffect items={projects} IsSideBar={IsSideBar} SideBar={SideBar} />
-        </div>
-        {/* Click content */}
-        <div className="w-5 mx-1">
-          {/* Color blocks */}
-          <div
-            className="bg-base_500 h-32 rounded-sm mb-5"
-            data-aos="zoom-in" // Individual animation for color block
-          ></div>
-          <div
-            className="bg-yellow-500 h-32 rounded-sm mb-5"
-            data-aos="zoom-in" // Individual animation for color block
-          ></div>
-          <div
-            className="bg-violet-950 h-32 rounded-sm"
-            data-aos="zoom-in" // Individual animation for color block
-          ></div>
-        </div>
-        <div className="w-full h-96 mt-2" data-aos="fade-up">
-          <Outlet />
-        </div>
+        <motion.p
+          className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-white py-4"
+        >
+          Organization Development
+        </motion.p>
+      </motion.div>
+    </ImagesSlider>
+  );
+
+  const renderContent = () => (
+    <div
+      className="flex items-center justify-center transition-all duration-1000 ease-in-out transform translate-x-5 mt-10"
+      data-aos="fade-right"
+    >
+      <div className="mx-auto px-4">
+        <HoverEffect items={projects} IsSideBar={IsSideBar} SideBar={SideBar} />
       </div>
+      <div className="w-5 mx-1">
+        {/* Color blocks */}
+        {["base_500", "yellow-500", "violet-950"].map((color, index) => (
+          <div
+            key={index}
+            className={`bg-${color} h-32 rounded-sm mb-5`}
+            data-aos="zoom-in"
+          ></div>
+        ))}
       </div>
-    ) : (
-      <div className="">
-        <ImagesSlider images={images}/>
-        <div className="mx-auto px-4" data-aos="fade-left">
-          <HoverEffect items={projects} IsSideBar={IsSideBar} />
-        </div>
-        {/* Click content */}
-        <div className="w-full h-96 mt-2" data-aos="fade-up">
-          {/* <Line type={'V'}/> */}
-          <Outlet />
-        </div>
+      <div className="w-full h-96 mt-2" data-aos="fade-up">
+        <Outlet />
       </div>
-    )
+    </div>
+  );
+
+  const renderFallbackContent = () => (
+    <div className="mx-auto px-4 mt-10" data-aos="fade-left">
+      <HoverEffect items={projects} IsSideBar={IsSideBar} />
+      <div className="w-full h-96 mt-2" data-aos="fade-up">
+        <Outlet />
+      </div>
+    </div>
+  );
+
+  return (
+    <div>
+      {renderImagesSlider()}
+      {SideBar ? renderContent() : renderFallbackContent()}
+    </div>
   );
 };
 
 export default Organization_Development;
+
 
 export const projects = [
   {
