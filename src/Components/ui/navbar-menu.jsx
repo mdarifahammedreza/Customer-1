@@ -66,7 +66,7 @@ export const Menu = ({ setActive, children }) => {
 </Link>
         <div className=" p-1  flex flex-col items-center justify-between text-base_600 hover:text-base_900">
         <h1 className="font-semibold text-2xl">Capacity Building Service Group</h1>
-        <Marquee gradient={true} gradientWidth={20} gradientColor={'#8bd0f23d'}><p className="text-xs">Supporting Greater Performanc</p></Marquee>
+        <Marquee gradient={true} gradientWidth={20} gradientColor={'#8bd0f23d'}><p className="text-xs">Supporting Greater Performance</p></Marquee>
         </div>
       </div>
       <nav

@@ -19,6 +19,17 @@ export default {
         base_600: '#055C9D', // Blue
         base_500: '#0E86D4', // Blue Grotto
         base_300: '#68BBE3', // Baby Blue
+        Teal_900: '#1f4e5f', // Teal
+        Teal_800: '#2a6b7d', // 10% lighter shade of Teal
+        Teal_700: '#2e7b8b', // 20% lighter shade of Teal
+        Coral_900:'#ff5e62', // Coral
+        Coral_800:'#ff6f61', // Coral
+        Golden_900: '#ffbe0b', // Golden
+        Golden_800: '#ffc857', // Golden
+        Corcol_Gray_900:'#444444', //Gray
+        Corcol_Gray_800:'#555555', //Gray
+        
+
       },
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],

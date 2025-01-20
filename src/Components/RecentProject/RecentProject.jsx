@@ -1,17 +1,28 @@
 "use client";
 
 import { Card, Carousel } from "../ui/apple-cards-carousel";
-
-
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 export function RecentProject() {
   const cards = data.map((card, index) => (
     <Card key={card.src} card={card} index={index} />
   ));
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      // once: true, // Trigger animation only once when the element comes into view
+    });
+  }, []);
+
   return (
     <div className="w-full h-full py-20">
-      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-base_600 font-sans">
+      <h2
+        className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-base_600 font-sans"
+        data-aos="fade-up" // Apply fade-up animation to the title
+      >
         Some Recent Projects
       </h2>
       <Carousel items={cards} />
@@ -26,6 +37,7 @@ const DummyContent = () => {
         <div
           key={"dummy-content" + index}
           className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
+          data-aos="fade-up" // Add fade-up animation for each dummy content block
         >
           <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
             <span className="font-bold text-neutral-700 dark:text-neutral-200">
@@ -36,7 +48,7 @@ const DummyContent = () => {
             Langotiya jeetu ka mara hua yaar is ready to capture every
             thought.
           </p>
-          
+
           <img
             src="https://assets.aceternity.com/macbook.png"
             alt="Macbook mockup from Aceternity UI"
