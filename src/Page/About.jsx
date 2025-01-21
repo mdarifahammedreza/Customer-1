@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import  { useEffect } from 'react';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import { ImagesSlider } from "../Components/ui/images-slider";
-import { TimeEvent } from "../Components/Timeline/TimeEvent";
-import Time from "../Components/tRASH/Time";
+
+import Time from "../Components/Timeline/Time";
 import StrategicPartner from "../Components/StrategicPartner/StrategicPartner";
 
 const About = () => {

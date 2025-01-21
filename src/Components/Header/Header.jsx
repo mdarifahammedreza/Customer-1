@@ -43,20 +43,9 @@ function Navbar({ className }) {
             <HoveredLink href="/branding">Decent Work / Workers Rights </HoveredLink>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Our team">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Executive Team</HoveredLink>
-            <HoveredLink href="/individual">Technical Experts </HoveredLink>
-            <HoveredLink href="/team">Consultants and Associates </HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Our work and reach">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/individual">Technical Experts </HoveredLink>
-            <HoveredLink href="/team">Consultants and Associates </HoveredLink>
-          </div>
-        </MenuItem>
-        <HoveredLink href="/team">Contacts</HoveredLink>
+        <HoveredLink href="/team">Our team</HoveredLink>
+        <HoveredLink href="/work&reach">Our work and reach</HoveredLink>
+        <HoveredLink href="/contacts">Contacts</HoveredLink>
       </Menu>
     </div>
   );

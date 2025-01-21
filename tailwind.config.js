@@ -1,5 +1,5 @@
-import daisyui from 'daisyui';
-import scrollbarHide from 'tailwind-scrollbar-hide';
+import daisyui from "daisyui";
+import scrollbarHide from "tailwind-scrollbar-hide";
 const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette");
@@ -14,25 +14,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        floor: '#fffff',     // Incorrect hex, might need fixing
-        base_900: '#003060', // Navy Blue
-        base_600: '#055C9D', // Blue
-        base_500: '#0E86D4', // Blue Grotto
-        base_300: '#68BBE3', // Baby Blue
-        Teal_900: '#1f4e5f', // Teal
-        Teal_800: '#2a6b7d', // 10% lighter shade of Teal
-        Teal_700: '#2e7b8b', // 20% lighter shade of Teal
-        Coral_900:'#ff5e62', // Coral
-        Coral_800:'#ff6f61', // Coral
-        Golden_900: '#ffbe0b', // Golden
-        Golden_800: '#ffc857', // Golden
-        Corcol_Gray_900:'#444444', //Gray
-        Corcol_Gray_800:'#555555', //Gray
-        
-
+        floor: "#ffffff", // Fixed incorrect hex
+        base_900: "#003060", // Navy Blue
+        base_600: "#055C9D", // Blue
+        base_500: "#0E86D4", // Blue Grotto
+        base_300: "#68BBE3", // Baby Blue
+        Teal_900: "#1f4e5f", // Teal
+        Teal_800: "#2a6b7d", // 10% lighter shade of Teal
+        Teal_700: "#2e7b8b", // 20% lighter shade of Teal
+        Coral_900: "#ff5e62", // Coral
+        Coral_800: "#ff6f61", // Coral
+        Golden_900: "#ffbe0b", // Golden
+        Golden_800: "#ffc857", // Golden
+        Corcol_Gray_900: "#444444", // Gray
+        Corcol_Gray_800: "#555555", // Gray
       },
       fontFamily: {
-        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
       },
     },
   },
@@ -43,10 +41,10 @@ export default {
   ],
 };
 
-// Custom plugin: Adds each Tailwind color as a global CSS variable
+/** Custom plugin: Adds each Tailwind color as a global CSS variable */
 function addVariablesForColors({ addBase, theme }) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
+  const allColors = flattenColorPalette(theme("colors"));
+  const newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
 

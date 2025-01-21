@@ -57,6 +57,7 @@ const Home = () => {
             {/* <Banner />
              */}
              <ImagesSliderDemo/>
+             
             {/* <Line/> */}
            <div className=" mx-auto  px-4 border-2 my-20  p-10 border-base_500 md:mx-11 lg:mx-24   mb-4 text-base_600 font-medium" data-aos="zoom-in">
             <p className=" font-extrabold pb-2 rounded-md w-full  text-base_600" data-aos="fade-right">What we Do</p>

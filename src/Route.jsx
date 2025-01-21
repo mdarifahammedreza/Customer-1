@@ -51,6 +51,7 @@ const router = createBrowserRouter([
             {
               path: "/Services/Research&Evaluation/:Subpath",
               loader: ({params}) => {return params.Subpath}, 
+              errorElement:<div>Sorry Content Not found</div>,
               element: <Child_Organization_Development />,
             }
           ]
@@ -67,21 +68,21 @@ const router = createBrowserRouter([
   
   
       {
-          path: "/Team",
+          path: "/team",
           element: <Team/>,
         //   children: [],
       },
   
   
       {
-          path: "/Work-&-reach",
+          path: "/Work&reach",
           element: <Work/>,
         //   children: [],
       },
   
   
       {
-          path: "/Contact",
+          path: "/contacts",
           element: <Contacts/>,
         //   children: [],
       },  ],

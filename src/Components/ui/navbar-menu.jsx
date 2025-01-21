@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { div } from "framer-motion/client";
 import Marquee from "react-fast-marquee";
 
 // Transition configuration for animations
