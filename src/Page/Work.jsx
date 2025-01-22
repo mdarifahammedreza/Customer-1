@@ -73,85 +73,57 @@ const Work = () => {
 
     {/* Form */}
     <form
-      className="flex flex-col gap-3 w-4/5 items-center"
+      className="flex flex-col gap-3 w-4/5 items-center mt-5 z-[500]"
       onSubmit={(e) => {
         e.preventDefault();
         alert("Form submitted successfully!");
       }}
+      onChange={(e) => {e.target.practiceArea.value}}
     >
       <div className="flex gap-4 w-full">
         {/* Service Type */}
         <div className="flex-1">
-          <label
-            htmlFor="serviceType"
-            className="block mb-2 text-sm font-medium text-neutral-700"
-          >
-            Service Type
-          </label>
-          <select
+        <select className="select select-bordered  max-w-xs rounded border border-base_900 focus:ring-2 focus:ring-base_600 p-3 w-full">
+            <option disabled selected>Select service type</option>
+            <option value="Organization Development">Organization Development</option>
+            <option value="Research and Evaluation">Research and Evaluation</option>
+          
+</select>
+          {/* <select
             id="serviceType"
-            className="rounded border border-base_900 focus:ring-2 focus:ring-base_600 p-3 w-full"
+            className=""
             defaultValue=""
             required
           >
             <option value="" disabled>
-              Select Service Type
+              
             </option>
-            <option value="consulting">Consulting</option>
-            <option value="legal">Legal</option>
-            <option value="training">Training</option>
-            <option value="custom">Custom Service</option>
-          </select>
+            
+          </select> */}
         </div>
 
         {/* Practice Area */}
         <div className="flex-1">
-          <label
-            htmlFor="practiceArea"
-            className="block mb-2 text-sm font-medium text-neutral-700"
-          >
-            Practice Area
-          </label>
-          <select
-            id="practiceArea"
-            className="rounded border border-base_900 focus:ring-2 focus:ring-base_600 p-3 w-full"
-            defaultValue=""
-            required
-          >
-            <option value="" disabled>
-              Select Practice Area
-            </option>
-            <option value="corporateLaw">Corporate Law</option>
-            <option value="taxation">Taxation</option>
-            <option value="intellectualProperty">
-              Intellectual Property
-            </option>
-            <option value="litigation">Litigation</option>
-          </select>
+        <select id="practiceArea"className="select select-bordered  max-w-xs rounded border border-base_900 focus:ring-2 focus:ring-base_600 p-3 w-full">
+            <option disabled selected>Practice area</option>
+            <option value="Health and Nutrition">Health and Nutrition</option>
+            <option value="Governance and Human Rights">Governance and Human Rights</option>
+            <option value="Women, Child and Youth Development">Women, Child and Youth Development</option>
+            <option value="Climate and Disaster Management">Climate and Disaster Management</option>
+            <option value="Agriculture, Livelihood and Food Security">Agriculture, Livelihood and Food Security</option>
+            <option value="WASH">WASH</option>
+            <option value="Decent Work/Workers Rights">Decent Work/Workers Rights</option>
+</select>
         </div>
 
         {/* Client */}
         <div className="flex-1">
-          <label
-            htmlFor="client"
-            className="block mb-2 text-sm font-medium text-neutral-700"
-          >
-            Client
-          </label>
-          <select
-            id="client"
-            className="rounded border border-base_900 focus:ring-2 focus:ring-base_600 w-full p-3"
-            defaultValue=""
-            required
-          >
-            <option value="" disabled>
-              Select Client
-            </option>
-            <option value="clientA">Client A</option>
-            <option value="clientB">Client B</option>
-            <option value="clientC">Client C</option>
-            <option value="clientD">Client D</option>
-          </select>
+        <select className="select select-bordered  max-w-xs rounded border border-base_900 focus:ring-2 focus:ring-base_600 p-3 w-full">
+            <option disabled selected>Client</option>
+            <option value="USG">USG</option>
+            <option value="Other">Other</option>
+            
+</select>
         </div>
       </div>
 
