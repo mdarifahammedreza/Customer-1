@@ -30,14 +30,14 @@ const UITeam =({cards})=> {
 
   useOutsideClick(ref, () => setActive(null));
 
-  return (<div className="py-8 w-full  flex bg-gradient-to-b from-white to-blue-100">
+  return (<div className="py-8 w-full  flex bg-transparent   ">
     <AnimatePresence>
       {active && typeof active === "object" && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/20 h-full w-full z-10" />
+          className="fixed inset-0 bg-black/50 h-full w-full z-10" />
       )}
     </AnimatePresence>
     <AnimatePresence>
@@ -119,13 +119,13 @@ const UITeam =({cards})=> {
       ) : null}
     </AnimatePresence>
     <div
-      className="max-w-[90%]  mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-4">
+      className="max-w-[90%]  mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-start gap-4">
       {cards.map((card, index) => (
         <motion.div
           layoutId={`card-${card.title}-${id}`}
           key={card.title}
           onClick={() => setActive(card)}
-          className="p-4 flex flex-col  hover:bg-neutral-200  cursor-pointer">
+          className="p-4 flex flex-col bg-white hover:bg-gray-50 hover:text-white  cursor-pointer">
           <div className="flex gap-4 flex-col  w-full">
             <motion.div layoutId={`image-${card.title}-${id}`}>
               <img

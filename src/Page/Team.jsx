@@ -1,16 +1,35 @@
+import { BackgroundBeams } from "../Components/ui/background-beams";
 import UITeam from "../Components/ui/UiTeam";
 
 const Team = () => {
   return (
-    <div className="team">
-      <div className="relative my-8 ">
-<div className="w-full h-20 bg-teal-700"></div>
-<div className="w-40 h-96 bg-teal-700"></div>
-<div className="absolute top-0 left-0 overflow-scroll">a<div className=" right-0 top-20 "><UITeam cards={cards}/></div></div>
-
+    <div className="mt-8" >
+     
+       <div className="bg-gray-100 shadow-md flex flex-col justify-center items-center h-full w-full">
+       
+        <p className="text-white mt-10 px-5 py-1 pl-5 rounded text-3xl max-w-5xl w-full border font-extrabold bg-teal-700 text-left">Core Team</p>
+      <BackgroundBeams/>
+      <div className="max-w-[90%] z-[1000] ">
+        <UITeam cards={cards} />
       </div>
-      <div></div>
-      <div></div>
+    </div>
+       <div className="bg-gray-100 shadow-md flex flex-col justify-center items-center h-full w-full">
+       
+        <p className="text-white mt-10 px-5 font-extrabold py-1 pl-5 rounded text-3xl max-w-5xl w-full shadow-md shadow-Coral_800 bg-gradient-to-r  from-Coral_800 to-Coral_900   transition ease-in-out delay-150 hover:translate-y-1 hover:scale-90 duration-400 text-right">Technical Expert</p>
+      <BackgroundBeams/>
+      <div className="max-w-[90%] z-[1000] ">
+        <UITeam cards={cards} />
+      </div>
+    </div>
+       <div className="bg-gray-100 shadow-md flex flex-col justify-center items-center h-full w-full">
+       
+        <p className="text-white mt-10 px-5 font-extrabold py-1 pl-5 rounded text-3xl max-w-5xl w-full shadow-md shadow-Golden_800 bg-gradient-to-r  from-Golden_800 to-Golden_900  transition ease-in-out delay-150 hover:translate-y-1 hover:scale-90 duration-400 text-left">International Consultant</p>
+      <BackgroundBeams/>
+      <div className="max-w-[90%] z-[1000] ">
+        <UITeam cards={cards} />
+      </div>
+    </div>
+     
     </div>
   );
 }
@@ -25,6 +44,9 @@ export default Team;
 
 
 const cards = [
+  
+ 
+  
   {
     description: "Lana Del Rey",
     title: "Summertime Sadness",
