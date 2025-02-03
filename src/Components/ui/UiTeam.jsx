@@ -42,7 +42,7 @@ const UITeam =({cards})=> {
     </AnimatePresence>
     <AnimatePresence>
       {active && typeof active === "object" ? (
-        <div className="fixed inset-0  grid place-items-center z-[100]">
+        <div className="fixed inset-0  grid place-items-center z-[1000]">
           <motion.button
             key={`button-${active.title}-${id}`}
             layout
@@ -65,7 +65,7 @@ const UITeam =({cards})=> {
           <motion.div
             layoutId={`card-${active.title}-${id}`}
             ref={ref}
-            className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white   overflow-hidden">
+            className="w-full max-w-[500px]  max-h-[90%]  md:h-fit md: flex flex-col bg-white   overflow-hidden z-[1000]">
             <motion.div layoutId={`image-${active.title}-${id}`}>
               <img
                

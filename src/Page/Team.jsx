@@ -1,36 +1,78 @@
+import { useEffect, useState } from "react";
 import { BackgroundBeams } from "../Components/ui/background-beams";
 import UITeam from "../Components/ui/UiTeam";
+import { color } from "framer-motion";
 
 const Team = () => {
+  const [display, SetDisplay] = useState("Core Team");
+  const [bgColor, SetBgColor] = useState("bg-teal-700");
+  console.log(display);
+
+  const bgColors = {
+    "Core Team": "bg-base_300",
+    "Technical Team": "bg-teal-300", 
+    "International Consultant": "bg-violet-300", 
+  };
+
+  // Use useEffect to update bgColor when display changes
+  useEffect(() => {
+    SetBgColor(bgColors[display] || "bg-teal-700");
+  }, [display]);
+  
+
   return (
-    <div className="mt-8" >
-     
-       <div className="bg-gray-100 shadow-md flex flex-col justify-center items-center h-full w-full">
-       
+   <>
+   <div>
+   <section className="spax-4 flex justify-start items-center pl-5 mt-10">
+      <button
+        onClick={() => SetDisplay("Core Team")}
+        className={`p-3 rounded-tl-md font-semibold ${display === "Core Team" ? bgColor : "bg-gray-300"}`}
+      >
+        Core Team
+      </button>
+      <button
+        onClick={() => SetDisplay("Technical Team")}
+        className={`p-3 font-semibold ${display === "Technical Team" ? bgColor : "bg-gray-300"} border-x-2 border-black`}
+      >
+        Technical Team
+      </button>
+      <button
+        onClick={() => SetDisplay("International Consultant")}
+        className={`p-3 rounded-tr-md font-semibold ${display === "International Consultant" ? bgColor : "bg-gray-300"}`}
+      >
+        International Consultant
+      </button>
+    </section>
+    <div className={`hidden md:block mx-5 ${bgColor} shadow-md  `}>
+      {display === "Core Team" && <div className="max-w-[90%] flex flex-col justify-center items-center"><p>Core team</p> <UITeam cards={cards} /></div>}
+      {display === "Technical Team" && < div className="max-w-[90%] flex flex-col justify-center items-center"><p>Technical Team</p> <UITeam cards={cards} /></div>}
+      {display === "International Consultant" && <div className="max-w-[90%] flex flex-col justify-center items-center"><p>International Consultant</p> <UITeam cards={cards} /></div>}
+    </div>
+   </div>
+    <div className="mt-8 block md:hidden" >
+    <div className="bg-gray-100 shadow-md flex flex-col justify-center items-center h-full w-full">
         <p className="text-white mt-10 px-5 py-1 pl-5 rounded text-3xl max-w-5xl w-full border font-extrabold bg-teal-700 text-left">Core Team</p>
-      <BackgroundBeams/>
-      <div className="max-w-[90%] z-[1000] ">
+        <BackgroundBeams/>
+        <div className="max-w-[90%] z-[30] ">
         <UITeam cards={cards} />
-      </div>
+        </div>
     </div>
-       <div className="bg-gray-100 shadow-md flex flex-col justify-center items-center h-full w-full">
-       
+    <div className="bg-gray-100 shadow-md flex flex-col justify-center items-center h-full w-full">
         <p className="text-white mt-10 px-5 font-extrabold py-1 pl-5 rounded text-3xl max-w-5xl w-full shadow-md shadow-Coral_800 bg-gradient-to-r  from-Coral_800 to-Coral_900   transition ease-in-out delay-150 hover:translate-y-1 hover:scale-90 duration-400 text-right">Technical Expert</p>
-      <BackgroundBeams/>
-      <div className="max-w-[90%] z-[1000] ">
+      
+      <div className="max-w-[90%] z-[30] ">
         <UITeam cards={cards} />
       </div>
     </div>
-       <div className="bg-gray-100 shadow-md flex flex-col justify-center items-center h-full w-full">
-       
+    <div className="bg-gray-100 shadow-md flex flex-col justify-center items-center h-full w-full">
         <p className="text-white mt-10 px-5 font-extrabold py-1 pl-5 rounded text-3xl max-w-5xl w-full shadow-md shadow-Golden_800 bg-gradient-to-r  from-Golden_800 to-Golden_900  transition ease-in-out delay-150 hover:translate-y-1 hover:scale-90 duration-400 text-left">International Consultant</p>
-      <BackgroundBeams/>
-      <div className="max-w-[90%] z-[1000] ">
+        
+      <div className="max-w-[90%] z-[30] ">
         <UITeam cards={cards} />
       </div>
     </div>
-     
     </div>
+   </>
   );
 }
 export default Team;
