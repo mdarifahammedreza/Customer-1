@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import Line from "../Components/Line/Line";
 import { BackgroundBeams } from "../Components/ui/background-beams";
 import { BackgroundBeamsWithCollision } from "../Components/ui/background-beams-with-collision";
@@ -140,6 +141,23 @@ const Work = () => {
   {/* Background Beams */}
   <BackgroundBeams />
 </div>
+<div className="mx-10 bg-gradient-to-b from-white to-gray-100 rounded-md shadow-md p-5">
+      <section className="flex justify-evenly items-center font-semibold px-2">
+        <p>Name</p>
+        <p>Area</p>
+        <p>Description</p>
+      </section>
+      {[...Array(6)].map((_, index) => (
+        <Link key={index} > <section
+        
+        className="flex justify-evenly items-center border-t-2 border-base_900 px-5 py-3 hover:bg-gray-200 hover:border-x-2 hover:cursor-pointer transition-colors duration-200"
+      >
+        <p>Name</p>
+        <p>Area</p>
+        <p>Description</p>
+      </section></Link>
+      ))}
+    </div>
 
         </div>
     );

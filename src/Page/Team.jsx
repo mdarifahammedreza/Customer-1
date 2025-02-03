@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { BackgroundBeams } from "../Components/ui/background-beams";
 import UITeam from "../Components/ui/UiTeam";
-import { color } from "framer-motion";
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 const Team = () => {
   const [display, SetDisplay] = useState("Core Team");
-  const [bgColor, SetBgColor] = useState("bg-teal-700");
+  const [bgColor, SetBgColor] = useState("bg-white text-base_600 shadow-md shadow-base_300  border-t-8 border-gray-300 mb-5 rounded-t-lg");
   console.log(display);
 
   const bgColors = {
@@ -14,39 +15,42 @@ const Team = () => {
     "International Consultant": "bg-violet-300", 
   };
 
-  // Use useEffect to update bgColor when display changes
-  useEffect(() => {
-    SetBgColor(bgColors[display] || "bg-teal-700");
-  }, [display]);
+ useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      offset: 100,    // Offset from viewport
+      once: false,     // Animation occurs only once
+    });
+  }, []);
   
 
   return (
    <>
-   <div>
-   <section className="spax-4 flex justify-start items-center pl-5 mt-10">
-      <button
+   <div className="relative mt-5">
+   <section className="absolute  left-24 flex justify-start items-center pl-5 mt-10 my-10">
+      <button data-aos="ease-in-out"
         onClick={() => SetDisplay("Core Team")}
-        className={`p-3 rounded-tl-md font-semibold ${display === "Core Team" ? bgColor : "bg-gray-300"}`}
+        className={`p-3  rounded-tl-md font-semibold  ${display === "Core Team" ? bgColor : "bg-gray-300"}`}
       >
         Core Team
       </button>
-      <button
+      <button data-aos="ease-in-out"
         onClick={() => SetDisplay("Technical Team")}
-        className={`p-3 font-semibold ${display === "Technical Team" ? bgColor : "bg-gray-300"} border-x-2 border-black`}
+        className={`p-3 font-semibold   ${display === "Technical Team" ? bgColor : "bg-gray-300"}  border-black`}
       >
         Technical Team
       </button>
-      <button
+      <button data-aos="ease-in-out"
         onClick={() => SetDisplay("International Consultant")}
-        className={`p-3 rounded-tr-md font-semibold ${display === "International Consultant" ? bgColor : "bg-gray-300"}`}
+        className={`p-3 rounded-tr-md font-semibold  ${display === "International Consultant" ? bgColor : "bg-gray-300"}`}
       >
         International Consultant
       </button>
     </section>
-    <div className={`hidden md:block mx-5 ${bgColor} shadow-md  `}>
-      {display === "Core Team" && <div className="max-w-[90%] flex flex-col justify-center items-center"><p>Core team</p> <UITeam cards={cards} /></div>}
-      {display === "Technical Team" && < div className="max-w-[90%] flex flex-col justify-center items-center"><p>Technical Team</p> <UITeam cards={cards} /></div>}
-      {display === "International Consultant" && <div className="max-w-[90%] flex flex-col justify-center items-center"><p>International Consultant</p> <UITeam cards={cards} /></div>}
+    <div className={`hidden md:block mx-5 bg-gradient-to-t from-base_600  via-base_900 to-base_600 shadow-md shadow-base_300 rounded pt-10 `}>
+      {display === "Core Team" && <div  className="max-w-[90%] flex flex-col justify-center items-center"><p data-aos="zoom-out" className="bg-white p-2 mt-16 shadow-md shadow-base_300 font-semibold text-blue-800 ">Core team</p> <UITeam cards={cards} /></div>}
+      {display === "Technical Team" && < div className="max-w-[90%] flex flex-col justify-center items-center"><p  data-aos="zoom-out" className="bg-white p-2 mt-16 shadow-md shadow-base_300 font-semibold text-blue-800">Technical Team</p> <UITeam cards={cards} /></div>}
+      {display === "International Consultant" && <div className="max-w-[90%] flex flex-col justify-center items-center"><p data-aos="zoom-out"  className="bg-white p-2 mt-16 shadow-md shadow-base_300 font-semibold text-blue-800">International Consultant</p> <UITeam cards={cards} /></div>}
     </div>
    </div>
     <div className="mt-8 block md:hidden" >
