@@ -2,9 +2,21 @@ import { MdLocationPin } from "react-icons/md";
 import { MdEmail, MdPhone, MdWeb } from "react-icons/md";
 
 const Contacts = () => {
+
+
+  const openGoogleMaps = (location) => {
+    const urls = {
+      bangladesh: "https://www.google.com/maps/place/Lalmatia,+Dhaka+1207,+Bangladesh/",
+      canada: "https://www.google.com/maps/place/104+Crockford+Blvd,+Scarborough,+ON+M1R+3C3,+Canada/"
+    };
+    window.open(urls[location], "_blank");
+  }; 
+
+
+
   return (
     <div className="mt-5 flex justify-center items-center">
-      <section className="w-full max-w-7xl mt-5 bg-base_900/[15%] rounded-lg shadow-lg p-6">
+      <section className="w-full max-w-7xl mt-5 bg-base_600/[10%] rounded-lg shadow-lg p-6">
         <div className="flex flex-col justify-center items-center">
           <p className="p-2 font-serif font-semibold text-2xl border-b-2 border-gray-300 text-base_600">Contact Person</p>
           <img 
@@ -19,13 +31,19 @@ const Contacts = () => {
           </div>
           <div className="flex flex-col items-center p-3 w-full max-w-2xl">
             <address className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
-              <p className="font-serif text-base_600/[80%] p-3 bg-gray-200 rounded-lg shadow-sm">
+              <p 
+                className="font-serif text-base_600/[80%] p-3 bg-base_600/[20%] rounded-lg shadow-sm cursor-pointer hover:bg-base_600/[25%]"
+                onClick={() => openGoogleMaps("bangladesh")}
+              >
                 <span className="text-base_600 font-medium flex items-center justify-center text-lg gap-2">
                   <MdLocationPin /> Bangladesh Location:
                 </span>
                 <br />4/2 Block - B, Lalmatia, Dhaka<br />Dhaka 1207, Bangladesh
               </p>
-              <p className="font-serif text-base_600/[80%] p-3 bg-gray-200 rounded-lg shadow-sm">
+              <p 
+                className="font-serif text-base_600/[80%] p-3 bg-base_600/[20%] rounded-lg shadow-sm cursor-pointer hover:bg-base_600/[25%]"
+                onClick={() => openGoogleMaps("canada")}
+              >
                 <span className="text-base_600 font-medium flex items-center justify-center text-lg gap-2">
                   <MdLocationPin /> Canada Location:
                 </span>
