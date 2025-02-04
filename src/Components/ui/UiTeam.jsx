@@ -1,5 +1,6 @@
 "use client";
-
+import 'aos/dist/aos.css';
+import AOS from 'aos'
 import  { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "../../../hooks/use-outside-click";
@@ -17,7 +18,11 @@ const UITeam =({cards})=> {
         setActive(false);
       }
     }
-
+      AOS.init({
+      duration: 1000, // Animation duration
+      offset: 100,    // Offset from viewport
+      once: false,     // Animation occurs only once
+    });
     if (active && typeof active === "object") {
       document.body.style.overflow = "hidden";
     } else {
@@ -121,12 +126,12 @@ const UITeam =({cards})=> {
     <div
       className="max-w-[90%]  mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-start gap-4">
       {cards.map((card, index) => (
-        <motion.div
+        <motion.div 
           layoutId={`card-${card.title}-${id}`}
           key={card.title}
           onClick={() => setActive(card)}
           className="p-4 flex flex-col bg-white hover:bg-gray-50 hover:text-white  cursor-pointer">
-          <div className="flex gap-4 flex-col  w-full">
+          <div className="flex gap-4 flex-col  w-full" data-aos="zoom-in">
             <motion.div layoutId={`image-${card.title}-${id}`}>
               <img
                 width={100}
