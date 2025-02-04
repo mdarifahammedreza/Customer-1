@@ -26,7 +26,7 @@ const Team = () => {
 
   return (
    <>
-   <div className="relative mt-5">
+   <div className="relative mt-5 mb-5">
    <section className="absolute  left-24 flex justify-start items-center pl-5 mt-10 my-10">
       <button data-aos="ease-in-out"
         onClick={() => SetDisplay("Core Team")}

@@ -15,8 +15,8 @@ const Contacts = () => {
 
 
   return (
-    <div className="mt-5 flex justify-center items-center">
-      <section className="w-full max-w-7xl mt-5 bg-base_600/[10%] rounded-lg shadow-lg p-6">
+    <div className="mt-5 flex justify-center items-center mb-5">
+      <section className="w-full mx-10 mt-5 bg-base_600/[10%] rounded-lg shadow-lg p-6">
         <div className="flex flex-col justify-center items-center">
           <p className="p-2 font-serif font-semibold text-2xl border-b-2 border-gray-300 text-base_600">Contact Person</p>
           <img 

@@ -20,7 +20,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="text-base_900 mt-5">
+    <div className="text-base_900 mt-5 mb-10">
       <ImagesSlider className="h-[40rem]" images={images} data-aos="fade-up" />
 
       <div className="w-full h-3 grid grid-cols-3 bg-black" data-aos="fade-right">

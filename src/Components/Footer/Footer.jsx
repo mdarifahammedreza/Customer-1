@@ -6,7 +6,7 @@ import Line from "../Line/Line";
 import { div } from "framer-motion/client";
 const Footer = () => {
   return (
-  <div className=" mt-20">
+  <div className="">
     <Line/>
   <footer className="footer footer-center bg-gradient-to-r from-base_600 to-indigo-900 p-10 text-white">
     <Line/>
