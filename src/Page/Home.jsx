@@ -5,6 +5,9 @@ import { AnimatedTestimonials } from "../Components/ui/animated-testimonials";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { VscOrganization } from "react-icons/vsc";
+import { TbSettingsSearch } from "react-icons/tb";
+import Count from "../Components/Home/Count";
 
 const Home = () => {
     const testimonials = [
@@ -57,6 +60,9 @@ const Home = () => {
             {/* <Banner />
              */}
              <ImagesSliderDemo/>
+             <div>
+              <Count/>
+             </div>
              
             {/* <Line/> */}
            <div className=" mx-auto  px-4 border-2 my-20  p-10 border-base_500 md:mx-11 lg:mx-24   mb-4 text-base_600 font-medium" data-aos="zoom-in">
@@ -67,7 +73,7 @@ const Home = () => {
             <div className="grid grid-cols-1 gap-2 mt-5"> 
                 <div className="p-2 flex flex-col md:flex-row   items-center ">
                    <div className="w-1/2">
-                    <p className="text-sm font-semibold min-h-10 text-right bg-gradient-to-r from-base_500 to-base_900 text-white flex items-center justify-end px-2 mb-2 " data-aos="fade-right">ORGANIZATIONAL AND INSTITUTIONAL DEVELOPMENT (OD/ID)</p>
+                    <p className="text-sm font-semibold min-h-10 text-right bg-gradient-to-r from-base_500 to-base_900 text-white flex items-center justify-end px-2 mb-2 gap-3" data-aos="fade-right"><span className="text-xl"> <VscOrganization /></span>ORGANIZATIONAL AND INSTITUTIONAL DEVELOPMENT (OD/ID)</p>
                     <p className="text-xs font-sans font-normal text-blue-950 text-justify" data-aos="fade-right">CBSG takes Organizational Development and Change Management approach to
 institutional development and capacity building. It pursues a planned and long-term
 process of organizational strengthening. Our approach is based on appreciative
@@ -82,7 +88,7 @@ improvement including HRM and M&amp;E.</p></div>
                 <div className="p-2 flex flex-col md:flex-row  items-center md:justify-around">
                   <div className="w-1/2" data-aos="fade-right"><img src="https://i.ibb.co.com/QHJjNMp/rb-1899.png" alt="Organizational Development"  className="w-1/2 relative -right-32"/>
                   </div>
-                  <div className="md:w-1/2"> <p className="text-sm font-semibold  min-h-10 bg-gradient-to-r from-base_900 to-base_500 text-white flex items-center justify-start px-2 mb-2" data-aos="fade-right">RESEARCH AND EVALUATION</p>
+                  <div className="md:w-1/2"> <p className="text-sm font-semibold  min-h-10 bg-gradient-to-r from-base_900 to-base_500 text-white flex items-center justify-start px-2 mb-2 gap-3" data-aos="fade-right"> <span className="text-xl"><TbSettingsSearch /></span>RESEARCH AND EVALUATION</p>
                     <p className="text-xs font-sans font-normal text-blue-950 text-justify" data-aos="fade-right">CBSG has strong competencies in applied research in a range of program areas
 including agriculture, climate, health and nutrition, WASH, livelihood development,
 governance, women empowerment, and social development. Results of our evaluation

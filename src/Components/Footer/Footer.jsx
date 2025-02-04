@@ -19,7 +19,7 @@ const Footer = () => {
   />
 </Link>
 <h1 className="font-semibold text-2xl">Capacity Building Service Group</h1>
-<Marquee  ><p className="text-xs">Supporting Greater Performanc</p></Marquee>
+<Marquee  ><p className="text-xs">Supporting Greater Performance</p></Marquee>
     <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
   </aside>
   <nav>
