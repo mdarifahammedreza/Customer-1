@@ -29,7 +29,7 @@ export function RecentProject() {
     AOS.init({
       duration: 1000,
     });
-      fetchurl(APIURI);
+      // fetchurl(APIURI);
     
   }, []);
 
