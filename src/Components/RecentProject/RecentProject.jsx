@@ -25,12 +25,15 @@ export function RecentProject() {
   };
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
     
     AOS.init({
       duration: 1000,
     });
       // fetchurl(APIURI);
-    
+      return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
