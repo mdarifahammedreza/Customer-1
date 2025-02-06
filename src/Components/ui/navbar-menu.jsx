@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
+import { useState } from "react";
+import { useRoutes } from "react-router";
 
 // Transition configuration for animations
 const transition = {
@@ -18,11 +20,14 @@ const transition = {
   
 // MenuItem Component
 export const MenuItem = ({ setActive, active, item, children }) => {
+
+  const router=useRoutes
+
   return (
     <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.8 }}
-        className="cursor-pointer transition  ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-base_900 duration-300  text-base_600 font-semibold   hover:opacity-[0.9] "
+        className="cursor-pointer transition  mt-2 ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-base_900 duration-300  text-base_600 font-semibold   hover:opacity-[0.9] "
       >
         {item}
       </motion.p>
@@ -63,14 +68,14 @@ export const Menu = ({ setActive, children }) => {
     className="px-1"
   />
 </Link>
-        <div className=" p-1  flex flex-col items-center justify-between text-base_600 hover:text-base_900">
+        <div className="flex flex-col items-center justify-between text-base_600 hover:text-base_900">
         <h1 className="font-semibold text-2xl">Capacity Building Service Group</h1>
-        <Marquee gradient={true} gradientWidth={20} gradientColor={'#8bd0f23d'}><p className="text-xs">Supporting Greater Performance</p></Marquee>
+        <Marquee gradient={true} gradientWidth={20} gradientColor={'#ffffff'}><p className="text-xs">Supporting Greater Performance</p></Marquee>
         </div>
       </div>
       <nav
       onMouseLeave={() => setActive(null)}
-      className="relative  shadow-input flex justify-end space-x-10  pr-14"
+      className="relative  shadow-input flex justify-end space-x-5   pr-14"
     >
       
       {children}
@@ -107,7 +112,7 @@ export const HoveredLink = ({ children, ...rest }) => {
   return (
     <Link
       {...rest}
-      className="text-base_600 font-semibold    transition ease-in-out delay-150 hover:translate-x-1 hover:scale-1110 hover:text-base_900 duration-300 "
+      className="text-base_600 font-semibold  hover:border-t-2 border-base_600 mt-2 rounded-md px-1  transition ease-in-out delay-150 hover:translate-x-1 hover:scale-1110 hover:text-base_900 duration-300 "
     >
       {children}
     </Link>

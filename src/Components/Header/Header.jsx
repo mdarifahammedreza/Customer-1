@@ -32,17 +32,8 @@ function Navbar({ className }) {
             <HoveredLink href="/Services/Research&Evaluation">Research and Evaluation</HoveredLink>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Practice areas">
-          <div className="flex flex-col  space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Health and Nutrition</HoveredLink>
-            <HoveredLink href="/interface-design">Governance and Human Rights</HoveredLink>
-            <HoveredLink href="/seo">Women, Child and Youth Development</HoveredLink>
-            <HoveredLink href="/branding">Climate and Disaster Management</HoveredLink>
-            <HoveredLink href="/branding">Agriculture, Livelihood and Food Security </HoveredLink>
-            <HoveredLink href="/branding">WASH</HoveredLink>
-            <HoveredLink href="/branding">Decent Work / Workers Rights </HoveredLink>
-          </div>
-        </MenuItem>
+        <HoveredLink href="/Practice-areas">Practice areas</HoveredLink>
+         
         <HoveredLink href="/team">Our team</HoveredLink>
         <HoveredLink href="/work&reach">Our work and reach</HoveredLink>
         <HoveredLink href="/contacts">Contacts</HoveredLink>
