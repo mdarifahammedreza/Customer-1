@@ -1,62 +1,19 @@
 import { Link } from "react-router";
-import { BackgroundBeams } from "../Components/ui/background-beams";
-import { BackgroundBeamsWithCollision } from "../Components/ui/background-beams-with-collision";
-import { Carousel } from "../Components/ui/carousel";
 import ReportsPagination from "../Components/Report&service/Report";
 import WorldMap from "../Components/ui/world-map";
 import { motion } from "framer-motion";
 import ContinentSelector from "../Components/Report&service/ContinentSelector";
+import CarouselComponent from "../Components/Work/CarouselComponent";
+import BackgroundBeamsComponent from "../Components/Work/BackgroundBeamsComponent";
+import { BackgroundBeams } from "../Components/ui/background-beams";
 const Work = () => {   
-    const slideData = [
-        {
-          title: "Mystic Mountains",
-          button: "Explore Component",
-          src: "https://images.unsplash.com/photo-1494806812796-244fe51b774d?q=80&w=3534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        },
-        {
-          title: "Urban Dreams",
-          button: "Explore Component",
-          src: "https://images.unsplash.com/photo-1518710843675-2540dd79065c?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        },
-        {
-          title: "Neon Nights",
-          button: "Explore Component",
-          src: "https://images.unsplash.com/photo-1590041794748-2d8eb73a571c?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        },
-        {
-          title: "Desert Whispers",
-          button: "Explore Component",
-          src: "https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        },
-      ]; 
+    
     return (
         <div className="mt-5">
            
-            <BackgroundBeamsWithCollision>
-      <h2
-        className="relative z-10 text-lg md:text-4xl  bg-clip-text text-transparent bg-gradient-to-b from-base_500 to-base_600  text-center font-sans font-bold flex justify-center items-center"
-      >
-        Our work fuels it.{" "}
-        <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
-          <div className="absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
-            <span>Our reach</span>
-          </div>
-          <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
-            <span>Our reach</span>
-          </div>
-         
-        </div>
-        <div>
-            <span className="ml-1">
-               {" "}defines it
-            </span>
-        </div>
-      </h2>
-    </BackgroundBeamsWithCollision>
+        <BackgroundBeamsComponent />
     <div className="h-0.5 bg-gradient-to-t from-purple-800 to-violet-700"></div>
-    <div className="relative overflow-hidden w-full h-full my-5">
-      <Carousel slides={slideData} />
-    </div>
+    <CarouselComponent/>
     <div className="h-0.5 bg-gradient-to-t from-purple-800 to-violet-700"></div>
     {/* <Line/> */}
     <div className="h-[22rem] w-full bg-gradient-to-b from-white to-gray-100 relative flex flex-col items-center justify-center antialiased">

@@ -1,21 +1,49 @@
 "use client";
 
 import { Card, Carousel } from "../ui/apple-cards-carousel";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
+import axios from "axios"; // Import Axios
 
 export function RecentProject() {
+
+  const APIURI ="https://your-api-endpoint.com/projects";
+  const [loading, setLoading] = useState(true); 
+  const [data, setData] = useState([...Data]); 
+  const fetchurl = async (uri) => {
+    await axios
+      .get(uri) 
+      .then((response) => {
+        setData(response.data);
+        setLoading(false); 
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setLoading(false); 
+      });
+  };
+
+  useEffect(() => {
+    
+    AOS.init({
+      duration: 1000,
+    });
+      fetchurl(APIURI);
+    
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-40 bg-gradient-to-r from-base_600 to-indigo-900 text-white">
+        <span className="loading loading-bars loading-lg"></span> {/* Loader */}
+      </div>
+    );
+  }
+
   const cards = data.map((card, index) => (
     <Card key={card.src} card={card} index={index} />
   ));
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      // once: true, // Trigger animation only once when the element comes into view
-    });
-  }, []);
 
   return (
     <div className="w-full h-full pt-20">
@@ -62,7 +90,7 @@ const DummyContent = () => {
   );
 };
 
-const data = [
+const Data = [
   {
     category: "Artificial Intelligence",
     title: "You can do more with AI.",
