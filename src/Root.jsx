@@ -9,8 +9,7 @@ const Root = () => {
     credential: import.meta.env.VITE_CREDENTIAL
   };
   
-  // Check in the console to confirm the values
-  console.log("Header Data:", HeaderData);
+
 
   return (
     <div className="font-sans bg-floor">

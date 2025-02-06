@@ -1,11 +1,12 @@
 
 import { HoveredLink, Menu, MenuItem } from "../ui/navbar-menu";
 import { cn } from "../../../lib/utils";
-import { useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
+import { useState } from "react";
 
-const Header = () => { 
+const Header = ({HeaderData}) => {
+ 
   return (
     <header>
       
@@ -18,25 +19,74 @@ const Header = () => {
 export default Header;
 
 function Navbar({ className }) {
+  const location = useLocation(); // Get the current location
   const [active, setActive] = useState(null);
+  // Function to check if a link is active
+  const isActive = (path) => location.pathname === path;
+
+  // Define the active class
+  const activeClass = 'border-t-2 text-blue-500'; // Customize this class for your active link style
 
   return (
-    <div className={cn(" relative inset-x-0  z-50  ", className)}>
+    <div className={cn('relative inset-x-0 z-50', className)}>
       <Menu setActive={setActive}>
+        {/* Menu Links */}
+        <HoveredLink 
+          to="/" 
+          className={isActive('/') ? activeClass : ''}
+        >
+          Home
+        </HoveredLink>
+        <HoveredLink 
+          to="/About" 
+          className={isActive('/About') ? activeClass : ''}
+        >
+          About us
+        </HoveredLink>
+
         {/* Services Menu */}
-        <HoveredLink href="/">Home</HoveredLink>
-        <HoveredLink href="/About">About us</HoveredLink>
         <MenuItem setActive={setActive} active={active} item="Our services">
-          <div className="flex flex-col  space-y-4  text-sm">
-            <HoveredLink href="/Services/Organization-Development">Organization Development</HoveredLink>
-            <HoveredLink href="/Services/Research&Evaluation">Research and Evaluation</HoveredLink>
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink 
+              to="/Services/Organization-Development" 
+              className={isActive('/Services/Organization-Development') ? activeClass : ''}
+            >
+              Organization Development
+            </HoveredLink>
+            <HoveredLink 
+              to="/Services/Research&Evaluation" 
+              className={isActive('/Services/Research&Evaluation') ? activeClass : ''}
+            >
+              Research and Evaluation
+            </HoveredLink>
           </div>
         </MenuItem>
-        <HoveredLink href="/Practice-areas">Practice areas</HoveredLink>
-         
-        <HoveredLink href="/team">Our team</HoveredLink>
-        <HoveredLink href="/work&reach">Our work and reach</HoveredLink>
-        <HoveredLink href="/contacts">Contacts</HoveredLink>
+
+        {/* Other Links */}
+        <HoveredLink 
+          to="/Practice-areas" 
+          className={isActive('/Practice-areas') ? activeClass : ''}
+        >
+          Practice areas
+        </HoveredLink>
+        <HoveredLink 
+          to="/team" 
+          className={isActive('/team') ? activeClass : ''}
+        >
+          Our team
+        </HoveredLink>
+        <HoveredLink 
+          to="/work&reach" 
+          className={isActive('/work&reach') ? activeClass : ''}
+        >
+          Our work and reach
+        </HoveredLink>
+        <HoveredLink 
+          to="/contacts" 
+          className={isActive('/contacts') ? activeClass : ''}
+        >
+          Contacts
+        </HoveredLink>
       </Menu>
     </div>
   );

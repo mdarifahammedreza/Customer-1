@@ -1,11 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
-import Image from "next/image";
+
 import Marquee from "react-fast-marquee";
-import { useState } from "react";
-import { useRoutes } from "react-router";
+
+import { Link } from "react-router";
 
 // Transition configuration for animations
 const transition = {
@@ -21,7 +20,7 @@ const transition = {
 // MenuItem Component
 export const MenuItem = ({ setActive, active, item, children }) => {
 
-  const router=useRoutes
+
 
   return (
     <div onMouseEnter={() => setActive(item)} className="relative">
@@ -61,7 +60,7 @@ export const Menu = ({ setActive, children }) => {
   return (
     <div className="flex justify-between items-end  ">
       <div className=" px-5 inline-flex ">
-      <Link href="/">
+      <Link to="/">
   <img
     src="https://i.ibb.co.com/pf3YyhR/logo.png"
     alt="CBSG LOGO"
@@ -85,34 +84,15 @@ export const Menu = ({ setActive, children }) => {
 };
 
 // ProductItem Component
-export const ProductItem = ({ title, description, href, src }) => {
-  return (
-    <Link href={href} className="flex space-x-2 ">
-      <Image
-        src={src}
-        width={140} 
-        height={70}
-        alt={title}
-        className="flex-shrink-0 rounded-md shadow-2xl"
-      />
-      <div>
-        <h4 className="text-xl  font-bold mb-1 text-base_600">
-          {title}
-        </h4>
-        <p className="text-sm max-w-[10rem] ">
-          {description}
-        </p>
-      </div>
-    </Link>
-  );
-};
+
 
 // HoveredLink Component
-export const HoveredLink = ({ children, ...rest }) => {
+export const HoveredLink = ({ children, to, className, ...rest }) => {
   return (
     <Link
+      to={to}
       {...rest}
-      className="text-base_600 font-semibold  hover:border-t-2 border-base_600 mt-2 rounded-md px-1  transition ease-in-out delay-150 hover:translate-x-1 hover:scale-1110 hover:text-base_900 duration-300 "
+      className={`text-base_600 font-semibold hover:border-t-2 border-base_600 mt-2 rounded px-1 transition ease-in-out delay-150 hover:translate-x-1 hover:scale-1110 hover:text-base_900 duration-300 ${className}`}
     >
       {children}
     </Link>
