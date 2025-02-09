@@ -30,7 +30,7 @@ export function ImagesSliderComponent() {
   }
 
   return (
-    <ImagesSlider className="h-[40rem]" images={Object.values(image)} overlay={true}>
+    <ImagesSlider className="h-[30rem]" images={Object.values(image)} overlay={true}>
       <motion.div
         initial={{
           opacity: 0,

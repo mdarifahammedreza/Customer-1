@@ -64,8 +64,8 @@ function Navbar({ className }) {
 
         {/* Other Links */}
         <HoveredLink 
-          to="/Practice-areas" 
-          className={isActive('/Practice-areas') ? activeClass : ''}
+          to="/practice-area" 
+          className={isActive('/practice-area') ? activeClass : ''}
         >
           Practice areas
         </HoveredLink>

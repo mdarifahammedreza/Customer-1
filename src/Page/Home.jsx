@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import Count from "../Components/Home/Count";
 import AboutSection from "../Components/Home/AboutSection";
 import TestimonialComponent from "../Components/Home/TestomonialComponent";
+import CarouselComponent from "../Components/Home/CarouselComponent";
 
 const Home = () => {
     
@@ -26,6 +27,7 @@ const Home = () => {
              </div>
              <AboutSection/>
             <Line/>
+            <CarouselComponent/>
             <RecentProject/>
           <Line/>
             <TestimonialComponent/>
