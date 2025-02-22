@@ -55,7 +55,15 @@ function Navbar({ className }) {
           </div>
         </MenuItem>
 
+<<<<<<< HEAD
         <HoveredLink to="/practice-areas" className={isActive("/practice-areas") ? activeClass : ""}>
+=======
+        {/* Other Links */}
+        <HoveredLink 
+          to="/practice-area" 
+          className={isActive('/practice-area') ? activeClass : ''}
+        >
+>>>>>>> 300c9301582743342f618861821decc8fd4ccf0e
           Practice areas
         </HoveredLink>
         <HoveredLink to="/team" className={isActive("/team") ? activeClass : ""}>
