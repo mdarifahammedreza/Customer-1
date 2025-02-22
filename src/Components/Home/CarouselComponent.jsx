@@ -1,4 +1,4 @@
-import React from "react";
+
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -25,8 +25,8 @@ const CarouselComponent = () => {
   return (
     <div className="py-5">
         <div className="w-full flex flex-col items-center justify-center mb-5">
-            <p className="text-5xl font-bold text-base_500">Practice Areas</p>
-            <p className="text-sm font-semibold text-base_500 max-w-lg text-center mt-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio nulla dolores vel iusto beatae tempora repellendus ea, velit possimus, ratione earum quam! Totam facilis reprehenderit unde, illum eaque cum neque.</p>
+            <p className="text-xl md:text-5xl font-bold text-base_500">Practice Areas</p>
+            <p className="text-sm text-center text-base_500 max-w-lg r mt-5 px-10 ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio nulla dolores vel iusto beatae tempora repellendus ea, velit possimus, ratione earum quam! Totam facilis reprehenderit unde, illum eaque cum neque.</p>
         </div>
       <div>
       <Carousel swipeable={true} draggable={true} responsive={responsive} infinite autoPlay>

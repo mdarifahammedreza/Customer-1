@@ -9,9 +9,9 @@ const Count = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false); // Stop loading after 2 seconds
-    }, 2000); // You can adjust this time
+    }, 2000);
 
-    return () => clearTimeout(timer); // Clear the timer when the component unmounts
+    return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
@@ -23,24 +23,21 @@ const Count = () => {
   }
 
   return (
-    <div className="flex justify-evenly items-center bg-gradient-to-r from-base_600 to-indigo-900 p-10 text-white">
-      <div className="px-10 flex flex-col justify-center items-center h-full w-full text-xl">
-        <HiOutlineUserGroup />
-        <p className="text-3xl font-semibold">120+</p>
-        <p>Customers</p>
-      </div>
-      <div className="border-x px-10 flex flex-col justify-center items-center h-full w-full text-xl">
-        <MdOutlineAssignmentTurnedIn />
-        <p className="text-3xl font-semibold">80+</p>
-        <p>Assignments</p>
-      </div>
-      <div className="px-10 flex flex-col justify-center items-center h-full w-full text-xl">
-        <RiUserLocationFill />
-        <p className="text-3xl font-semibold">18+</p>
-        <p>Countries</p>
-      </div>
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 justify-evenly items-center bg-gradient-to-tr from-base_600 to-indigo-900 p-6 text-white">
+      <CountItem icon={<HiOutlineUserGroup />} number="120+" label="Customers" />
+      <CountItem icon={<MdOutlineAssignmentTurnedIn />} number="80+" label="Assignments" />
+      <CountItem icon={<RiUserLocationFill />} number="18+" label="Countries" />
+      <CountItem icon={<RiUserLocationFill />} number="18+" label="Countries" />
     </div>
   );
 };
+
+const CountItem = ({ icon, number, label }) => (
+  <div className="flex flex-col justify-center items-center text-lg space-y-1">
+    <div className="text-3xl opacity-80">{icon}</div>
+    <p className="text-2xl font-medium">{number}</p>
+    <p className="text-sm opacity-90">{label}</p>
+  </div>
+);
 
 export default Count;

@@ -1,9 +1,9 @@
 import { HoveredLink, Menu, MenuItem } from "../ui/navbar-menu";
 import { cn } from "../../../lib/utils";
-import { CiMenuFries } from "react-icons/ci";
-import {  useLocation } from "react-router";
+import { ImMenu } from "react-icons/im";
+import { Link, useLocation } from "react-router";
 import { useState, useEffect } from "react";
-import { Link } from "react-router";
+import Marquee from "react-fast-marquee";
 
 const Header = () => {
   return (
@@ -33,46 +33,52 @@ function Navbar({ className }) {
         <HoveredLink to="/" className={isActive("/") ? activeClass : ""}>
           Home
         </HoveredLink>
-        <HoveredLink to="/About" className={isActive("/About") ? activeClass : ""}>
+        <HoveredLink
+          to="/About"
+          className={isActive("/About") ? activeClass : ""}>
           About us
         </HoveredLink>
 
         {/* Services Menu */}
         <MenuItem setActive={setActive} active={active} item="Our services">
-          <div className="flex flex-col space-y-2 text-sm">
+          <div className="flex flex-col space-y-2 ">
             <HoveredLink
               to="/Services/Organization-Development"
-              className={isActive("/Services/Organization-Development") ? activeClass : ""}
-            >
+              className={
+                isActive("/Services/Organization-Development")
+                  ? activeClass
+                  : ""
+              }>
               Organization Development
             </HoveredLink>
             <HoveredLink
               to="/Services/Research&Evaluation"
-              className={isActive("/Services/Research&Evaluation") ? activeClass : ""}
-            >
+              className={
+                isActive("/Services/Research&Evaluation") ? activeClass : ""
+              }>
               Research and Evaluation
             </HoveredLink>
           </div>
         </MenuItem>
 
-<<<<<<< HEAD
-        <HoveredLink to="/practice-areas" className={isActive("/practice-areas") ? activeClass : ""}>
-=======
-        {/* Other Links */}
-        <HoveredLink 
-          to="/practice-area" 
-          className={isActive('/practice-area') ? activeClass : ''}
-        >
->>>>>>> 300c9301582743342f618861821decc8fd4ccf0e
+        <HoveredLink
+          to="/practice-areas"
+          className={isActive("/practice-areas") ? activeClass : ""}>
           Practice areas
         </HoveredLink>
-        <HoveredLink to="/team" className={isActive("/team") ? activeClass : ""}>
+        <HoveredLink
+          to="/team"
+          className={isActive("/team") ? activeClass : ""}>
           Our team
         </HoveredLink>
-        <HoveredLink to="/work&reach" className={isActive("/work&reach") ? activeClass : ""}>
+        <HoveredLink
+          to="/work&reach"
+          className={isActive("/work&reach") ? activeClass : ""}>
           Our work and reach
         </HoveredLink>
-        <HoveredLink to="/contacts" className={isActive("/contacts") ? activeClass : ""}>
+        <HoveredLink
+          to="/contacts"
+          className={isActive("/contacts") ? activeClass : ""}>
           Contacts
         </HoveredLink>
       </Menu>
@@ -83,29 +89,39 @@ function Navbar({ className }) {
 const Phonenav = () => {
   return (
     <div className="block lg:hidden">
-      <div className="navbar bg-base-300 z-50 w-full">
-        <div className="flex justify-between items-center w-full px-4 py-2">
-          <img
-            src="https://i.ibb.co.com/pf3YyhR/logo.png"
-            alt="CBSG logo"
-            className="shadow-xl w-8"
-          />
-          <h1 className="font-semibold text-sm text-center flex-1">
-            Capacity Building Service Group
-          </h1>
+      <div className="navbar  z-50 w-full">
+        <div className="flex justify-between items-center w-full  py-2">
+          <div className="mr-2 inline-flex max-w-[19.1rem] md:max-w-[21.6rem]">
+            <Link to="/">
+              <img
+                src="https://i.ibb.co.com/pf3YyhR/logo.png"
+                alt="CBSG LOGO"
+                className=" w-16  px-1"
+              />
+            </Link>
+            <div className="flex flex-col  justify-between text-base_600 hover:text-base_900">
+              <h1 className="font-semibold text-base  md:text-lg ">
+                Capacity Building Service Group
+              </h1>
+              <Marquee
+                gradient={true}
+                gradientWidth={15}
+                gradientColor={"#ffffff"}>
+                <p className="text-xs">Supporting Greater Performance</p>
+              </Marquee>
+            </div>
+          </div>
 
           <div className="dropdown dropdown-bottom dropdown-end">
             <div
               tabIndex={0}
               role="button"
-              className="text-black font-extrabold text-xl md:text-2xl cursor-pointer"
-            >
-              <CiMenuFries />
+              className="text-base_600 font-extrabold text-xl md:text-2xl cursor-pointer px-3">
+              <ImMenu />
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 z-[1] mt-3 w-56 p-3 shadow-lg rounded-lg overflow-y-auto h-96 whitespace-normal"
-            >
+              className="menu menu-sm dropdown-content bg-base-100 z-[1] mt-3 w-56 p-3 shadow-lg rounded-lg overflow-y-auto h-auto whitespace-normal font-semibold text-base_600">
               <li>
                 <Link to="/" className="w-full">
                   Home

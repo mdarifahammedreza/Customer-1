@@ -8,7 +8,7 @@ const Footer = () => {
   return (
   <div className="">
     <Line/>
-  <footer className="footer footer-center bg-gradient-to-r from-base_600 to-indigo-900 p-10 text-white">
+  <footer className="footer footer-center bg-gradient-to-tr from-base_600 to-indigo-900 p-10 text-white">
     <Line/>
   <aside>
   <Link href="/">

@@ -7,20 +7,19 @@ import "aos/dist/aos.css"; // Import AOS styles
 import axios from "axios"; // Import Axios
 
 export function RecentProject() {
-
-  const APIURI ="https://your-api-endpoint.com/projects";
-  const [loading, setLoading] = useState(true); 
-  const [data, setData] = useState([...Data]); 
+  const APIURI = "https://your-api-endpoint.com/projects";
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([...Data]);
   const fetchurl = async (uri) => {
     await axios
-      .get(uri) 
+      .get(uri)
       .then((response) => {
         setData(response.data);
-        setLoading(false); 
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
-        setLoading(false); 
+        setLoading(false);
       });
   };
 
@@ -28,12 +27,12 @@ export function RecentProject() {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
-    
+
     AOS.init({
       duration: 1000,
     });
-      // fetchurl(APIURI);
-      return () => clearTimeout(timer);
+    // fetchurl(APIURI);
+    return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
@@ -51,7 +50,7 @@ export function RecentProject() {
   return (
     <div className="w-full h-full pt-20">
       <h2
-        className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-base_600 font-sans"
+        className=" pl-8 mx-auto text-xl md:text-5xl font-bold text-base_600 font-sans"
         data-aos="fade-up" // Apply fade-up animation to the title
       >
         Some Recent Projects
@@ -76,8 +75,7 @@ const DummyContent = () => {
             </span>{" "}
             Keep a journal, quickly jot down a grocery list, and take amazing
             class notes. Want to convert those notes to text? No problem.
-            Langotiya jeetu ka mara hua yaar is ready to capture every
-            thought.
+            Langotiya jeetu ka mara hua yaar is ready to capture every thought.
           </p>
 
           <img
