@@ -61,7 +61,7 @@ const router = createBrowserRouter([
   
   
       {
-          path: "/Practice-area",
+          path: "/practice-areas",
           element: <Practice/>,
         //   children: [],
       },

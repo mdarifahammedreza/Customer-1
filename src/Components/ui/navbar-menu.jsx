@@ -58,7 +58,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
 // Menu Component
 export const Menu = ({ setActive, children }) => {
   return (
-    <div className="flex justify-between items-end  ">
+    <div className="flex justify-between items-end">
       <div className=" px-5 inline-flex ">
       <Link to="/">
   <img
@@ -68,7 +68,7 @@ export const Menu = ({ setActive, children }) => {
   />
 </Link>
         <div className="flex flex-col items-center justify-between text-base_600 hover:text-base_900">
-        <h1 className="font-semibold text-2xl">Capacity Building Service Group</h1>
+        <h1 className="font-semibold md:text-base lg:text-2xl">Capacity Building Service Group</h1>
         <Marquee gradient={true} gradientWidth={20} gradientColor={'#ffffff'}><p className="text-xs">Supporting Greater Performance</p></Marquee>
         </div>
       </div>
@@ -92,7 +92,7 @@ export const HoveredLink = ({ children, to, className, ...rest }) => {
     <Link
       to={to}
       {...rest}
-      className={`text-base_600 font-semibold hover:border-t-2 border-base_600 mt-2 rounded px-1 transition ease-in-out delay-150 hover:translate-x-1 hover:scale-1110 hover:text-base_900 duration-300 ${className}`}
+      className={`text-base_600 font-semibold md:text-sm lg:text-base hover:border-t-2 border-base_600 mt-2 rounded px-1 transition ease-in-out delay-150 hover:translate-x-1 hover:scale-1110 hover:text-base_900  duration-300 ${className}`}
     >
       {children}
     </Link>
