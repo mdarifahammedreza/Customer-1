@@ -1,10 +1,10 @@
-import { useEffect } from "react";
-import "aos/dist/aos.css";
 import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 import { ImagesSlider } from "../Components/ui/images-slider";
 
-import Time from "../Components/Timeline/Time";
 import StrategicPartner from "../Components/StrategicPartner/StrategicPartner";
+import Time from "../Components/Timeline/Time";
 
 const About = () => {
   const images = ["https://i.ibb.co/SyXjRsH/banner-3.jpg"];
@@ -47,7 +47,7 @@ const About = () => {
       </div>
 
       <div
-        className="w-full grid grid-cols-3 gap-5 xl:px-72 mt-10 justify-items-center p-10"
+        className="w-full grid  grid-cols-2 md:grid-cols-3 gap-5 xl:px-72 mt-10 justify-items-center p-10"
         data-aos="fade-up">
         <div data-aos="fade-right">
           <div className="card">
@@ -84,7 +84,7 @@ const About = () => {
           </div>
         </div>
 
-        <div data-aos="zoom-in">
+        <div data-aos="zoom-in" className="hidden md:block">
           <img
             src="https://i.ibb.co/VDQzp3T/Performance-Studies-upscaled.jpg"
             alt="Performance Studies"
@@ -93,7 +93,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="w-full grid grid-cols-3 gap-5 xl:px-72 justify-items-center p-10">
+      <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-5 xl:px-72 justify-items-center p-10">
         <div className="card col-span-2 w-full" data-aos="fade-left">
           <div className="card-body pl-0">
             <h2 className="card-title font-sans font-bold text-base_600 underline underline-offset-8">

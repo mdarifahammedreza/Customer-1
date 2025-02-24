@@ -1,13 +1,13 @@
-import { HoveredLink, Menu, MenuItem } from "../ui/navbar-menu";
-import { cn } from "../../../lib/utils";
+import { useEffect, useState } from "react";
+import Marquee from "react-fast-marquee";
 import { ImMenu } from "react-icons/im";
 import { Link, useLocation } from "react-router";
-import { useState, useEffect } from "react";
-import Marquee from "react-fast-marquee";
+import { cn } from "../../../lib/utils";
+import { HoveredLink, Menu, MenuItem } from "../ui/navbar-menu";
 
 const Header = () => {
   return (
-    <header className="w-full">
+    <header className="w-full px-3">
       <Navbar className="hidden lg:block" />
       <Phonenav className="lg:hidden" />
     </header>

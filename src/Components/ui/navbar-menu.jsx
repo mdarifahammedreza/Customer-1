@@ -22,7 +22,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
     <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.8 }}
-        className="cursor-pointer transition lg:text-sm xl:text-lg mt-2 ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-base_900 duration-300  text-base_600 font-semibold   hover:opacity-[0.9] ">
+        className="cursor-pointer transition lg:text-base mt-2 ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-base_900 duration-300  text-base_600 font-semibold   hover:opacity-[0.9] ">
         {item}
       </motion.p>
       {active !== null && (
@@ -52,7 +52,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
 export const Menu = ({ setActive, children }) => {
   return (
     <div className="flex justify-between items-end">
-      <div className=" px-2 inline-flex lg:max-w-[24.9rem] xl:max-w-[30rem]">
+      <div className=" px-2 inline-flex lg:max-w-[24.9rem] ">
         <Link to="/">
           <img
             src="https://i.ibb.co.com/pf3YyhR/logo.png"
@@ -61,7 +61,7 @@ export const Menu = ({ setActive, children }) => {
           />
         </Link>
         <div className="flex flex-col justify-between text-base_600 hover:text-base_900">
-          <h1 className="font-semibold  lg:text-xl xl:text-2xl">
+          <h1 className="font-semibold  lg:text-xl ">
             Capacity Building Service Group
           </h1>
           <Marquee gradient={true} gradientWidth={20} gradientColor={"#ffffff"}>
@@ -71,7 +71,7 @@ export const Menu = ({ setActive, children }) => {
       </div>
       <nav
         onMouseLeave={() => setActive(null)}
-        className="relative  shadow-input flex justify-end lg:space-x-3 xl:space-x-5  pr-2 xl:pr-14">
+        className="relative  shadow-input flex justify-end lg:space-x-3   pr-2 xl:pr-14">
         {children}
       </nav>
     </div>
@@ -86,7 +86,7 @@ export const HoveredLink = ({ children, to, className, ...rest }) => {
     <Link
       to={to}
       {...rest}
-      className={`text-base_600 font-semibold lg:text-sm xl:text-lg hover:border-b-2 border-base_600 mt-2 rounded px-1 transition ease-in-out delay-150 hover:translate-x-1 hover:scale-1110 hover:text-base_900  duration-300 ${className}`}>
+      className={`text-base_600 font-semibold lg:text-base hover:border-b-2 border-base_600 mt-2 rounded px-1 transition ease-in-out delay-150 hover:translate-x-1 hover:scale-1110 hover:text-base_900  duration-300 ${className}`}>
       {children}
     </Link>
   );
