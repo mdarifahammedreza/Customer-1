@@ -112,7 +112,7 @@ const About = () => {
 
         <div
           data-aos="flip-right"
-          className="card shadow-md shadow-Coral_800 bg-gradient-to-r  from-Coral_800 to-Coral_900  rounded-none transition ease-in-out delay-150 hover:translate-y-1 hover:scale-90 duration-400">
+          className="card shadow-md shadow-Coral_800 bg-gradient-to-r col-span-2 md:col-span-1 from-Coral_800 to-Coral_900  rounded-none transition ease-in-out delay-150 hover:translate-y-1 hover:scale-90 duration-400">
           <div className="card-body text-white">
             <h2 className="card-title font-sans font-bold ">
               <div className="flex items-center justify-center ">
@@ -128,7 +128,7 @@ const About = () => {
         </div>
         <div
           data-aos="flip-right"
-          className="card shadow-md shadow-Teal_700 bg-gradient-to-r from-Teal_800 to-Teal_800 rounded-none transition ease-in-out delay-150  hover:translate-y-1 hover:scale-210  duration-400">
+          className="card shadow-md shadow-Teal_700 bg-gradient-to-r from-Teal_800 to-Teal_800 rounded-none transition ease-in-out delay-150  hover:translate-y-1 hover:scale-210  duration-400 col-span-2 md:col-span-1">
           <div className="card-body ">
             <h2 className="card-title font-sans font-bold text-white">
               <div className="flex items-center justify-center">
@@ -146,7 +146,7 @@ const About = () => {
         </div>
         <div
           data-aos="flip-right"
-          className="card shadow-md shadow-Golden_800 bg-gradient-to-r from-Golden_800 to-Golden_900 text-white rounded-none transition ease-in-out delay-150  hover:translate-y-1 hover:scale-210  duration-400">
+          className="card shadow-md shadow-Golden_800 bg-gradient-to-r from-Golden_800 to-Golden_900 text-white rounded-none transition ease-in-out delay-150  hover:translate-y-1 hover:scale-210  duration-400 col-span-2 md:col-span-1">
           <div className="card-body ">
             <h2 className="card-title font-sans font-bold ">
               <div className="flex items-center justify-center">
@@ -164,7 +164,7 @@ const About = () => {
         </div>
         <div
           data-aos="flip-right"
-          className="card shadow-md shadow-Corcol_Gray_800 bg-gradient-to-r from-Corcol_Gray_800 to-Corcol_Gray_900 text-white rounded-none transition ease-in-out delay-150  hover:translate-y-1 hover:scale-210  duration-400">
+          className="card col-span-2 md:col-span-1 shadow-md shadow-Corcol_Gray_800 bg-gradient-to-r from-Corcol_Gray_800 to-Corcol_Gray_900 text-white rounded-none transition ease-in-out delay-150  hover:translate-y-1 hover:scale-210  duration-400">
           <div className="card-body ">
             <h2 className="card-title font-sans font-bold ">
               <div className="flex items-center justify-center">
