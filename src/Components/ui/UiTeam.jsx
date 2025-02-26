@@ -1,10 +1,10 @@
 "use client";
+import AOS from 'aos';
 import 'aos/dist/aos.css';
-import AOS from 'aos'
-import  { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useOutsideClick } from "../../../hooks/use-outside-click";
+import { useEffect, useId, useRef, useState } from "react";
 import { IoLogoLinkedin } from "react-icons/io";
+import { useOutsideClick } from "../../../hooks/use-outside-click";
 
 
 const UITeam =({cards})=> {
@@ -35,7 +35,7 @@ const UITeam =({cards})=> {
 
   useOutsideClick(ref, () => setActive(null));
 
-  return (<div className="py-8 w-full  flex bg-transparent   ">
+  return (<div className="py-8 w-full  flex bg-transparent  ">
     <AnimatePresence>
       {active && typeof active === "object" && (
         <motion.div
@@ -63,20 +63,20 @@ const UITeam =({cards})=> {
                 duration: 0.05,
               },
             }}
-            className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-2"
+            className="flex absolute top-2 right-2 lg:hidden items-center justify-center rounded-full h-6 w-2"
             onClick={() => setActive(null)}>
             <CloseIcon />
           </motion.button>
           <motion.div
             layoutId={`card-${active.title}-${id}`}
             ref={ref}
-            className="w-full max-w-[500px]  max-h-[90%]  md:h-fit md: flex flex-col bg-white   overflow-hidden z-[1000]">
+            className="w-full max-w-[500px]  max-h-[90%]  md:h-fit md: flex flex-col bg-slate-100 border-2 border-base_600   overflow-hidden z-[1000]">
             <motion.div layoutId={`image-${active.title}-${id}`}>
               <img
                
                 src={active.src}
                 alt={active.title}
-                className="w-full  h-80 lg:h-80 object-cover object-top" />
+                className="w-full  h-80 lg:h-80 object-cover object-top " />
             </motion.div>
 
             <div>
@@ -130,15 +130,16 @@ const UITeam =({cards})=> {
           layoutId={`card-${card.title}-${id}`}
           key={card.title}
           onClick={() => setActive(card)}
-          className="p-4 flex flex-col bg-white hover:bg-gray-50 hover:text-white  cursor-pointer">
-          <div className="flex gap-4 flex-col  w-full" data-aos="zoom-in">
-            <motion.div layoutId={`image-${card.title}-${id}`}>
+          className="p-4 flex flex-col bg-slate-100  rounded-md border border-base_600 hover:bg-gray-50 hover:text-white  cursor-pointer shadow-md shadow-base_300" data-aos="zoom-in">
+          <div className="flex gap-4 flex-col  w-full justify-center items-center" >
+            <motion.div layoutId={`image-${card.title}-${id}`} className='h-52 w-60 md:w-52 overflow-hidden rounded-full relative'>
+            <div className="absolute inset-0 rounded-full bg-cyan-400 blur-2xl opacity-40"></div>
               <img
                 width={100}
                 height={100}
                 src={card.src}
                 alt={card.title}
-                className="h-60 w-full  rounded object-cover object-top" />
+                className=" w-full h-full object-cover object-top rounded-full" />
             </motion.div>
             <div className="flex justify-center items-center flex-col">
               <motion.h3

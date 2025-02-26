@@ -1,8 +1,8 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { useEffect, useState } from "react";
 import { BackgroundBeams } from "../Components/ui/background-beams";
 import UITeam from "../Components/ui/UiTeam";
-import 'aos/dist/aos.css';
-import AOS from 'aos';
 
 const Team = () => {
   const [display, SetDisplay] = useState("Core Team");
@@ -27,7 +27,7 @@ const Team = () => {
   return (
    <>
    <div className="relative mt-5 mb-5">
-   <section className="absolute  left-24 flex justify-start items-center pl-5 mt-10 my-10">
+   <section className="absolute  left-24  justify-start items-center pl-5 mt-10 my-10 hidden md:flex">
       <button data-aos="ease-in-out"
         onClick={() => SetDisplay("Core Team")}
         className={`p-3  rounded-tl-md font-semibold  ${display === "Core Team" ? bgColor : "bg-gray-300"}`}
@@ -47,7 +47,7 @@ const Team = () => {
         International Consultant
       </button>
     </section>
-    <div className={`hidden md:block mx-5 bg-gradient-to-t from-base_600  via-base_900 to-base_600 shadow-md shadow-base_300 rounded pt-10 `}>
+    <div className={`hidden md:block mx-5 rounded pt-10 `}>
       {display === "Core Team" && <div  className="max-w-[90%] flex flex-col justify-center items-center"><p data-aos="zoom-out" className="bg-white p-2 mt-16 shadow-md shadow-base_300 font-semibold text-blue-800 ">Core team</p> <UITeam cards={cards} /></div>}
       {display === "Technical Team" && < div className="max-w-[90%] flex flex-col justify-center items-center"><p  data-aos="zoom-out" className="bg-white p-2 mt-16 shadow-md shadow-base_300 font-semibold text-blue-800">Technical Team</p> <UITeam cards={cards} /></div>}
       {display === "International Consultant" && <div className="max-w-[90%] flex flex-col justify-center items-center"><p data-aos="zoom-out"  className="bg-white p-2 mt-16 shadow-md shadow-base_300 font-semibold text-blue-800">International Consultant</p> <UITeam cards={cards} /></div>}
@@ -55,21 +55,21 @@ const Team = () => {
    </div>
     <div className="mt-8 block md:hidden" >
     <div className="bg-gray-100 shadow-md flex flex-col justify-center items-center h-full w-full">
-        <p className="text-white mt-10 px-5 py-1 pl-5 rounded text-3xl max-w-5xl w-full border font-extrabold bg-teal-700 text-left">Core Team</p>
+        <p className="text-white mt-10 px-10 py-1 pl-5 rounded text-xl  max-w-5xl w-full border bg-teal-700 text-left">Core Team</p>
         <BackgroundBeams/>
         <div className="max-w-[90%] z-[30] ">
         <UITeam cards={cards} />
         </div>
     </div>
     <div className="bg-gray-100 shadow-md flex flex-col justify-center items-center h-full w-full">
-        <p className="text-white mt-10 px-5 font-extrabold py-1 pl-5 rounded text-3xl max-w-5xl w-full shadow-md shadow-Coral_800 bg-gradient-to-r  from-Coral_800 to-Coral_900   transition ease-in-out delay-150 hover:translate-y-1 hover:scale-90 duration-400 text-right">Technical Expert</p>
+        <p className="text-white mt-10 px-10 py-1 pl-5 rounded text-xl  max-w-5xl w-full shadow-md shadow-Coral_800 bg-gradient-to-r  from-Coral_800 to-Coral_900   transition ease-in-out delay-150 ">Technical Expert</p>
       
       <div className="max-w-[90%] z-[30] ">
         <UITeam cards={cards} />
       </div>
     </div>
     <div className="bg-gray-100 shadow-md flex flex-col justify-center items-center h-full w-full">
-        <p className="text-white mt-10 px-5 font-extrabold py-1 pl-5 rounded text-3xl max-w-5xl w-full shadow-md shadow-Golden_800 bg-gradient-to-r  from-Golden_800 to-Golden_900  transition ease-in-out delay-150 hover:translate-y-1 hover:scale-90 duration-400 text-left">International Consultant</p>
+        <p className="text-white mt-10 px-10 py-1 pl-5 rounded text-xl  max-w-5xl w-full shadow-md shadow-Golden_800 bg-gradient-to-r  from-Golden_800 to-Golden_900  transition ease-in-out delay-150 ">International Consultant</p>
         
       <div className="max-w-[90%] z-[30] ">
         <UITeam cards={cards} />
