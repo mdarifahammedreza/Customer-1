@@ -37,337 +37,53 @@ export const content = [
   {
     title: "2003-2008",
     description:
-      "CBSG contributed to enhance organizations, strengthens livelihoods, expands training with UNICEF, advances urban governance with ADB, and drives healthcare insights for USAID’s Smiling Sun Program. ",
-    content: (
-      <div className="h-full w-full0">
-        <div className="grid grid-cols-2 gap-4 bg-whiborder ">
-          <div className="m-5 text-base_600 bg-white shadow-sm shadow-base_900  h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <img
-              src="https://i.ibb.co.com/k2NNZrTR/logo-1.png"
-              className="w-20 "
-              alt="working image"
-            />
-            {/* <h1 className="font-bold">AB Company Limited</h1> */}
-            <p className="p-2 text-xs bg-white">
-              Strengthening Organizational Excellence: CBSG’s Engagement with
-              Shishu Polli Plus
-            </p>
-            <img
-              src="https://i.ibb.co.com/k2NNZrTR/logo-1.png"
-              className="w-20 "
-              alt="working image"
-            />
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900 top-0 right-0 h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">CD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together together in real time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900 bottom-0  h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">BD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900  bottom-0 right-0 h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABC Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-        </div>
-      </div>
-    ),
+      "CBSG contributed to enhance organizations, strengthens livelihoods, expands training with UNICEF, advances urban governance with ADB, and drives healthcare insights for USAID’s Smiling Sun Program.",
+    content: [
+      {
+        Content_title: "ABC Company",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        image: "https://assets.aceternity.com/demos"
+      },
+      {
+        Content_title: "XYZ Corporation",
+        description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.",
+        image: "https://assets.aceternity.com/demos"
+      }
+    ]
   },
   {
-    title: "2011-2008",
+    title: "2009-2014",
     description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-    content: (
-      <div className="h-full w-full">
-        <div className="grid grid-cols-2 gap-4 border ">
-          <div className="m-5 text-white shadow-sm shadow-base_900  h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ACD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together real time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900 top-0 right-0 h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">BCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900 bottom-0  h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABC Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900  bottom-0 right-0 h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ACD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in time with your team, clients
-            </p>
-          </div>
-        </div>
-      </div>
-    ),
+      "CBSG expanded its reach, partnering with WHO for public health initiatives, collaborating with UNDP for sustainable development, and pioneering educational reforms in collaboration with the World Bank.",
+    content: [
+      {
+        Content_title: "DEF Enterprises",
+        description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
+        image: "https://assets.aceternity.com/demos"
+      },
+      {
+        Content_title: "GHI Solutions",
+        description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.",
+        image: "https://assets.aceternity.com/demos"
+      }
+    ]
   },
   {
-    title: "2008-2006",
+    title: "2015-2020",
     description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-    content: (
-      <div className="h-full w-full">
-        <div className="grid grid-cols-2 gap-4 border ">
-          <div className="m-5 text-white shadow-sm shadow-base_900  h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900 top-0 right-0 h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900 bottom-0  h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900  bottom-0 right-0 h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-        </div>
-      </div>
-    ),
-  },
-  {
-    title: "2012-2013",
-    description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-    content: (
-      <div className="h-full w-full">
-        <div className="grid grid-cols-2 gap-4 border ">
-          <div className="m-5 text-white shadow-sm shadow-base_900  h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900 top-0 right-0 h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900 bottom-0  h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900  bottom-0 right-0 h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-        </div>
-      </div>
-    ),
-  },
-  {
-    title: "2013-2018",
-    description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-    content: (
-      <div className="h-full w-full">
-        <div className="grid grid-cols-2 gap-4 border ">
-          <div className="m-5 text-white shadow-sm shadow-base_900  h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900 top-0 right-0 h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900 bottom-0  h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900  bottom-0 right-0 h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-        </div>
-      </div>
-    ),
-  },
-  {
-    title: "2032-2018",
-    description:
-      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-    content: (
-      <div className="h-full w-full">
-        <div className="grid grid-cols-2 gap-4 border ">
-          <div className="m-5 text-white shadow-sm shadow-base_900  h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900 top-0 right-0 h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900 bottom-0  h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-          <div className="m-5 text-white shadow-sm shadow-base_900  bottom-0 right-0 h-[calc(50%-40px)] w-[calc(50%-40px)] absolute p flex flex-col items-center justify-center">
-            <h1 className="font-bold">ABCD Company Limited</h1>
-            <img
-              src="https://i.ibb.co.com/HTfnsmb/rb-2148726151.png"
-              className="w-20 "
-              alt="working image"
-            />
-            <p className="p-2 text-xs">
-              Work together in real time with your team, clients
-            </p>
-          </div>
-        </div>
-      </div>
-    ),
-  },
+      "CBSG focused on digital transformation, strengthening its ties with tech giants, improving disaster resilience with the Red Cross, and launching global leadership programs.",
+    content: [
+      {
+        Content_title: "JKL Innovations",
+        description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.",
+        image: "https://assets.aceternity.com/demos"
+      },
+      {
+        Content_title: "MNO Tech",
+        description: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+        image: "https://assets.aceternity.com/demos"
+      }
+    ]
+  }
 ];
+

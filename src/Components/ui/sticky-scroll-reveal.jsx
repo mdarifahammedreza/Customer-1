@@ -1,7 +1,6 @@
 "use client";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import { useMotionValueEvent, useScroll } from "framer-motion";
-import { motion } from "framer-motion";
 import { cn } from "../../../lib/utils";
 
 export const StickyScroll = ({ content, contentClassName }) => {
@@ -59,7 +58,8 @@ export const StickyScroll = ({ content, contentClassName }) => {
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
       className="h-[40rem] overflow-y-auto scroll-smooth flex justify-center relative space-x-10 scrollbar-hide p-10"
-      ref={ref}>
+      ref={ref}
+    >
       <div className="div relative flex items-start ">
         <div className="max-w-2xl">
           {content.map((item, index) => (
@@ -71,7 +71,8 @@ export const StickyScroll = ({ content, contentClassName }) => {
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl font-bold text-slate-100">
+                className="text-2xl font-bold text-slate-100"
+              >
                 {item.title}
               </motion.h2>
               <motion.p
@@ -81,7 +82,8 @@ export const StickyScroll = ({ content, contentClassName }) => {
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg text-slate-300 max-w-sm mt-10 hidden md:block mb-64">
+                className="text-kg text-slate-300 max-w-sm mt-10 hidden md:block mb-64"
+              >
                 {item.description}
               </motion.p>
               {item.image && (
@@ -105,10 +107,19 @@ export const StickyScroll = ({ content, contentClassName }) => {
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          "lg:block h-1/2 md:h-[30rem] w-[45rem]   sticky top-10 overflow-hidden ",
+          "lg:block h-1/2 md:h-[30rem] w-[45rem] sticky top-10 shadow-lg",
           contentClassName
-        )}>
-        {content[activeCard].content ?? null}
+        )}
+      >
+        <div className="h-full overflow-auto p-4 text-white">
+  {content[activeCard].content?.map((item, index) => (
+    <div key={index} className="content-item mb-4">
+      <h3 className="text-xl font-bold">{item.Content_title}</h3>
+      <p className="">{item.description}</p>
+      <img src={item.image} alt={item.Content_title} className="w-[15rem] h-[15rem] mt-2 " />
+    </div>
+  ))}
+</div>
       </div>
     </motion.div>
   );
