@@ -1,6 +1,7 @@
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Card from "../ui/Card";
 
 const responsive = {
   superLargeDesktop: {
@@ -25,13 +26,13 @@ const CarouselComponent = () => {
   return (
     <div className="py-5">
         <div className="w-full flex flex-col items-center justify-center mb-5">
-            <p className="text-xl md:text-5xl font-bold text-base_500">Practice Areas</p>
-            <p className="text-sm text-center text-base_500 max-w-lg r mt-5 px-10 ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio nulla dolores vel iusto beatae tempora repellendus ea, velit possimus, ratione earum quam! Totam facilis reprehenderit unde, illum eaque cum neque.</p>
+            <p className="text-xl md:text-5xl font-bold ">Practice Areas</p>
+            <p className="text-sm text-center  max-w-lg r mt-5 px-10 ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio nulla dolores vel iusto beatae tempora repellendus ea, velit possimus, ratione earum quam! Totam facilis reprehenderit unde, illum eaque cum neque.</p>
         </div>
       <div>
       <Carousel swipeable={true} draggable={true} responsive={responsive} infinite autoPlay>
         {cardData.map((card, index) => (
-          <Card key={index} {...card} />
+          <Card key={index} {...card} className=" lg:max-w-xs"/>
         ))}
       </Carousel>
       </div>
@@ -41,17 +42,17 @@ const CarouselComponent = () => {
 
 export default CarouselComponent;
 
-const Card = ({ title, description, image }) => {
-  return (
-    <div className="bg-gradient-to-b from-base_500 to-base_600 shadow-lg rounded-md overflow-hidden transform hover:scale-95 transition duration-300 border-2 border-base_600 mx-auto max-w-56 h-56">
-      <img src={image} alt={title} className="object-cover w-full h-32" />
-      <div className="p-2 border-t-2 border-base_600">
-        <h1 className="text-lg font-medium text-white">{title}</h1>
-        <p className="mt-1 text-xs text-gray-300">{description.slice(0, 100)}...</p>
-      </div>
-    </div>
-  );
-};
+// const Card = ({ title, description, image }) => {
+//   return (
+//     <div className="bg-gradient-to-b from-base_500 to-base_600 shadow-lg rounded-md overflow-hidden transform hover:scale-95 transition duration-300 border-2 border-base_600 mx-auto max-w-56 h-56">
+//       <img src={image} alt={title} className="object-cover w-full h-32" />
+//       <div className="p-2 border-t-2 border-base_600">
+//         <h1 className="text-lg font-medium text-white">{title}</h1>
+//         <p className="mt-1 text-xs text-gray-300"></p>
+//       </div>
+//     </div>
+//   );
+// };
 
 const cardData = [
   {

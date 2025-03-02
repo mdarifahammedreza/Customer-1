@@ -1,10 +1,11 @@
 "use client";
 
-import { Card, Carousel } from "../ui/apple-cards-carousel";
-import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import axios from "axios"; // Import Axios
+import { useEffect, useState } from "react";
+import CBSGCharLoader from "../../Page/CBSGCharLoader";
+import { Card, Carousel } from "../ui/apple-cards-carousel";
 
 export function RecentProject() {
   const APIURI = "https://your-api-endpoint.com/projects";
@@ -37,8 +38,8 @@ export function RecentProject() {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-40 bg-gradient-to-r from-base_600 to-indigo-900 text-white">
-        <span className="loading loading-bars loading-lg"></span> {/* Loader */}
+      <div className="flex justify-center items-center ">
+        <CBSGCharLoader />
       </div>
     );
   }
@@ -50,7 +51,7 @@ export function RecentProject() {
   return (
     <div className="w-full h-full pt-20">
       <h2
-        className=" pl-8 mx-auto text-xl md:text-5xl font-bold text-base_600 font-sans"
+        className=" pl-8 mx-auto text-xl md:text-5xl font-bold  font-sans flex justify-center items-center"
         data-aos="fade-up" // Apply fade-up animation to the title
       >
         Some Recent Projects

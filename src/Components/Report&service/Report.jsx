@@ -26,6 +26,9 @@ const reports = [
 const ReportsPagination = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const reportsPerPage = 10;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedReport, setSelectedReport] = useState(null);
+  const [formData, setFormData] = useState({ name: "", email: "", purpose: "" });
 
   const indexOfLastReport = currentPage * reportsPerPage;
   const indexOfFirstReport = indexOfLastReport - reportsPerPage;
@@ -33,24 +36,50 @@ const ReportsPagination = () => {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  const openModal = (report) => {
+    setSelectedReport(report);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setFormData({ name: "", email: "", purpose: "" });
+  };
+
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Your request has been submitted for approval.");
+    closeModal();
+  };
+
   return (
     <div className="p-6 bg-sky-50 shadow-lg rounded-lg max-w-7xl mx-auto min-h-[80vh]">
       <h2 className="text-xl font-bold mb-4 text-center">Reports</h2>
       <ul>
         {currentReports.map((report, index) => (
-          <li key={index} className="border-b py-2 gap-5 flex justify-between items-center hover:bg-slate-200 px-2">
+          <li key={index} className="border-b py-2 gap-5 flex flex-col sm:flex-row justify-between items-center hover:bg-slate-200 px-2">
             <span className="text-3xl"><FaFilePdf /></span>
-            <div className="flex justify-between items-center w-full">
-            <div >
-              <p className="font-semibold">{report.title}</p>
-              <p className="text-sm text-gray-600">{report.description}</p>
-            </div>
-            <a href={report.link} className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Read</a>
+            <div className="flex flex-col sm:flex-row sm:justify-between items-center w-full">
+              <div className="text-center sm:text-left">
+                <p className="font-semibold text-sm ">{report.title}</p>
+                <p className="text-xs sm:text-xs text-gray-600">{report.description}</p>
+              </div>
+              <button 
+                onClick={() => openModal(report)} 
+                className="bg-blue-500 text-white px-4 py-2 mt-2 sm:mt-0 rounded-lg hover:bg-blue-600"
+              >
+                Read
+              </button>
             </div>
           </li>
         ))}
       </ul>
-      <div className="flex justify-center mt-4">
+
+      <div className="flex justify-center mt-4 flex-wrap gap-2">
         {[...Array(Math.ceil(reports.length / reportsPerPage)).keys()].map((number) => (
           <button
             key={number + 1}
@@ -62,7 +91,60 @@ const ReportsPagination = () => {
         ))}
       </div>
 
-     
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
+            <h2 className="text-lg font-semibold mb-3 text-center">Request Access to Read</h2>
+            <p className="mb-2 text-gray-600 text-center">
+              Submit your details to request access for <strong>{selectedReport?.title}</strong>.
+            </p>
+
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={handleInputChange}
+                className="w-full border p-2 rounded outline-none focus:ring focus:ring-blue-300"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                value={formData.email}
+                onChange={handleInputChange}
+                className="w-full border p-2 rounded outline-none focus:ring focus:ring-blue-300"
+                required
+              />
+              <textarea
+                name="purpose"
+                placeholder="Purpose of reading this report"
+                value={formData.purpose}
+                onChange={handleInputChange}
+                className="w-full border p-2 rounded outline-none focus:ring focus:ring-blue-300"
+                required
+              />
+              <div className="flex flex-col sm:flex-row justify-between gap-2">
+                <button
+                  type="button"
+                  onClick={closeModal}
+                  className="bg-gray-400 text-white px-4 py-2 rounded hover:bg-gray-500 w-full sm:w-auto"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full sm:w-auto"
+                >
+                  Submit Request
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

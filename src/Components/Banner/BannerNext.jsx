@@ -1,7 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
-import { ImagesSlider } from "../ui/images-slider";
 import { useEffect, useState } from "react";
+import CBSGCharLoader from "../../Page/CBSGCharLoader";
+import { ImagesSlider } from "../ui/images-slider";
 
 export function ImagesSliderComponent() {
   const [loading, setLoading] = useState(true);
@@ -10,7 +11,7 @@ export function ImagesSliderComponent() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 8000);
 
     setImage({
       image: "https://i.ibb.co/5MZPdhp/banner-1.jpg",
@@ -24,7 +25,8 @@ export function ImagesSliderComponent() {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-[40rem]">
-        <span className="loading loading-bars loading-lg"></span>
+        <CBSGCharLoader/>
+        {/* <span className="loading loading-bars loading-lg"></span> */}
       </div>
     );
   }

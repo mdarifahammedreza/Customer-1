@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import { ImagesSlider } from "../Components/ui/images-slider";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import Card from "../Components/ui/Card";
+import { ImagesSlider } from "../Components/ui/images-slider";
 
 const Practice = () => {
   const [loading, setLoading] = useState(true);
@@ -85,16 +86,6 @@ const Practice = () => {
   );
 };
 
-const Card = ({ title, description, image }) => {
-  return (
-    <div className="bg-gradient-to-b from-80% from-base_500 to-base_600 shadow-md shadow-base_500 rounded-md overflow-hidden transition transform hover:scale-105 duration-300 hover:border-white hover:cursor-pointer max-w-56 h-56 border-2 border-base_600 mx-auto">
-      <img src={image} alt={title} className="object-cover" />
-      <div className="p-2 border-t-2 border-base_600">
-        <h1 className="text-lg font-medium text-white ">{title}</h1>
-        <p className="mt-1 text-xs text-gray-300 overflow-hidden">{description.split(" ").slice(0, 18).join(" ") + "..."}</p>
-      </div>
-    </div>
-  );
-};
+
 
 export default Practice;

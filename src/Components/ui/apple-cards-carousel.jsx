@@ -1,8 +1,8 @@
 "use client";
-import React, { useEffect, useRef, useState, createContext, useContext } from "react";
 import { IconArrowNarrowLeft, IconArrowNarrowRight, IconX } from "@tabler/icons-react";
-import { cn } from "../../../lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
+import React, { createContext, useContext, useEffect, useRef, useState } from "react";
+import { cn } from "../../../lib/utils";
 
 import { useOutsideClick } from "../../../hooks/use-outside-click";
 
@@ -155,12 +155,12 @@ export const Card = ({ card, index, layout = false }) => {
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 h-screen z-50 overflow-auto">
+          <div className="fixed inset-0 h-screen z-50 overflow-auto rounded-xl">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="bg-base_900/60 backdrop-blur-lg h-full w-full fixed inset-0"
+              className="bg-base_900/60 backdrop-blur-lg h-full w-full fixed inset-0 "
             />
             <motion.div
               initial={{ opacity: 0 }}
@@ -178,7 +178,7 @@ export const Card = ({ card, index, layout = false }) => {
               </button>
               <motion.p
                 layoutId={layout ? `category-${card.title}` : undefined}
-                className="text-base font-medium text-black dark:text-white"
+                className="text-base font-medium text-black dark:text-white "
               >
                 {card.category}
               </motion.p>
@@ -196,7 +196,7 @@ export const Card = ({ card, index, layout = false }) => {
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className=" bg-base_900  h-80 w-56 md:h-[20rem] md:w-72 overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className=" bg-base_900  h-80 w-56 md:h-[20rem] md:w-72 overflow-hidden flex flex-col items-start justify-start relative z-10 rounded-md"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <div className="relative z-40 p-8">
@@ -213,12 +213,12 @@ export const Card = ({ card, index, layout = false }) => {
             {card.title}
           </motion.p>
         </div>
-        {/* <BlurImage
+        <BlurImage
           src={card.src}
           alt={card.title}
           fill
           className="object-cover absolute z-10 inset-0"
-        /> */}
+        />
       </motion.button>
     </>
   );
