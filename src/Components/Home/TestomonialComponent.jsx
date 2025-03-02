@@ -1,6 +1,7 @@
 import axios from "axios";
-import { AnimatedTestimonials } from "../ui/animated-testimonials";
 import { useEffect, useState } from "react";
+import CBSGCharLoader from "../../Page/CBSGCharLoader";
+import { AnimatedTestimonials } from "../ui/animated-testimonials";
 
 // Function to fetch testimonials from the API
 const fetchTestimonials = async () => {
@@ -63,7 +64,7 @@ const TestimonialComponent = () => {
   if (loading) {
     return (
       <div className="text-center">
-        <span className="loading loading-bars loading-lg"></span> {/* Loader */}
+        <CBSGCharLoader/>
       </div>
     );
   }

@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
-import { VscOrganization } from "react-icons/vsc";
+import { useEffect, useState } from "react";
 import { TbSettingsSearch } from "react-icons/tb";
+import { VscOrganization } from "react-icons/vsc";
+import CBSGCharLoader from "../../Page/CBSGCharLoader";
 
 const AboutSection = () => {
   const [loading, setLoading] = useState(true);
@@ -22,7 +23,7 @@ const AboutSection = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <span className="loading loading-bars loading-lg"></span>
+        <CBSGCharLoader />
       </div>
     );
   }

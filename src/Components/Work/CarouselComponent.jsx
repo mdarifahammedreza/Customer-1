@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import CBSGCharLoader from "../../Page/CBSGCharLoader";
 import { Carousel } from "../ui/carousel";
 const slideData = [
     {
@@ -54,7 +55,7 @@ const CarouselComponent = () => {
   if (loading) {
     return (
       <div className="text-center">
-        <span className="loading loading-bars loading-lg"></span>
+      <CBSGCharLoader/>
       </div>
     );
   }
