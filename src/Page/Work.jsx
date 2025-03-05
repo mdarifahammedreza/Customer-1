@@ -10,7 +10,7 @@ const Work = () => {
     <div className="mt-5">
       {/* <BackgroundBeamsComponent /> */}
       {/* <Line/> */}
-      <div className="h-[22rem] w-full bg-gradient-to-b from-white to-gray-100 relative flex flex-col items-center justify-center antialiased">
+      <div className="h-[25rem] w-full bg-gradient-to-b from-white to-gray-100 relative flex flex-col items-center justify-center antialiased">
         <div className="w-full p-4 flex flex-col justify-center items-center">
           {/* Title */}
           <h1 className="relative z-10 text-lg md:text-4xl bg-clip-text text-transparent bg-gradient-to-b from-base_500 to-base_600 text-center font-sans font-bold">
