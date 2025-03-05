@@ -24,12 +24,21 @@ const Count = () => {
   }
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-0 justify-evenly items-center bg-gradient-to-tr from-base_600 to-indigo-900 p-6 text-white text-center">
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-0 justify-evenly items-center bg-gradient-to-tr from-base_600 to-indigo-900 p-6 text-white text-center relative">
       <CountItem icon={<MdBusinessCenter />} number="380+" label="Contracts for International Agencies" />
       <CountItem icon={<FaFlag />} number="290+" label="US Government Projects" />
       <CountItem icon={<RiTeamLine />} number="140+" label="Organizational Capacity Assessment" />
       <CountItem icon={<FaRegNewspaper />} number="180+" label="Research and Evaluation Assignments" />
       <CountItem icon={<FaBriefcase />} number="23+" label="Years of Experience" />
+
+      <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 ">
+      <a href="CBSG-profile.pdf" download="CBSG-profile.pdf">
+  <button className="text-white bg-[#115096] px-5 py-3 opacity-50 hover:opacity-100 rounded-b-lg">
+    Download Profile
+  </button>
+</a>
+
+</div>
     </div>
   );
 };

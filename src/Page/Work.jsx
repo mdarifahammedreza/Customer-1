@@ -18,7 +18,7 @@ const Work = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center relative z-10">
+          <p className="text-neutral-500 max-w-lg mx-auto my-2 text-lg text-center relative z-10">
             Welcome to MailJet, the best transactional email service on the web.
             We provide reliable, scalable, and customizable email solutions for
             your business. Whether you&apos;re sending order confirmations,
