@@ -40,7 +40,7 @@ function Navbar({ className }) {
         </HoveredLink>
 
         {/* Services Menu */}
-        <MenuItem setActive={setActive} active={active} item="Our services">
+        <MenuItem setActive={setActive} to="Services" active={active} item="Our services">
           <div className="flex flex-col space-y-2 ">
             <HoveredLink
               to="/Services/Organization-Development"

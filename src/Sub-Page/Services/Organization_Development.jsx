@@ -1,16 +1,21 @@
-import { Outlet } from "react-router";
-import { HoverEffect } from "../../Components/ui/card-hover-effect";
-import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { ImagesSlider } from "../../Components/ui/images-slider";
+import axios from "axios";
 import { motion } from "framer-motion";
+import { useContext, useEffect, useState } from "react";
+import { Outlet } from "react-router";
+import { AppContext } from "../../AppProvider";
+import { HoverEffect } from "../../Components/ui/card-hover-effect";
+import { ImagesSlider } from "../../Components/ui/images-slider";
 
 const Organization_Development = () => {
   const [SideBar, IsSideBar] = useState(false);
-  const images = ["https://i.ibb.co/SyXjRsH/banner-3.jpg"];
+  const {images,uri} = useContext(AppContext);
 
   useEffect(() => {
+    axios.get(`${uri}sub-service-areas/`)
+
+
     AOS.init({
       duration: 1000, // Animation duration in milliseconds
     });

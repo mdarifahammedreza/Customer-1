@@ -1,15 +1,17 @@
 import { createBrowserRouter } from "react-router";
-import Root from "./Root";
-import Home from "./Page/Home";
 import About from "./Page/About";
-import Services from "./Page/Services";
+import Contacts from "./Page/Contacts";
+import Home from "./Page/Home";
 import Practice from "./Page/Practice";
+import Services from "./Page/Services";
 import Team from "./Page/Team";
 import Work from "./Page/Work";
-import Contacts from "./Page/Contacts";
+import Root from "./Root";
+import BlockPage from "./Sub-Page/Home/Blog";
+import PracticeChild from "./Sub-Page/Practice/PracticeChild";
+import Child_Organization_Development from "./Sub-Page/Services/Child_Organization_Development/Child_Organization_Development";
 import Organization_Development from "./Sub-Page/Services/Organization_Development";
 import Reacher_Evaluation from "./Sub-Page/Services/Research_Evaluation";
-import Child_Organization_Development from "./Sub-Page/Services/Child_Organization_Development/Child_Organization_Development";
 const router = createBrowserRouter([
     {
       path: "/",
@@ -27,43 +29,52 @@ const router = createBrowserRouter([
         element: <About/>,
       //   children: [],
       },
+      {
+        path: "/blog/:id",
+        element: <BlockPage/>,
+      //   children: [],
+      },
   
   
       {
         path: "/Services",
         element: <Services/>,
-       children: [
-        {
-          path: "/Services/Organization-Development",
-          element: <Organization_Development/>,
-          children:[
-            {
-              path: "/Services/Organization-Development/:Subpath",
-              loader: ({params}) => {return params.Subpath}, 
-              element: <Child_Organization_Development />,
-            }
-          ]
-        },
-        {
-          path: "/Services/Research&Evaluation",
-          element: <Reacher_Evaluation/>,
-          children:[
-            {
-              path: "/Services/Research&Evaluation/:Subpath",
-              loader: ({params}) => {return params.Subpath}, 
-              errorElement:<div>Sorry Content Not found</div>,
-              element: <Child_Organization_Development />,
-            }
-          ]
-        },
-       ],
+      
       },
-  
+      {
+        path: "/Services/Research&Evaluation",
+        element: <Reacher_Evaluation/>,
+        children:[
+          {
+            path: "/Services/Research&Evaluation/:Subpath",
+            loader: ({params}) => {return params.Subpath}, 
+            errorElement:<div>Sorry Content Not found</div>,
+            element: <Child_Organization_Development />,
+          }
+        ]
+      },
+      {
+        path: "/Services/Organization-Development",
+        element: <Organization_Development/>,
+        children:[
+          {
+            path: "/Services/Organization-Development/:Subpath",
+            loader: ({params}) => {return params.Subpath}, 
+            element: <Child_Organization_Development />,
+          }
+        ]
+      },
   
       {
           path: "/practice-areas",
           element: <Practice/>,
-        //   children: [],
+          
+            
+          
+      },
+      {
+        path: "/practice-areas/:id",
+        element: <PracticeChild/>,
       },
   
   

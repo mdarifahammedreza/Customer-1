@@ -1,21 +1,67 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router";
+import { AppContext } from "../../AppProvider";
+import CBSGCharLoader from "../../Page/CBSGCharLoader";
 
 const StrategicPartner = () => {
+  const [partners, setPartners] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const { uri } = useContext(AppContext);
+
   useEffect(() => {
+
+    const fetchData = async () => {
+      try {
+        // Fetch data from the API using axios
+        const response = await axios.get(`${uri}strategic-partners/`);
+        setPartners(response.data);
+        console.log(response.data); // Set the fetched data to state
+      } catch (error) {
+        // Handle errors
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          setError(`Error: ${error.response.status} - ${error.response.data}`);
+        } else if (error.request) {
+          // The request was made but no response was received
+          setError("Error: No response received from the server");
+        } else {
+          // Something happened in setting up the request
+          setError(`Error: ${error.message}`);
+        }
+      } finally {
+        setLoading(false); // Stop loading regardless of success or failure
+      }
+    };
+    fetchData();
+
+
+
     AOS.init({
       duration: 1000, // Animation duration in milliseconds
       // once: true, // Whether animation should happen only once
     });
-  }, []);
+  }, [partners, uri]);
 
-  const partners = Array.from({ length: 21 }, (_, index) => ({
-    title: `Company ${index + 1}`,
-    img: "https://i.ibb.co/HTfnsmb/rb-2148726151.png",
-    link: "https://i.ibb.co/HTfnsmb/rb-2148726151.png",
-  }));
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-[40rem]">
+        <CBSGCharLoader />
+      
+      </div>
+    );
+  }
+  if(error){
+    return (
+      <div className="flex justify-center items-center h-[40rem]">
+        <h1 className="text-2xl text-red-500">{error}</h1>
+      </div>
+    );
+  }
+
 
   return (
     <div
@@ -24,10 +70,10 @@ const StrategicPartner = () => {
     >
       {partners.map((partner, idx) => (
         <Partner
-          key={idx}
-          title={partner.title}
-          img={partner.img}
-          link={partner.link}
+          key={partner.id}
+          title={partner.company_name}
+          img={partner.logo}
+          link={partner.company_website_link}
           animation="zoom-in" // Custom animation for each card
         />
       ))}

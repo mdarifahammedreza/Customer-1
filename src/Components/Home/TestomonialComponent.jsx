@@ -1,79 +1,78 @@
+"use client";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../../AppProvider";
 import CBSGCharLoader from "../../Page/CBSGCharLoader";
-import { AnimatedTestimonials } from "../ui/animated-testimonials";
+import { AnimatedTestimonials } from "../ui/animated-testimonials"; // Ensure this import is correct
 
 // Function to fetch testimonials from the API
-const fetchTestimonials = async () => {
+const fetchTestimonials = async (uri) => {
   try {
-    const response = await axios.get('/testimonial.json');
-    return response.data; // Ensure your API response is in the correct format
+    const response = await axios.get(uri);
+    return response.data; // Return the fetched data
   } catch (error) {
     console.error("Failed to fetch testimonials:", error);
-    return []; // Return an empty array in case of error
+    throw error; // Re-throw the error to handle it in the component
   }
 };
 
 const TestimonialComponent = () => {
-  const [testimonials, setTestimonials] = useState([
-    {
-      "quote": "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-      "name": "Sarah",
-      "designation": "Product Manager at TechFlow",
-      "src": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "quote": "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-      "name": "Michael Rodriguez",
-      "designation": "CTO at InnovateSphere",
-      "src": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "quote": "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-      "name": "Emily Watson",
-      "designation": "Operations Director at CloudScale",
-      "src": "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "quote": "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-      "name": "James Kim",
-      "designation": "Engineering Lead at DataPro",
-      "src": "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "quote": "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-      "name": "Lisa Thompson",
-      "designation": "VP of Technology at FutureNet",
-      "src": "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    }
-  ]);
+  const [testimonials, setTestimonials] = useState([]); // Initialize as an empty array
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null); // State to handle errors
+  const { uri } = useContext(AppContext);
 
   // Fetch data once the component mounts
   useEffect(() => {
     const getData = async () => {
-      // const data = await fetchTestimonials();
-      // setTestimonials(data);
-      setLoading(false); // Set loading to false after data is fetched
+      try {
+        const data = await fetchTestimonials(`${uri}testimonials/`); // Fetch data using the URI
+        setTestimonials(data); // Set the fetched data
+      } catch (error) {
+        setError("Failed to fetch testimonials. Please try again later."); // Set error message
+      } finally {
+        setLoading(false); // Set loading to false after data is fetched or if there's an error
+      }
     };
 
     getData();
-  }, []); // Empty dependency array ensures this runs once on mount
+  }, [uri]); // Re-fetch if the URI changes
 
   // Show loader while the testimonials are being fetched
   if (loading) {
     return (
-      <div className="text-center">
-        <CBSGCharLoader/>
+      <div className="flex justify-center items-center h-screen">
+        <CBSGCharLoader />
+      </div>
+    );
+  }
+
+  // Show error message if there's an error
+  if (error) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p className="text-red-500 text-lg">{error}</p>
+      </div>
+    );
+  }
+
+  // Show a message if no testimonials are available
+  if (testimonials.length === 0 && !loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p className="text-gray-500 text-lg">No testimonials available.</p>
       </div>
     );
   }
 
   // Once data is fetched, show the testimonials
   return (
-    <>
+    <div className="w-full h-full pt-20">
+      <h2 className="pl-8 mx-auto text-xl md:text-5xl font-bold font-sans flex justify-center items-center">
+        Testimonials
+      </h2>
       <AnimatedTestimonials testimonials={testimonials} />
-    </>
+    </div>
   );
 };
 

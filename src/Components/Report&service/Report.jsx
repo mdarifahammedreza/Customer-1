@@ -1,29 +1,13 @@
-import { useState } from "react";
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
 import { FaFilePdf } from "react-icons/fa";
+import { AppContext } from "../../AppProvider";
+import CBSGCharLoader from "../../Page/CBSGCharLoader";
 
-const reports = [
-  { title: "Baseline Study Report of Ain-O-Salish Kendra (ASK)", description: "Human Rights and Access to Justice Situation in ASK Programme area", link: "#" },
-  { title: "Mid-term Evaluation Report - TLMZ supported project", description: "Community based rehabilitation project focused on leprosy affected person with disabilities", link: "#" },
-  { title: "Report on MJF Baseline Survey 2009", description: "Baseline Survey on Human and Child Rights programme.", link: "#" },
-  { title: "End-line Evaluation of CNA Foundation project in RMG sector", description: "Final Evaluation of WEAR project on RGM industries by Netherland based Buyers Network CNA Foundation", link: "#" },
-  { title: "UNFPA Research on Reproductive Health Initiatives for Youth in ASIA (RHIYA)", description: "Adolescent Reproductive Health - quality research", link: "#" },
-  { title: "Review Report of Voucher Scheme Under Homeless Component of MSI`S EC Block Grant Project", description: "Conducted for Marie Stopes (MS) clinic society", link: "#" },
-  { title: "Baseline Survey Report of Sharique Phase-IV", description: "Baseline Survey of Sharique Local Government Program.", link: "#" },
-  { title: "Migration Project Evaluation Report", description: "Mid-term Evaluation of Safe Migration Facilitation Project of BRAC", link: "#" },
-  { title: "Vulnerability Analysis of CSE and CSEC Survivors in Bangladesh", description: "Cross-boarder trafficking victims - Vulnerability Analysis of Women and Children survivors from Commercial Sex Exploitation", link: "#" },
-  { title: "Functionality and Sustainability Assessment of SHN CSPs", description: "Community Service Providers Assessment - USAID's Surjer Hasi Clinics", link: "#" },
-  { title: "Migration Project Evaluation Report", description: "Mid-term Evaluation of Safe Migration Facilitation Project of BRAC", link: "#" },
-  { title: "Vulnerability Analysis of CSE and CSEC Survivors in Bangladesh", description: "Cross-boarder trafficking victims - Vulnerability Analysis of Women and Children survivors from Commercial Sex Exploitation", link: "#" },
-  { title: "Functionality and Sustainability Assessment of SHN CSPs", description: "Community Service Providers Assessment - USAID's Surjer Hasi Clinics", link: "#" },
-  { title: "Migration Project Evaluation Report", description: "Mid-term Evaluation of Safe Migration Facilitation Project of BRAC", link: "#" },
-  { title: "Vulnerability Analysis of CSE and CSEC Survivors in Bangladesh", description: "Cross-boarder trafficking victims - Vulnerability Analysis of Women and Children survivors from Commercial Sex Exploitation", link: "#" },
-  { title: "Functionality and Sustainability Assessment of SHN CSPs", description: "Community Service Providers Assessment - USAID's Surjer Hasi Clinics", link: "#" },
-  { title: "Migration Project Evaluation Report", description: "Mid-term Evaluation of Safe Migration Facilitation Project of BRAC", link: "#" },
-  { title: "Vulnerability Analysis of CSE and CSEC Survivors in Bangladesh", description: "Cross-boarder trafficking victims - Vulnerability Analysis of Women and Children survivors from Commercial Sex Exploitation", link: "#" },
-  { title: "Functionality and Sustainability Assessment of SHN CSPs", description: "Community Service Providers Assessment - USAID's Surjer Hasi Clinics", link: "#" }
-];
+
 
 const ReportsPagination = () => {
+  const [reports, setReports] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const reportsPerPage = 10;
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,6 +19,37 @@ const ReportsPagination = () => {
   const currentReports = reports.slice(indexOfFirstReport, indexOfLastReport);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const {uri} = useContext(AppContext);
+  const [loading, setLoading] = useState(true);
+ 
+  const [error, setError] = useState(null);
+
+
+
+  useEffect(() => {
+    axios.get(`${uri}reports/`)
+      .then((res) => {
+        setReports(res.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching reports:", error);
+        setError(error);
+        setLoading(false);
+      });
+  }, [uri]);
+
+if(loading) {
+  return (
+    <div className="text-center">
+      <CBSGCharLoader />
+    </div>
+  );
+}
+if(error) {
+  return <p>Error fetching reports: {error.message}</p>;
+}
+
 
   const openModal = (report) => {
     setSelectedReport(report);
@@ -66,7 +81,7 @@ const ReportsPagination = () => {
             <div className="flex flex-col sm:flex-row sm:justify-between items-center w-full">
               <div className="text-center sm:text-left">
                 <p className="font-semibold text-sm ">{report.title}</p>
-                <p className="text-xs sm:text-xs text-gray-600">{report.description}</p>
+                <div className="text-xs sm:text-xs text-gray-600" dangerouslySetInnerHTML={{__html:report.description}}/>
               </div>
               <button 
                 onClick={() => openModal(report)} 

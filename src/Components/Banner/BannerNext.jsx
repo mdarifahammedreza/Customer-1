@@ -1,50 +1,43 @@
-"use client";
+//Done
+import axios from "axios";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../../AppProvider";
 import CBSGCharLoader from "../../Page/CBSGCharLoader";
 import { ImagesSlider } from "../ui/images-slider";
 
 export function ImagesSliderComponent() {
   const [loading, setLoading] = useState(true);
-  const [image, setImage] = useState({});
-
+  const [images, setImages] = useState([]);
+const {uri}=useContext(AppContext)
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 8000);
+    axios
+    axios.get(`${uri}home-banners/`)
+      .then((res) => {
+        setImages(res.data.map((item) => item.image));
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching images:", error);
+        setLoading(false);
+      });
 
-    setImage({
-      image: "https://i.ibb.co/5MZPdhp/banner-1.jpg",
-      image1: "https://i.ibb.co/thDf1NW/banner-2.jpg",
-      image2: "https://i.ibb.co/SyXjRsH/banner-3.jpg",
-    });
-
-    return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
     return (
       <div className="flex justify-center items-center h-[40rem]">
-        <CBSGCharLoader/>
-        {/* <span className="loading loading-bars loading-lg"></span> */}
+        <CBSGCharLoader />
       </div>
     );
   }
 
   return (
-    <ImagesSlider className="h-[30rem]" images={Object.values(image)} overlay={true}>
+    <ImagesSlider className="h-[30rem]" images={images} overlay={true}>
       <motion.div
-        initial={{
-          opacity: 0,
-          y: -80,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 0.9,
-        }}
+        initial={{ opacity: 0, y: -80 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9 }}
         className="z-50 flex flex-col justify-center items-center"
       >
         <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-white py-4">
