@@ -56,14 +56,14 @@ const router = createBrowserRouter([
       {
         path: "/Services/Organization-Development",
         element: <Organization_Development/>,
-        children:[
-          {
-            path: "/Services/Organization-Development/:Subpath",
-            loader: ({params}) => {return params.Subpath}, 
-            element: <Child_Organization_Development />,
-          }
-        ]
+        
       },
+      {
+        path: "/Services/Organization-Development/:id",
+        
+        element: <Child_Organization_Development />,
+      },
+
   
       {
           path: "/practice-areas",

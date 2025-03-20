@@ -20,6 +20,7 @@ export const AppProvider = ({ children }) => {
         setImages(bannerRes.data.map((item) => item.image));
 
         const assignmentRes = await axios.get(`${uri}assignments/`);
+        console.log(assignmentRes.data);
         setAssignments(assignmentRes.data);
       } catch (error) {
         console.error("Error fetching data:", error);

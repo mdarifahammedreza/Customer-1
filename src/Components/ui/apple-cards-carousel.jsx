@@ -177,7 +177,7 @@ export const Card = ({ card, index, layout = false }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="bg-base_900/60 backdrop-blur-lg h-full w-full fixed inset-0"
+              className="bg-white/20 backdrop-blur-lg h-full w-full fixed inset-0"
             />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -209,7 +209,7 @@ export const Card = ({ card, index, layout = false }) => {
               {/* Assignment Name */}
               <motion.h1
                 layoutId={layout ? `title-${card.assignment_name}` : undefined}
-                className="text-2xl md:text-4xl lg:text-6xl font-bold text-neutral-800 dark:text-white text-center mb-2 md:mb-4"
+                className="text-xl md:text-xl lg:text-3xl font-bold text-neutral-800 dark:text-white text-center mb-2 md:mb-4"
               >
                 {card.assignment_name}
               </motion.h1>
@@ -290,7 +290,7 @@ export const Card = ({ card, index, layout = false }) => {
           <BlurImage
             src={card.assignment_photo}
             alt={card.assignment_name}
-            fill
+            
             className="object-cover absolute z-10 inset-0"
           />
         )}

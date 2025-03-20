@@ -15,7 +15,7 @@ const Services = () => {
     axios
       .get(`${uri}service-intros/`)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setServices(res.data[0]);
         setLoading(false);
       })
@@ -25,7 +25,7 @@ const Services = () => {
       });
   }, []);
 
-  console.log(services);
+  // console.log(services);
 
   return (
     <div className="mt-5 px-5 md:px-16">

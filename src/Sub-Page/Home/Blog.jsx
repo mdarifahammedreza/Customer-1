@@ -37,12 +37,12 @@ const BlockPage = () => {
 
   return (
     <div className="min-h-screen flex justify-center items-center px-6 py-12">
-      <div className="w-full  text-black shadow-lg rounded-lg p-8 backdrop-blur-lg">
+      <div className="w-full  text-black  rounded-lg p-8 backdrop-blur-lg">
         {post.image ? (
           <img
             src={post.image}
             alt={post.title}
-            className="w-1/2 h-64 object-cover rounded-lg mb-4 shadow-lg shadow-gray-600"
+            className="w-1/2 h-64 object-cover rounded-lg mb-4 shadow-md shadow-gray-600"
           />
         ) : (
           <div className="w-full h-64  rounded-lg mb-4 flex items-center justify-center">
@@ -54,7 +54,7 @@ const BlockPage = () => {
         <span className="inline-block bg-blue-500/70 text-white px-3 py-1 rounded-md text-sm mt-2">
           {post.category}
         </span>
-        <div className="mt-4 text-lg" dangerouslySetInnerHTML={{ __html: post.content }} />
+        <div className="text-base font-normal text-blue-950  dynamic-content" dangerouslySetInnerHTML={{ __html: post.content }} />
         <p className="mt-4 text-gray-600"><strong>Tags:</strong> {post.tags || "None"}</p>
       </div>
     </div>

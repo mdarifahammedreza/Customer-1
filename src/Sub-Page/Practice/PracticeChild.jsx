@@ -6,8 +6,8 @@ import { AppContext } from "../../AppProvider";
 import CBSGCharLoader from "../../Page/CBSGCharLoader";
 
 const PracticeChild = () => {
-  const { uri } = useContext(AppContext); // Get API base URL from Context
-  const { id } = useParams(); // Get post ID from URL params
+  const { uri } = useContext(AppContext);
+  const { id } = useParams();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -18,7 +18,6 @@ const PracticeChild = () => {
       .get(`${uri}practice-areas/${id}`)
       .then((response) => {
         setPost(response.data);
-        console.log(response.data);
         setLoading(false);
       })
       .catch((error) => {
@@ -37,26 +36,31 @@ const PracticeChild = () => {
   }
 
   return (
-    <div className="min-h-screen flex justify-center items-center px-6 py-12">
-      <div className="w-full  text-black shadow-lg rounded-lg p-8 backdrop-blur-lg">
+    <div className="min-h-screen flex justify-center items-center px-6 py-12 bg-white">
+      <div className="w-full max-w-[150vmin] bg-white shadow-lg rounded-lg p-6">
         {post.image ? (
           <img
             src={post.image}
-            alt={post.title}
-            className="w-1/2 h-64 object-cover rounded-lg mb-4 shadow-lg shadow-gray-600"
+            alt={post.name}
+            className="w-full h-96 object-cover rounded-lg mb-4 shadow-md"
           />
         ) : (
-          <div className="w-full h-64  rounded-lg mb-4 flex items-center justify-center">
-            <span className="text-gray-400">No Image Available</span>
+          <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+            <span className="text-gray-500">No Image Available</span>
           </div>
         )}
-        <h1 className="text-3xl font-bold">{post.title}</h1>
-        <p className="text-gray-800">{new Date(post.publication_date).toDateString()}</p>
-        <span className="inline-block bg-blue-500/70 text-white px-3 py-1 rounded-md text-sm mt-2">
-          {post.category}
-        </span>
-        <div className="mt-4 text-lg" dangerouslySetInnerHTML={{ __html: post.content }} />
-        <p className="mt-4 text-gray-600"><strong>Tags:</strong> {post.tags || "None"}</p>
+
+        {post?.logo && (
+          <div className="w-24 h-24 mb-4 mx-auto">
+            <img src={post.logo} alt={`${post.name} logo`} className="w-full h-full object-contain" />
+          </div>
+        )}
+
+        <h1 className="text-3xl font-bold text-center mb-4">{post.name}</h1>
+        <div
+          className="text-base font-normal text-gray-700 dynamic-content"
+          dangerouslySetInnerHTML={{ __html: post.introduction }}
+        />
       </div>
     </div>
   );

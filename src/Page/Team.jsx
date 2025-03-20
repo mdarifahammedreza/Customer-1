@@ -24,7 +24,7 @@ const Team = () => {
  useEffect(() => {
     axios.get(`${uri}team-members/`)
     .then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setEmployees(res.data);
       setLoading(false);
     })
@@ -46,9 +46,9 @@ const Team = () => {
   if(error)
     return <p className="text-red-500">Error: {error}</p>
 
-  const technicalExperts = employees.filter(member => member.category === "Technical Expert");
-  const Core_Team = employees.filter(member => member.category === "Core Team");
-  const International_Consultant = employees.filter(member => member.category === "International Consultant");
+  const technicalExperts = employees?.filter(member => member?.category === "Technical Expert");
+  const Core_Team = employees?.filter(member => member?.category === "Core Team");
+  const International_Consultant = employees?.filter(member => member?.category === "International Consultant");
   return (
    <>
    <div className="relative mt-5 mb-5">

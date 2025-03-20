@@ -12,9 +12,10 @@ const Root = () => {
 
 
   return (
-    <div className="font-sans bg-floor">
-      <Header data={HeaderData} />
-      <Outlet />
+    <div className="font-sans bg-gray-100 ">
+      <div className='px-4'><Header data={HeaderData} />
+      
+      <Outlet /></div>
       <Footer />
     </div>
   );

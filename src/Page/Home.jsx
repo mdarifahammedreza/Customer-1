@@ -24,7 +24,7 @@ const Home = () => {
         // Fetch data from the API using axios
         const response = await axios.get(`${uri}company-profile/`);
         setCompanyProfile(response.data[0]);
-        console.log(response.data[0]); // Set the fetched data to state
+        // console.log(response.data[0]); // Set the fetched data to state
       } catch (error) {
         // Handle errors
         if (error.response) {
@@ -63,25 +63,25 @@ const Home = () => {
 
   const CountData = {
     contracts_international_agencies:
-      companyProfile.contracts_international_agencies,
+      companyProfile?.contracts_international_agencies,
     research_evaluation_assignments:
-      companyProfile.research_evaluation_assignments,
+      companyProfile?.research_evaluation_assignments,
     organizational_capacity_assessment:
-      companyProfile.organizational_capacity_assessment,
-    us_government_project: companyProfile.us_government_project,
-    years_of_experience: companyProfile.years_of_experience,
+      companyProfile?.organizational_capacity_assessment,
+    us_government_project: companyProfile?.us_government_project,
+    years_of_experience: companyProfile?.years_of_experience,
   };
 const AboutData ={
-  about_text:companyProfile.about_text,
-  organization_development_image:companyProfile.organization_development_image,
-  organization_development_text:companyProfile.organization_development_text,
-  organization_development_title:companyProfile.organization_development_title,
-  research_evaluation_image:companyProfile.research_evaluation_image,
-  research_evaluation_text:companyProfile.research_evaluation_text,
+  about_text:companyProfile?.about_text,
+  organization_development_image:companyProfile?.organization_development_image,
+  organization_development_text:companyProfile?.organization_development_text,
+  organization_development_title:companyProfile?.organization_development_title,
+  research_evaluation_image:companyProfile?.research_evaluation_image,
+  research_evaluation_text:companyProfile?.research_evaluation_text,
 }
-const practice_caption = companyProfile.practice_caption;
+const practice_caption = companyProfile?.practice_caption;
   return (
-    <div className="mt-5 mb-20">
+    <div className=" mb-20">
       <ImagesSliderComponent />
       <div>
         <Count CountData={CountData}/>
@@ -91,6 +91,7 @@ const practice_caption = companyProfile.practice_caption;
      <div className="px-10">
      <CarouselComponent practice_caption={practice_caption}/>
      </div>
+     <Line />
       <RecentProject />
       <Line />
       <TestimonialComponent />

@@ -33,7 +33,7 @@ const {uri}=useContext(AppContext)
   }
 
   return (
-    <ImagesSlider className="h-[30rem]" images={images} overlay={true}>
+    <ImagesSlider className="h-[30rem] rounded-t border-t border-l border-r border-gray-300" images={images} overlay={true}>
       <motion.div
         initial={{ opacity: 0, y: -80 }}
         animate={{ opacity: 1, y: 0 }}

@@ -14,7 +14,7 @@ const Gallery = () => {
     useEffect(()=>{
         axios.get(`${uri}gallery/`)
         .then((res)=>{
-            console.log(res.data);
+            // console.log(res.data);
             setImages(res.data);
             setLoading(false);
         })

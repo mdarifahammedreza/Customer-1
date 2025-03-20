@@ -7,9 +7,9 @@ import { HoveredLink, Menu, MenuItem } from "../ui/navbar-menu";
 
 const Header = () => {
   return (
-    <header className="w-full px-3">
-      <Navbar className="hidden lg:block" />
-      <Phonenav className="lg:hidden" />
+    <header className="w-full pt-2">
+      <Navbar className="hidden lg:block mb-10 shadow-xl py-3 border border-gray-300 rounded" />
+      <Phonenav className="lg:hidden px-3 " />
     </header>
   );
 };
@@ -88,7 +88,7 @@ function Navbar({ className }) {
 
 const Phonenav = () => {
   return (
-    <div className="block lg:hidden">
+    <div className="block lg:hidden bg-white shadow-xl mb-10  border border-gray-300 rounded">
       <div className="navbar  z-50 w-full">
         <div className="flex justify-between items-center w-full  py-2">
           <div className="mr-2 inline-flex max-w-[19.1rem] md:max-w-[21.6rem]">

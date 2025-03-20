@@ -11,7 +11,7 @@ const Count = ({CountData}) => {
 
 
   return (
-    <div className="flex flex-wrap gap-6 md:gap-0 justify-evenly items-center bg-gradient-to-tr from-base_600 to-indigo-900 p-6 text-white text-center relative">
+    <div className="flex flex-wrap gap-6 md:gap-0 justify-evenly items-center bg-gradient-to-tr from-base_600 to-indigo-900 p-6 text-white text-center relative rounded-b border-b border-l border-r border-gray-300">
       <CountItem icon={<MdBusinessCenter />} number={CountData?.contracts_international_agencies} label="Contracts for International Agencies" />
       <CountItem icon={<FaFlag />} number={CountData?.us_government_project} label="US Government Projects" />
       <CountItem icon={<RiTeamLine />} number={CountData?.organizational_capacity_assessment} label="Organizational Capacity Assessment" />

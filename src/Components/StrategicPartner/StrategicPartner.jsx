@@ -19,7 +19,7 @@ const StrategicPartner = () => {
         // Fetch data from the API using axios
         const response = await axios.get(`${uri}strategic-partners/`);
         setPartners(response.data);
-        console.log(response.data); // Set the fetched data to state
+        // console.log(response.data); // Set the fetched data to state
       } catch (error) {
         // Handle errors
         if (error.response) {
@@ -44,7 +44,7 @@ const StrategicPartner = () => {
       duration: 1000, // Animation duration in milliseconds
       // once: true, // Whether animation should happen only once
     });
-  }, [partners, uri]);
+  }, []);
 
   if (loading) {
     return (
@@ -85,7 +85,7 @@ const Partner = ({ title, img, link, animation }) => {
   return (
     <Link to={link}>
       <div
-        className="relative min-w-32 min-h-32 sm:min-w-44 sm:min-h-44 max-w-56 max-h-56 bg-gradient-to-t from-blue-50 to-indigo-50 border border-base_900 shadow-md shadow-base_300 flex items-center justify-center group transition-all ease-in-out duration-500 hover:translate-y-2 hover:scale-110 hover:bg-gradient-to-b hover:from-base_600 hover:to-base_900"
+        className="relative min-w-32 min-h-32 sm:min-w-44 sm:min-h-44 max-w-56 max-h-56 bg-gradient-to-t border border-gray-300 shadow-xl flex items-center justify-center group transition-all ease-in-out duration-500 hover:translate-y-2 hover:scale-110 hover:bg-gradient-to-b hover:from-base_600 hover:to-base_900"
         data-aos={animation} // Individual animation for each card
       >
         <h1 className="absolute opacity-0 group-hover:opacity-100 font-bold text-white text-sm sm:text-base transition-all duration-500">

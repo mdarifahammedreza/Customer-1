@@ -2,7 +2,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useContext, useEffect, useState } from "react";
 import { ImagesSlider } from "../Components/ui/images-slider";
-
+import { motion } from "framer-motion";
 import axios from "axios";
 import PropTypes from "prop-types";
 import { AppContext } from "../AppProvider";
@@ -70,7 +70,18 @@ const [loading1, setLoading1] = useState(true);
 
   return (
     <div className="text-base_900 mt-5 mb-10">
-      <ImagesSlider className="h-[40rem]" images={images} data-aos="fade-up" />
+      <ImagesSlider className="h-[30rem] rounded-t border-t border-l border-r border-gray-300" images={images} overlay={true} data-aos="fade-up"> 
+      <motion.div
+        initial={{ opacity: 0, y: -80 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9 }}
+        className="z-50 flex flex-col justify-center items-center"
+      >
+        <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-white py-4">
+          Supporting Greater Performance
+        </motion.p>
+      </motion.div>
+    </ImagesSlider>
 
       <div
         className="w-full h-3 grid grid-cols-3 bg-black"
@@ -137,7 +148,7 @@ const [loading1, setLoading1] = useState(true);
                 <p>Our Core Values</p>
               </div>
             </h2>
-            <div className="font-normal text-justify" dangerouslySetInnerHTML={{ __html: About?.Core_values }} />
+            <div className="font-normal text-justify" dangerouslySetInnerHTML={{ __html: About?.core_value_text }} />
           </div>
         </div>
 
@@ -247,3 +258,6 @@ export default About;
 Core.propTypes = {
   categories: PropTypes.array.isRequired,
 };
+
+
+

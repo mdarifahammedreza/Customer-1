@@ -39,7 +39,7 @@ const Blog = () => {
     <div className="w-full mt-16 px-10">
       <BentoGrid className="flex flex-wrap justify-center">
         {paginatedBlogs.map((item, i) => (
-          <Link key={item.post_id} to={`/blog/${item.post_id}`}>
+          <Link key={item.post_id} to={`/blog/${item.post_id}`} className="min-w-[300px]">
             <Card
               title={item.title}
               description={item.category}

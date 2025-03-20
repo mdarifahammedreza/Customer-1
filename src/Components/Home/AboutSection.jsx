@@ -17,7 +17,7 @@ const AboutSection = ({ AboutData }) => {
 
   if (AboutData === undefined) {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center h-screen ">
         <CBSGCharLoader />
       </div>
     );
@@ -25,7 +25,7 @@ const AboutSection = ({ AboutData }) => {
 
   return (
     <div
-      className="mx-auto px-4 border-2 my-20 p-10 border-base_500 md:mx-11 lg:mx-24 mb-4 text-base_600 font-medium"
+      className="mx-auto px-4 border-2 my-20 p-10 border-base_500 md:mx-11 lg:mx-24 mb-4 text-base_600 bg-white rounded font-medium"
       data-aos="zoom-in"
     >
       <p
@@ -59,7 +59,7 @@ const AboutSection = ({ AboutData }) => {
               dangerouslySetInnerHTML={{
                 __html: organization_development_text,
               }}
-              className="text-xs font-sans font-normal text-blue-950 text-justify"
+              className="text-base font-sans font-normal text-blue-950 text-justify"
               data-aos="fade-left"
             />
           </div>
