@@ -1,16 +1,19 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { AppContext } from "../../../AppProvider";
+// import { filterAssignments } from "../../../Components/Assignment";
+import Card from "../../../Components/ui/Card";
 
 const ChildOrganizationDevelopment = () => {
   const { id } = useParams();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { uri } = useContext(AppContext);
+  const { uri,assignments } = useContext(AppContext);
+  console.log(assignments);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -49,8 +52,41 @@ const ChildOrganizationDevelopment = () => {
       </h1>
       
       <div className="dynamic-content mt-5" data-aos="fade-left" dangerouslySetInnerHTML={{ __html: data.description }} />
+      <div>
+        <LoadAssignment assignments={assignments} type={data.name} />
+      </div>
     </div>
   );
 };
 
 export default ChildOrganizationDevelopment;
+
+
+
+const LoadAssignment = (assignments, type) => {
+  console.log(assignments);
+  console.log(type);
+  const filteredAssignments = assignments.filter(
+    (assignment) => assignment.sub_service_area.name === type
+  );
+
+  console.log(filteredAssignments);
+  return filteredAssignments?.map((assignment) =>
+    assignment ? (
+      <Link key={assignment.id} to={`/assignments/${assignment.id}`}>
+        <Card
+          title={assignment.title}
+          description={assignment.description}
+          photo={assignment.photo}
+          logo={assignment.company_logo}
+          practiceArea={assignment.practice_area.name}
+          subServiceArea={assignment.sub_service_area.name}
+          serviceType={assignment.service_type}
+        />
+      </Link>
+    ) : null
+  );
+};
+
+
+

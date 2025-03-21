@@ -16,12 +16,15 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const bannerRes = await axios.get(`${uri}home-banners/`);
-        setImages(bannerRes.data.map((item) => item.image));
+        const [bannerRes, assignmentRes] = await Promise.all([
+          axios.get(`${uri}home-banners/`),
+          axios.get(`${uri}assignments/`),
+        ]);
 
-        const assignmentRes = await axios.get(`${uri}assignments/`);
-        console.log(assignmentRes.data);
+        setImages(bannerRes.data.map((item) => item.image));
         setAssignments(assignmentRes.data);
+
+        console.log("Fetched Assignments:", assignmentRes.data); // ✅ Better logging placement
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
