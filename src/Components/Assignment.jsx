@@ -1,18 +1,18 @@
 import { useContext } from "react";
-import { AppContext } from "../AppProvider";
 import { useParams } from "react-router-dom";
+import { AppContext } from "../AppProvider";
 
 
 
-export const filterAssignments = async(assignments, { practiceArea, subServiceArea, serviceType, clientId }) =>
-    assignments.filter(assignment => {
-      const matchPracticeArea = practiceArea ? assignment.practice_area.name === practiceArea : false;
-      const matchSubServiceArea = subServiceArea ? assignment.sub_service_area.name === subServiceArea : false;
-      const matchServiceType = serviceType ? assignment.service_type === serviceType : false;
-      const matchClient = clientId ? assignment.select_client === clientId : false;
+// export const filterAssignments = async(assignments, { practiceArea, subServiceArea, serviceType, clientId }) =>
+//     assignments.filter(assignment => {
+//       const matchPracticeArea = practiceArea ? assignment.practice_area.name === practiceArea : false;
+//       const matchSubServiceArea = subServiceArea ? assignment.sub_service_area.name === subServiceArea : false;
+//       const matchServiceType = serviceType ? assignment.service_type === serviceType : false;
+//       const matchClient = clientId ? assignment.select_client === clientId : false;
   
-      return matchPracticeArea || matchSubServiceArea || matchServiceType || matchClient;
-    });
+//       return matchPracticeArea || matchSubServiceArea || matchServiceType || matchClient;
+//     });
 
 const Assignment = () => {
     const { assignments } = useContext(AppContext);

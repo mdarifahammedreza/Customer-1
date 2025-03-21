@@ -8,7 +8,7 @@ import { HoveredLink, Menu, MenuItem } from "../ui/navbar-menu";
 const Header = () => {
   return (
     <header className="w-full pt-2">
-      <Navbar className="hidden lg:block mb-10 shadow-xl py-3 border border-gray-300 rounded" />
+      <Navbar className="hidden lg:block mb-10 shadow-md py-3 border border-gray-300 rounded" />
       <Phonenav className="lg:hidden px-3 " />
     </header>
   );

@@ -7,6 +7,7 @@ import Services from "./Page/Services";
 import Team from "./Page/Team";
 import Work from "./Page/Work";
 import Root from "./Root";
+import AssignmentPage from "./Sub-Page/AssignmentPage";
 import BlockPage from "./Sub-Page/Home/Blog";
 import PracticeChild from "./Sub-Page/Practice/PracticeChild";
 import Child_Organization_Development from "./Sub-Page/Services/Child_Organization_Development/Child_Organization_Development";
@@ -90,7 +91,10 @@ const router = createBrowserRouter([
           element: <Work/>,
         //   children: [],
       },
-  
+      {
+        path: "assignments/:id",
+        element: <AssignmentPage />,
+      },
   
       {
           path: "/contacts",
