@@ -1,58 +1,103 @@
-import {
-  IconArrowWaveRightUp,
-  IconBoxAlignRightFilled,
-  IconBoxAlignTopLeft,
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
-} from "@tabler/icons-react";
-import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
-import { Link } from "react-router";
+import axios from "axios";
+import { useContext, useEffect, useState } from "react";
+import { AppContext } from "../AppProvider";
 import { ImagesSliderComponent } from "../Components/Banner/BannerNext";
 import AboutSection from "../Components/Home/AboutSection";
+import Blog from "../Components/Home/Blog";
 import CarouselComponent from "../Components/Home/CarouselComponent";
 import Count from "../Components/Home/Count";
 import TestimonialComponent from "../Components/Home/TestomonialComponent";
 import { RecentProject } from "../Components/RecentProject/RecentProject";
-import { BentoGrid } from "../Components/ui/bento-grid";
-import Card from "../Components/ui/Card";
+import CBSGCharLoader from "./CBSGCharLoader";
+
+
 const Home = () => {
+  const { uri } = useContext(AppContext);
+  
+  const [loading, setLoading] = useState(true);
+  const [companyProfile, setCompanyProfile] = useState([{ data: [] }]);
+  const [error, setError] = useState(null);
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      // once: true, // Only trigger the animation once when it enters the viewport
-    });
+    const fetchData = async () => {
+      try {
+        // Fetch data from the API using axios
+        const response = await axios.get(`${uri}company-profile/`);
+        setCompanyProfile(response.data[0]);
+        // console.log(response.data[0]); // Set the fetched data to state
+      } catch (error) {
+        // Handle errors
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          setError(`Error: ${error.response.status} - ${error.response.data}`);
+        } else if (error.request) {
+          // The request was made but no response was received
+          setError("Error: No response received from the server");
+        } else {
+          // Something happened in setting up the request
+          setError(`Error: ${error.message}`);
+        }
+      } finally {
+        setLoading(false); // Stop loading regardless of success or failure
+      }
+    };
+    fetchData();
   }, []);
 
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-[40rem]">
+        <CBSGCharLoader />
+        {/* <span className="loading loading-bars loading-lg"></span> */}
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex justify-center items-center h-[40rem]">
+        <p className="text-red-500">Error: {error}</p>
+      </div>
+    );
+  }
+
+  const CountData = {
+    contracts_international_agencies:
+      companyProfile?.contracts_international_agencies,
+    research_evaluation_assignments:
+      companyProfile?.research_evaluation_assignments,
+    organizational_capacity_assessment:
+      companyProfile?.organizational_capacity_assessment,
+    us_government_project: companyProfile?.us_government_project,
+    years_of_experience: companyProfile?.years_of_experience,
+  };
+const AboutData ={
+  about_text:companyProfile?.about_text,
+  organization_development_image:companyProfile?.organization_development_image,
+  organization_development_text:companyProfile?.organization_development_text,
+  organization_development_title:companyProfile?.organization_development_title,
+  research_evaluation_image:companyProfile?.research_evaluation_image,
+  research_evaluation_text:companyProfile?.research_evaluation_text,
+}
+const practice_caption = companyProfile?.practice_caption;
   return (
-    <div className="mt-5 mb-20">
+    <div className=" mb-20">
       <ImagesSliderComponent />
       <div>
-        <Count />
+        <Count CountData={CountData}/>
       </div>
-      <AboutSection />
+      <AboutSection AboutData={AboutData} />
       <Line />
-      <CarouselComponent />
+     <div className="px-10">
+     <CarouselComponent practice_caption={practice_caption}/>
+     </div>
+     <Line />
       <RecentProject />
       <Line />
       <TestimonialComponent />
-      <BentoGrid className="w-full  mt-16 px-10">
-        {items.map((item, i) => (
-          <Link key={i} to={`/blog/${item.title}`} >
-          <Card
-            key={i}
-            title={item.title}
-            description={item.description}
-            header={item.header}
-            icon={item.icon}
-            className={i === 5 || i === 10 || i===15 ? "md:col-span-2" : ""}
-          />
-          </Link>
-        ))}
-      </BentoGrid>
+     <section>
+     <Blog />
+     </section>
     </div>
   );
 };
@@ -67,47 +112,4 @@ const Line = () => {
   );
 };
 
-export const items = [
-  {
-    title: "The Dawn of Innovation",
-    description: "Explore the birth of groundbreaking ideas and inventions.",
-    header: <p className=" h-full w-full bg-slate-400 rounded-md ">hip</p>,
-    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Digital Revolution",
-    description: "Dive into the transformative power of technology.",
-    header: <p className=" h-full w-full bg-slate-400 rounded-md">hi</p>,
-    icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Art of Design",
-    description: "Discover the beauty of thoughtful and functional design.",
-    header: <p className=" h-full w-full bg-slate-400 rounded-md">hi</p>,
-    icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Power of Communication",
-    description: "Understand the impact of effective communication in our lives.",
-    header: <p className=" h-full w-full bg-slate-400 rounded-md">hi</p>,
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Pursuit of Knowledge",
-    description: "Join the quest for understanding and enlightenment.",
-    header: <p className=" h-full w-full bg-slate-400 rounded-md">hi</p>,
-    icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Joy of Creation",
-    description: "Experience the thrill of bringing ideas to life.",
-    header: <p className=" h-full w-full bg-slate-400 rounded-md">hi</p>,
-    icon: <IconBoxAlignTopLeft className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "The Spirit of Adventure",
-    description: "Embark on exciting journeys and thrilling discoveries.",
-    header: <p className=" h-full w-full bg-slate-400 rounded-md">hi</p>,
-    icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
-  },
-];
+

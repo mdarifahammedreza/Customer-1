@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router'; // Correct import for React Router
-import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
+import Header from './Components/Header/Header';
 
 const Root = () => {
   const HeaderData = {
@@ -12,9 +12,10 @@ const Root = () => {
 
 
   return (
-    <div className="font-sans bg-floor">
-      <Header data={HeaderData} />
-      <Outlet />
+    <div className="font-sans bg-white ">
+      <div className='px-4'><Header data={HeaderData} />
+      
+      <Outlet /></div>
       <Footer />
     </div>
   );

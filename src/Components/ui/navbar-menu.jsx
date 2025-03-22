@@ -52,7 +52,7 @@ export const MenuItem = ({ setActive, active, item, children }) => {
 export const Menu = ({ setActive, children }) => {
   return (
     <div className="flex justify-between items-end">
-      <div className=" px-2 inline-flex lg:max-w-[24.9rem] ">
+      <div className=" px-2 inline-flex lg:max-w-[30rem] ">
         <Link to="/">
           <img
             src="https://i.ibb.co.com/pf3YyhR/logo.png"
@@ -61,17 +61,17 @@ export const Menu = ({ setActive, children }) => {
           />
         </Link>
         <div className="flex flex-col justify-between text-base_600 hover:text-base_900">
-          <h1 className="font-semibold  lg:text-xl ">
+          <h1 className="font-semibold  lg:text-2xl ">
             Capacity Building Service Group
           </h1>
           <Marquee gradient={true} gradientWidth={20} gradientColor={"#ffffff"}>
-            <p className="text-xs">Supporting Greater Performance</p>
+            <p className="text-xs italic">Supporting Greater Performance</p>
           </Marquee>
         </div>
       </div>
       <nav
         onMouseLeave={() => setActive(null)}
-        className="relative  shadow-input flex justify-end lg:space-x-3   pr-2 xl:pr-14">
+        className="relative  shadow-input flex justify-end lg:space-x-3   pr-3 ">
         {children}
       </nav>
     </div>

@@ -7,9 +7,9 @@ import { HoveredLink, Menu, MenuItem } from "../ui/navbar-menu";
 
 const Header = () => {
   return (
-    <header className="w-full px-3">
-      <Navbar className="hidden lg:block" />
-      <Phonenav className="lg:hidden" />
+    <header className="w-full pt-2">
+      <Navbar className="hidden lg:block mb-10 shadow-md py-3 border border-gray-300 rounded" />
+      <Phonenav className="lg:hidden px-3 " />
     </header>
   );
 };
@@ -40,7 +40,7 @@ function Navbar({ className }) {
         </HoveredLink>
 
         {/* Services Menu */}
-        <MenuItem setActive={setActive} active={active} item="Our services">
+        <MenuItem setActive={setActive} to="Services" active={active} item="Our services">
           <div className="flex flex-col space-y-2 ">
             <HoveredLink
               to="/Services/Organization-Development"
@@ -88,7 +88,7 @@ function Navbar({ className }) {
 
 const Phonenav = () => {
   return (
-    <div className="block lg:hidden">
+    <div className="block lg:hidden bg-white shadow-xl mb-10  border border-gray-300 rounded">
       <div className="navbar  z-50 w-full">
         <div className="flex justify-between items-center w-full  py-2">
           <div className="mr-2 inline-flex max-w-[19.1rem] md:max-w-[21.6rem]">
@@ -112,7 +112,7 @@ const Phonenav = () => {
             </div>
           </div>
 
-          <div className="dropdown dropdown-bottom dropdown-end">
+          <div className="dropdown dropdown-bottom dropdown-end z-[100]">
             <div
               tabIndex={0}
               role="button"

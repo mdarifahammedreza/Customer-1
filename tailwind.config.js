@@ -30,14 +30,17 @@ export default {
         Corcol_Gray_800: "#555555", // Gray
       },
       fontFamily: {
-        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+        sans: ["Poppins", ...defaultTheme.fontFamily.sans],  // Using Poppins as the default sans font
+        // Add additional custom fonts if needed:
+        // heading: ['CustomHeadingFont', 'Arial', 'sans-serif'],
+        // body: ['CustomBodyFont', 'Verdana', 'serif'],
       },
     },
   },
   plugins: [
     daisyui,
     scrollbarHide,
-    addVariablesForColors, // Add the custom plugin
+    addVariablesForColors, // Add the custom plugin to generate CSS variables
   ],
 };
 
